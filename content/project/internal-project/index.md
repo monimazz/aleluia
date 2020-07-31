@@ -9,7 +9,7 @@ links:
   icon_pack: fab
   name: Follow
   url: https://twitter.com/monimazz
-slides: example
+slides: 
 summary: Você sabia que é possível criar arte com o R? Durante 6 meses vou explorar o tema aRt, criando arte através do R com o uso de algorítimos e demais funcionalidades da linguagem.
 tags:
 - aRt

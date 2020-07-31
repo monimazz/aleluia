@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="Bem-Vindesss Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!">
+  <meta name="description" content="Bem-Vindes Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!">
 
   
   <link rel="alternate" hreflang="en-us" href="../../../post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/">
@@ -224,6 +224,44 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174155598-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-174155598-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
 
@@ -257,7 +295,7 @@
   <meta property="og:site_name" content="R-Dados: Pesquisando com R">
   <meta property="og:url" content="/post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/">
   <meta property="og:title" content="Introdução ao text mining: O caso da votação do FUNDEB | R-Dados: Pesquisando com R">
-  <meta property="og:description" content="Bem-Vindesss Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!"><meta property="og:image" content="/images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="Bem-Vindes Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!"><meta property="og:image" content="/images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -307,7 +345,7 @@
       "url": "/images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Bem-Vindesss Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!"
+  "description": "Bem-Vindes Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!"
 }
 </script>
 
@@ -648,8 +686,8 @@
       
 
 
-<div id="bem-vindesss" class="section level1">
-<h1>Bem-Vindesss</h1>
+<div id="bem-vindes" class="section level1">
+<h1>Bem-Vindes</h1>
 <p>Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação! Abaixo um post do <span class="citation">@mapaeducacao</span> para entender melhor o que ocorreu:</p>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CC7I0BrnVmj/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:440px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
 <div style="padding:16px;">
@@ -1184,6 +1222,23 @@ Bem, isso foi uma pequena grande intro ao Text Mining no R! <strong>Espero que t
     <li>
       <a href="https://github.com/monimazz" target="_blank" rel="noopener">
         <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://br.linkedin.com/in/monicarocabado" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
       </a>
     </li>
   

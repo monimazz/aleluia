@@ -224,6 +224,44 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174155598-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-174155598-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
 
@@ -698,6 +736,23 @@
           </a>
         </li>
         
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://br.linkedin.com/in/monicarocabado" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin big-icon"></i>
+          </a>
+        </li>
+        
       </ul>
 
     </div>
@@ -909,7 +964,7 @@
   
   <a href="./post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/" class="summary-link">
     <div class="article-style">
-      <p>Bem-Vindesss Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!</p>
+      <p>Bem-Vindes Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!</p>
     </div>
   </a>
   
@@ -994,7 +1049,7 @@
   
   <a href="./post/writing-technical-content/" class="summary-link">
     <div class="article-style">
-      <p>Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.
+      <p>[teste] Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.
 Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.</p>
     </div>
   </a>
@@ -1386,7 +1441,7 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
                 
                 
                 
-                <a href="#" data-filter=".js-id-Deep-Learning" class="btn btn-primary btn-lg">Deep Learning</a>
+                <a href="#" data-filter=".js-id-aRt" class="btn btn-primary btn-lg">aRt</a>
               
                 
                 
@@ -1528,11 +1583,6 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
           
           
           
-          <a href="./tag/academic/" style="font-size:0.7rem">Academic</a>
-        
-          
-          
-          
           <a href="./tag/analise-de-texto/" style="font-size:0.7rem">analise de texto</a>
         
           
@@ -1558,37 +1608,12 @@ Highlight your code snippets, take notes on math classes, and draw diagrams from
           
           
           
-          <a href="./tag/plot/" style="font-size:0.7rem">plot</a>
-        
-          
-          
-          
           <a href="./tag/politica/" style="font-size:0.7rem">Política</a>
         
           
           
           
-          <a href="./tag/r-markdown/" style="font-size:0.7rem">R Markdown</a>
-        
-          
-          
-          
-          <a href="./tag/regression/" style="font-size:0.7rem">regression</a>
-        
-          
-          
-          
-          <a href="./tag/source-themes/" style="font-size:1.7302256254687514rem">Source Themes</a>
-        
-          
-          
-          
           <a href="./tag/textmining/" style="font-size:0.7rem">textmining</a>
-        
-          
-          
-          
-          <a href="./tag/%E5%BC%80%E6%BA%90/" style="font-size:0.7rem">开源</a>
         
       </div>
     

@@ -224,6 +224,44 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174155598-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-174155598-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
 
@@ -545,30 +583,6 @@
     
     <div>
       <h2><a href="../../publication/preprint/" >An example preprint / working paper</a></h2>
-      <div class="article-style">
-        
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="../../publication/journal-article/" >An example journal article</a></h2>
-      <div class="article-style">
-        
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="../../publication/conference-paper/" >An example conference paper</a></h2>
       <div class="article-style">
         
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.

@@ -2,8 +2,9 @@
 title: "Hello R Markdown"
 author: "Frida Gomam"
 date: 2015-07-23T21:13:14-05:00
+draft: TRUE
 categories: ["R"]
-tags: ["R Markdown", "plot", "regression"]
+tags: []
 ---
 
 ```{r setup, include=FALSE}

@@ -20,10 +20,10 @@ publication_short: In *STC*
 publication_types:
 - "1"
 publishDate: "2017-01-01T00:00:00Z"
+draft: TRUE
 slides: example
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 tags:
-- Source Themes
 title: An example conference paper
 url_code: '#'
 url_dataset: '#'

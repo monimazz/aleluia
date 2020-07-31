@@ -224,6 +224,44 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174155598-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-174155598-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
 
@@ -822,14 +860,6 @@
 
 
 
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="../../tag/academic/">Academic</a>
-  
-  <a class="badge badge-light" href="../../tag/%E5%BC%80%E6%BA%90/">开源</a>
-  
-</div>
-
 
 
 <div class="share-box" aria-hidden="true">
@@ -1001,6 +1031,23 @@
     <li>
       <a href="https://github.com/monimazz" target="_blank" rel="noopener">
         <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://br.linkedin.com/in/monicarocabado" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
       </a>
     </li>
   

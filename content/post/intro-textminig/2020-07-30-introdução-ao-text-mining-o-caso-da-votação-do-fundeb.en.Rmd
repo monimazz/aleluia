@@ -24,7 +24,7 @@ image:
 projects: []
 ---
 
-# Bem-Vindesss
+# Bem-Vindes
 
 Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação! Abaixo um post do @mapaeducacao para entender melhor o que ocorreu:
 

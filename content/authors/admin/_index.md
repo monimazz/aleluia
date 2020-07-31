@@ -34,6 +34,9 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/monimazz
+- icon: linkedin
+  icon_pack: fab
+  link: https://br.linkedin.com/in/monicarocabado
 superuser: true
 title: Mônica Rocabado
 user_groups:

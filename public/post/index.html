@@ -224,6 +224,44 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174155598-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-174155598-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
 
@@ -568,7 +606,7 @@
     
     <a href="../post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/" class="summary-link">
       <div class="article-style">
-        Bem-Vindesss Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!
+        Bem-Vindes Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!
       </div>
     </a>
     
@@ -664,7 +702,7 @@
     
     <a href="../post/writing-technical-content/" class="summary-link">
       <div class="article-style">
-        Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.
+        [teste] Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.
 Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.
       </div>
     </a>

@@ -20,8 +20,8 @@
       <description>
 
 
-&lt;div id=&#34;bem-vindesss&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Bem-Vindesss&lt;/h1&gt;
+&lt;div id=&#34;bem-vindes&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Bem-Vindes&lt;/h1&gt;
 &lt;p&gt;Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação! Abaixo um post do &lt;span class=&#34;citation&#34;&gt;@mapaeducacao&lt;/span&gt; para entender melhor o que ocorreu:&lt;/p&gt;
 &lt;blockquote class=&#34;instagram-media&#34; data-instgrm-permalink=&#34;https://www.instagram.com/p/CC7I0BrnVmj/?utm_source=ig_embed&amp;amp;utm_campaign=loading&#34; data-instgrm-version=&#34;12&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:440px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;
 &lt;div style=&#34;padding:16px;&#34;&gt;
@@ -368,7 +368,8 @@ Bem, isso foi uma pequena grande intro ao Text Mining no R! &lt;strong&gt;Espero
       <link>/post/writing-technical-content/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
       <guid>/post/writing-technical-content/</guid>
-      <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
+      <description>&lt;p&gt;[teste]
+Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
