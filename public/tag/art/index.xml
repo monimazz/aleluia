@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aRt | R-Dados: Pesquisando com R</title>
+    <link>/tag/art/</link>
+      <atom:link href="/tag/art/index.xml" rel="self" type="application/rss+xml" />
+    <description>aRt</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_512x512_fill_lanczos_center_2.png</url>
+      <title>aRt</title>
+      <link>/tag/art/</link>
+    </image>
+    
+    <item>
+      <title>6 meses de aRt</title>
+      <link>/project/internal-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/project/internal-project/</guid>
+      <description>&lt;p&gt;Sou apaixonada 😍 por arte e visualização de dados e informações, no passado até cheguei a pensar em fazer história da arte! A vida me levou para outros caminhos, mas a paixão pelo &amp;ldquo;criar&amp;rdquo; e refletir em relação a esse processo continuou. Quando descobri que existia uma vertente do R chamada aRt, ou seja, criar arte através do R, tive que testar.&lt;/p&gt;
+&lt;p&gt;Criar aRt é um processo complexo, não só pela criação em si, mas pelos códigos que irão levar você a criá-lo. Logo, um ótimo exercício para praticar a linguagem R!&lt;/p&gt;
+&lt;p&gt;Inspirada por William Chase no desafio 
+&lt;a href=&#34;https://www.williamrchase.com/work/art/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;12 Months of Art&lt;/a&gt;, resolvi criar meu próprio desafio para 2020: 6 meses de aRt 🎨, em que eu me proponho a 1 vez por mês desevolver um projeto relacionado ao tema.&lt;/p&gt;
+&lt;p&gt;Como minhas referências principais tenho&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.williamrchase.com/work/art/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;William Chase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Danielle Navarro, que inclusive tem um 
+&lt;a href=&#34;https://robust-tools.djnavarro.net/functional-programming/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;tutorial&lt;/a&gt; sobre!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Olha que maravilhoso o trabalho da Danielle Navarro, e sim, foi feito no R!!
+&lt;img src=&#34;../../img/danielle.png&#34; width=&#34;300&#34; height=&#34;100&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

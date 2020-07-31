@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>O que é o R-dados? | R-Dados: Pesquisando com R</title>
+    <link>/sobre/</link>
+      <atom:link href="/sobre/index.xml" rel="self" type="application/rss+xml" />
+    <description>O que é o R-dados?</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>/images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_512x512_fill_lanczos_center_2.png</url>
+      <title>O que é o R-dados?</title>
+      <link>/sobre/</link>
+    </image>
+    
+  </channel>
+</rss>

@@ -1,0 +1,338 @@
+---
+title: 'Introdução ao text mining: O caso da votação do FUNDEB'
+author: monimazz
+date: '2020-07-30'
+slug: introdução-ao-text-mining-o-caso-da-votação-do-fundeb
+categories:
+  - Tutorial
+tags:
+  - textmining
+  - analise de texto
+  - FUNDEB
+  - Câmara dos Deputados
+  - Política
+  - Governo
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-07-30T03:22:05Z'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+# Bem-Vindesss
+
+Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação! Abaixo um post do @mapaeducacao para entender melhor o que ocorreu:
+
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CC7I0BrnVmj/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:440px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CC7I0BrnVmj/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;"> Ver essa foto no Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CC7I0BrnVmj/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Uma publicação compartilhada por Movimento Mapa Educac¸a~o (@mapaeducacao)</a> em <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2020-07-22T00:20:27+00:00">21 de Jul, 2020 às 5:20 PDT</time></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+<br>
+
+Para obter os dados fui até o site da câmara e copiei todo o conteúdo da ordem do dia (votação) e depois deixei em formato _tidy_, fazendo mais ou menos manualmente. Se você souber uma forma de transformar texto corrido (tipo pdf) em um formato para análise, ou seja identificando variáveis e documentos deixa aqui nos comentário! 
+
+Antes de iniciar o tutorial, para os curiosos já vou apresentar quais foram os resultados iniciais da análise de conteúdo das votações:
+
+<img src="/img/resumo_fundeb.png">
+
+
+## Agora... O tutorial!
+Basicamente o pacote que vou usar é o _tidytext_ como é uma introdução, tudo o que realizei pode ser encontrado no Livro [Tidytext Mining](tidytextmining.com/), apesar de gostar mais do quanteda e do spacyr, o tidytext é um otimo pacote para começar a análise de texto, ainda mais quando a informação está estruturada em tabela.
+
+```{r message=FALSE, warning=FALSE}
+library(quanteda) #pacote similar ao tidytext, vou usá-lo de forma pontual
+require(readxl) # le arquivos em excel
+library(wordcloud) #faz nuvem de palavras
+library(tidyverse) #maravilhoso pacotão
+library(tidytext) #Pote de ouro, trabalharemos com ele.
+library(topicmodels) # Pacote possui diversos modelos, usaremos o LDA (vou explicar)
+library(igraph) #para criar graficos de rede (grafos)
+library(ggraph) #para visualizar a rede
+```
+
+Vamos adicionar as stop_words agora. Porque faço isso? Quando fui analisando o texto percebi que algumas palavras não agregavam muito a análise ou que o próprio stop_word não reconhecia, assim fiz esse esqueminha:
+
+```{r message=FALSE, warning=FALSE}
+stop_pt <-as.data.frame(stopwords("pt")) #subindo (quanteda) e já colocando como tabela
+names(stop_pt) <- "stop" #renomeando a coluna
+stop_sr <- as.data.frame(c("sr", "sra", "srs", "sras", "é", "vamos", "vou", "quero",
+                           "neste", "dorinha")) #subindo e já colocando como tabela 
+names(stop_sr) <- "stop" #renomeando a coluna
+
+stop_pt <- rbind(stop_pt, stop_sr) #juntando as duas
+
+```
+
+Qualquer processo de análise dos dados parte primeiro do pré-processamento e tratamento da base de dados, ou seja, temos que deixá-los bonitinhos e organizados para rodar nos nossos modelos.
+
+<img src="/img/votfundeb.png">
+
+## Text mining 101 :mortar_board:
+
+* **Corpus** é uma coleção de documentos
+* Um documento é composto de tokens. Um documento pode ser várias coisas, depende do que você determina como documento.
+
+* **Tokens** é a divisão do texto, podendo ser: 
+  + unigrams ( ‘amo’ , ‘bolo’ , ‘de’ , ‘chocolate’)
+  + bigrams (‘amo_bolo’, ‘bolo_de’, ‘de_chocolate’)
+  + etc..
+
+* **Lowercase**: deixar todos os termos em minúscula. Deve-se fazer isso porque o R não compreende a diferença entre maiúscula e minúscula, então quando você rodar análises ele não saber a perceber que ‘Banana’ e ‘banana’ são a mesma palavra.
+
+* **Filter e Stopwords**: filtrar a base de termos, retirando todas as stop_words, que são palavras como "a", "de", "é"... Também pode ser usado para palavras muito comuns que não vão agregar na sua análise.
+
+* **Steeming**: recorta a palavra ou coloca ela no seu radical. Infelizmente esse método para lingua portuguesa ainda está sendo construído, pro Brasil ainda que tem várias girias, acho que deve ser mais complicado ainda.Por isso, apesar de muito recomendável que seja feito, fica atenta a problemas na sua base de dados! Um recomendado é o _ptstem_
+
+* **Vetorização**: para análises mais profundas devemos vetorizar a informação, para isso usamos o famoso: DFM - Document Frequency Matrix. Basicamente cada linha representa um documento e cada coluna um termo (podendo estar no método utilizado de unigram, bigram e etc)
+
+<img src="/img/dfm.png">
+
+
+* **Análise**: Dentre os métodos de análise de texto o mais comum se chama bag-of-words _BOW_ . Basicamente você coloca todas as palavras (tokenizadas) dentro de uma ‘sacola’, ou seja, sem ordem, ignorando erros de escrita, gramática e outras (por isso a importância do pré-processamento).
+ 
+ </br>
+_‘mas eu preciso da ordem, existem frases que só tem sentido juntas, como expressões comuns’_
+
+Não tema pequeno gafanhoto :dragon:! há formas de você lidar com isso.
+
+**Para além do modelo de BOW**: Ngram Sequences, Named Entity Extraction e Topic Models.
+No caso, não vou utilizar o _steeming_ porque estou acostumada a usar ele mais no quanteda. Também não vou utilizar o BOW, mas o Ngram Sequences porque eu quero analisar a ordem dos termos.
+
+
+```{r,echo=FALSE}
+library(readxl)
+deputado_fala <- read_excel("/cloud/project/content/post/intro-textminig/deputados_consolidado.xlsx")
+```
+
+
+Antes de começar vamos explorar rapidamente os dados...
+
+### Quais foram os partidos que mais se manifestaram? Quais foram os partidos que tiveram falas mais longas?
+
+```{r}
+deputado_fala %>%
+  count(Partido, sort = TRUE) %>%
+  mutate(Partido = fct_reorder(Partido, n)) %>%
+  ggplot(aes(Partido, n)) +
+  geom_col(fill = "#956C8E") +
+  coord_flip() +
+  theme_minimal() +
+  labs(title = "Partidos que mais se manifestaram")
+```
+
+
+```{r}
+deputado_fala %>%
+  mutate(tamanho = str_length(Fala)) %>%
+  group_by(Partido) %>%
+  summarise(tamanho = sum(tamanho)) %>%
+  mutate(Partido = fct_reorder(Partido, tamanho)) %>%
+  ggplot(aes(Partido, tamanho)) +
+  geom_col(fill = "#6BAB90") +
+  coord_flip() +
+  theme_minimal() +
+  labs(title = "Partidos com falas mais longas")
+```
+
+Pelos gráficos é possível analisar que apesar do DEM ter se manifestado menos em relação aos demais, foi o que teve uma fala mais longa, referindo-se ao discurso da Relatora em relação ao projeto. Os demais seguem um padrão similar, com falas mais longas pelos partidos de esquerda e centro-esquerda. Estas falas mais longas por partido refere-se aos seguintes parlamentares: Professora Dorinha (DEM), Fernanda Melchionna (PSOL), Tiago Mitraud (NOVO), Soraya Santo (PL), José Guimarães (PT), Sâmia Bonfim (PSOL), Joenia Wapichana (REDE), Professora Rosa Neide (PT), Paulo Ganime (NOVO).
+
+### Quais os **principais termos** do debate? :speech_balloon:
+Para conseguir obter essa informação vamos usar o pacote _wordcloud2_ muito útil e produz nuvem de palavras animadas :tada: Explicando um pouco o código abaixo:
+
+1. **Token**: 'unnest tokens' -> tokeniza as palavras, no caso eu escolhi bigrams
+2. **Filter**: todavia eu não quero as stopwords e como está em formato de bigram eu preciso primeiro separar para poder filtrar pelas stopwords.
+3. **Count**: agora que eu quero contar, preciso unir _(unite)_ novamente os termos em uma mesma coluna, e agora contar por termos com a função _count_
+4. **Filter**: percebi umas palavras que eu não tinha interesse, então resolvi tirar elas
+4. **wordcloud** e tchanss tudo nos trinques :dizzy:
+
+```{r message=FALSE, warning=FALSE}
+deputado_fala %>%
+  unnest_tokens(bigram, Fala, token = "ngrams", n = 2) %>%
+  separate(bigram, into = c("word1", "word2"), sep = " ") %>%
+  filter(!word1 %in% stop_pt$stop,
+         !word2 %in% stop_pt$stop) %>%
+  unite(bigram, c("word1", "word2"), sep = " ") %>%
+  count(bigram, sort = T) %>%
+  filter(!bigram %in% c("presidente rodrigo", "presidente tábata", "rodrigo maia", "sra presidente", "professora dorinha", "deputada professora")) -> wordc1
+  wordcloud(wordc1$bigram, wordc1$n)
+``` 
+
+Podemos perceber que primeira infância é um termo altamente comentado durante o processo de votação, assim como os turnos da votação (que ocorreram no mesmo dia!). Outros destaques do debate estão nos termos: _"escola pública"_, _"custo aluno"_ que seria o "Custo aluno Qualidade" CAQ, altamente debatido na votação e _"partido novo"_ que houve um momento de debate durante a votação envolvendo esse partido.
+<br>
+
+### Quais os principais **Tópicos** por partido?
+Mas você deve estar se perguntando, como assim tópicos? O que isso significa?
+
+## **LDA 101** :mortar_board:
+**LDA** = Latent Dirichlet allocation é um dos algorítmos mais comuns para modelagem de tópico no R. **Modelagem de tópico** pode ser definida como:
+
+> Topic modeling algorithms are statistical methods that analyze the words of the original texts to discover the themes that run through them, how those themes are connected to each other, and how they change over time (Blei, 2012). 
+
+Ou seja, modelagem de tópico é um método estatístico que analisa os termos dos textos originais para descobrir temas presentes nos textos, a relação e conexão entre eles e possíveis mudanças ao longo do tempo.
+
+Toda modelagem de tópico possui as mesmas bases:
+* cada documente consiste em uma distribuição de tópicos. Ou seja, um documento pode estar em mais de um tópico. 
+* cada tópico consiste em uma distribuição de termos. Os termos podem estar presentes em mais de um tópico.
+
+> Latent se refere a variáveis escondidas ou ocultas, Dirichlet distribution é uma distribuição de probabilidade, e Allocation significa que alguns valores são alocados baseados nesses dois critérios. [Koch](https://towardsdatascience.com/a-friendly-introduction-to-text-clustering-fa996bcefd04)
+
+Dessa forma, LDA vai encontrar a mistura de palavras associada com cada tópico enquanto também determina a mistura dos tópicos e o quanto descreve cada documento. Alguns termos possuem probabilidade maior de aparecer em um tópico e outras menos, o mesmo vale para os documentos. Parece bruxaria né, mas tudo é feito a partir de um modelo estatístico, o que não deixa de ser meio mágico também :crystal_ball:
+
+Um exemplo prático que eu roubei do post incrivel da [Koch](https://towardsdatascience.com/a-friendly-introduction-to-text-clustering-fa996bcefd04):
+
+<img src="/img/lda1.JPG">
+
+<br>
+No entanto na hora de programar você precisa escolher o numero de topicos "k" que você deseja que sejam criados. Escolhi k = 4, por que? Bem tive como base os blocos partidários [divulgados](https://www.camara.leg.br/noticias/551176-tres-blocos-parlamentares-sao-formalizados-na-camara-dos-deputados/) pelo Câmara dos Deputados, há 3 blocos, em que os partidos os integram, no entanto há partidos sem bloco, dessa forma, há 4 grupos na CD.
+
+```{r message=FALSE, warning=FALSE}
+dfm_partido <- deputado_fala %>%
+  unnest_tokens(bigram, Fala, token = "ngrams", n=2)%>% #colocando em token
+  separate(bigram, into = c("word1", "word2"), sep = " ") %>% #separando
+  filter(!word1 %in% stop_pt$stop, 
+         !word2 %in% stop_pt$stop) %>% #tirando stopwords
+  unite(bigram, c("word1", "word2"), sep = " ") %>% #volta a unir
+  count(Partido, bigram, sort = T) %>% #contar por partido
+  arrange(desc(n)) %>%
+  filter(!bigram %in% 
+           c("presidente rodrigo", "rodrigo maia", "sra presidente", "deputada professora")) %>%
+  cast_dfm(Partido, bigram, n) #VETORIZAR
+
+partido_lda <- LDA(dfm_partido, k = 4, control = list(seed = 1234)) #Transformar em LDA
+partido_topics <- tidy(partido_lda, matrix = "beta")
+
+top_terms <- partido_topics %>%
+  group_by(topic) %>%
+  top_n(15, beta) %>%
+  ungroup() %>%
+  arrange(topic, -beta) #pegando só os 15 principais termos
+
+top_terms %>%
+  mutate(term = reorder_within(term, beta, topic)) %>%
+  ggplot(aes(term, beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip() +
+  scale_x_reordered() #fazendo um grafico mara
+```
+
+
+```{r message=FALSE, warning=FALSE}
+#quais partidos estao em quais topicos?
+
+td_gamma <- tidy(partido_lda, matrix = "gamma",                    
+                 document_names = rownames(dtm_partido)) #pegando a probabilidade dos partidos estarem presentes por topicos
+
+library(scales) #para fazer um grafico mara
+
+td_gamma %>% 
+  mutate(document = factor(document, levels = rev(unique(document)))) %>%
+  group_by(document) %>%
+  top_n(1) %>%
+  ungroup %>%
+  ggplot(aes(document, gamma, label = document, fill = as.factor(topic))) +
+  geom_col() +
+  geom_text(aes(document, 0.01), hjust = 0,
+            color = "white", size = 2.5) +
+  scale_fill_manual(values = c("#F48024", "#0077CC", "#5FBA7D", 
+                               "#8C60A7", "#34495E", "#CDDC39")) +
+  scale_y_continuous(expand = c(0,0),
+                     labels = percent_format()) +
+  coord_flip() +
+  theme_minimal() +
+  theme(axis.text.y=element_blank()) +
+  labs(x = NULL, y = expression(gamma), fill = "Topic") #grafico mara
+```
+
+Apesar da divisão em blocos, levando a votações mais alinhadas, percebemos que há algumas diferenças entre a probabilidade de presença dos partidos em cada tópico, levando a pensar em algumas outras suposições. 
+
+<img src="/img/blocopartidario2019.jpg">
+
+* PSOL, PT e PSDB estão no mesmo cluster! Compreensível PSOL e PT por serem do mesmo bloco, mas me surpreendi com PSDB.
+* Na maioria do tópico 2 está o centrão, o que era esperado, mas vemos algumas nuances interessantes como a REDE e PCdoB no mesmo tópico.
+* DEM, PDT e PSD no topico 1, uma mistureba estranha entre centrão e centro-esquerda(?)
+
+Analisando o conteúdo, os tópicos são um pouco parecidos, com algumas palavras que os diferenciam entre si. Por exemplo no tópico 4 a presença do termo "partido novo", interessante ao ter em vista o debate que ocorreu durante a votação.
+
+Fiquei assim com um interesse particular no que o Bloco de minoria e NOVO comentaram, o Bloco por ser um dos que mais se pronunciou e o NOVO por ter sido mencionado "partido novo", de forma presente no debate.
+
+Para isso, vou usar o **TF-IDF**, que vou dar uma breve explicada antes:
+
+> TF significa frequência do termo; IDF significa frequência inversa do documento. O método resulta na frequência das palavras mais “relevantes”, ou seja, únicas ou mais presentes entre documentos. Ele não vê similaridade, mas justamente a diferença, o que torna aquele documento especial em relação aos demais documentos analisados. Quanto mais perto de 1, mais presente é a palavra.
+
+<img src="/img/tfidf.png">
+
+
+<br>
+
+```{r, message=FALSE, warning=FALSE}
+deputado_fala %>%
+  unnest_tokens(bigram, Fala, token = "ngrams", n = 2) %>%
+  separate(bigram, into = c("word1", "word2"), sep = " ") %>%
+  filter(!word1 %in% stop_pt$stop,
+         !word2 %in% stop_pt$stop) %>%
+  unite(bigram, c("word1", "word2"), sep = " ") %>%
+  count(Partido, bigram, sort = T) %>%
+  filter(!bigram %in% c("presidente rodrigo", "presidente tábata", "rodrigo maia", "sra presidente", "professora dorinha", "deputada professora", "primeiro turno", "segundo turno")) %>%
+  bind_tf_idf(Partido, bigram, n) %>%
+  filter(Partido == "NOVO")-> word2c
+  wordcloud(word2c$bigram, word2c$n)
+```
+
+Podemos perceber que um termo de grande relevância no discurso do NOVO foi "12 mil", isso se refere a justificativa deles do custo de "12 mil reais por aluno" e serem contras a constitucionalização do CAQ (custo aluno qualidade).
+Vale explicar o que fiz: como queria verificar os termos mais "exclusivos" usados pelo novo, usei primeiro o método de TF-IDF, que basicamente me retorna isso em relação ao total de documentos, assim obtendo os termos mais relavantes e "unicos". 
+
+
+#### Já o bloco de minoria do congresso?
+```{r message=FALSE, warning=FALSE}
+deputado_fala %>%
+  unnest_tokens(bigram, Fala, token = "ngrams", n = 2) %>%
+  separate(bigram, into = c("word1", "word2"), sep = " ") %>%
+  filter(!word1 %in% stop_pt$stop,
+         !word2 %in% stop_pt$stop) %>%
+  unite(bigram, c("word1", "word2"), sep = " ") %>%
+  count(Partido, bigram, sort = T) %>%
+  filter(!bigram %in% c("presidente rodrigo", "presidente tábata", "rodrigo maia", "sra presidente", "professora dorinha", "deputada professora")) %>%
+  bind_tf_idf(Partido, bigram, n) %>%
+  filter(Partido == "PSOL" | Partido == "PT" |
+          Partido == "PSB" | Partido == "Rede") %>%
+  top_n(tf_idf, 500) -> wordc3
+  wordcloud(wordc3$bigram, wordc3$n)
+```
+
+Podemos ver assim, o termo "partido novo" com destaque, demonstrando o debate em relação ao tema do CAQ e sua defesa por esse bloco.
+
+### Qual a relação entre os termos?
+```{r}
+bigram_counts <- deputado_fala %>%
+  unnest_tokens(bigram,Fala, token = "ngrams", n = 2) %>%
+  separate(bigram, c("word1", "word2"), sep = " ") %>%
+  filter(!word1 %in% stop_pt$stop,
+         !word2 %in% stop_pt$stop) %>%
+  count(word1, word2, sort = TRUE)
+
+library(igraph)
+bigram_graph <- bigram_counts %>%
+  filter(n > 4) %>%
+  graph_from_data_frame()
+
+
+set.seed(2016)
+
+a <- grid::arrow(type = "closed", length = unit(.15, "inches"))
+library(ggraph)
+ggraph(bigram_graph, layout = "fr") +
+  geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
+                 arrow = a, end_cap = circle(.07, 'inches')) +
+  geom_node_point(color = "lightblue", size = 5) +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
+  theme_void()
+```
+<br>
+Podemos pelo gráfico acima ver a relação entre alguns termos e palavras, como novo estar associado ao termo "partido mofo", assim como custo aluno qualidade.
+<br>
+Bem, isso foi uma pequena grande intro ao Text Mining no R! **Espero que tenham gostado. Caso tenham sugestões ou dúvidas escreve nos comentários!**
+
+![](https://media.giphy.com/media/upg0i1m4DLe5q/giphy.gif)

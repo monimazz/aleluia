@@ -1,0 +1,1438 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Mônica Rocabado">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Bem-Vindesss Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!">
+
+  
+  <link rel="alternate" hreflang="en-us" href="../../../post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  <script src="../../../js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="../../../css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="../../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../../images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="../../../post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@monimazz">
+  <meta property="twitter:creator" content="@monimazz">
+  
+  <meta property="og:site_name" content="R-Dados: Pesquisando com R">
+  <meta property="og:url" content="/post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/">
+  <meta property="og:title" content="Introdução ao text mining: O caso da votação do FUNDEB | R-Dados: Pesquisando com R">
+  <meta property="og:description" content="Bem-Vindesss Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!"><meta property="og:image" content="/images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-07-30T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-07-30T03:22:05&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/"
+  },
+  "headline": "Introdução ao text mining: O caso da votação do FUNDEB",
+  
+  "datePublished": "2020-07-30T00:00:00Z",
+  "dateModified": "2020-07-30T03:22:05Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Mônica Rocabado"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "R-Dados: Pesquisando com R",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Bem-Vindesss Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação!"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Introdução ao text mining: O caso da votação do FUNDEB | R-Dados: Pesquisando com R</title>
+
+</head>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="../../../">R-Dados: Pesquisando com R</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="../../../">R-Dados: Pesquisando com R</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../../#about"><span>Sobre</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../../#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../../#projects"><span>Projetos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../../courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Introdução ao text mining: O caso da votação do FUNDEB</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jul 30, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    12 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="../../../post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="../../../category/tutorial/">Tutorial</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<div id="bem-vindesss" class="section level1">
+<h1>Bem-Vindesss</h1>
+<p>Ocorreu dia 21/07 a votação histórica em dois turnos do Novo Fundeb, texto que potencialmente irá modificar o cenário da educação no Brasil, aumentando o investimento do Governo Federal na educação! Abaixo um post do <span class="citation">@mapaeducacao</span> para entender melhor o que ocorreu:</p>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CC7I0BrnVmj/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:440px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+<div style="padding:16px;">
+<a href="https://www.instagram.com/p/CC7I0BrnVmj/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+<div style=" display: flex; flex-direction: row; align-items: center;">
+<div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+
+</div>
+<div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+
+</div>
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+
+</div>
+</div>
+</div>
+<div style="padding: 19% 0;">
+
+</div>
+<div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+<svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g>
+</svg>
+</div>
+<div style="padding-top: 8px;">
+<div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+Ver essa foto no Instagram
+</div>
+</div>
+<div style="padding: 12.5% 0;">
+
+</div>
+<div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+<div>
+<div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+
+</div>
+<div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+
+</div>
+<div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+
+</div>
+</div>
+<div style="margin-left: 8px;">
+<div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+
+</div>
+<div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+
+</div>
+</div>
+<div style="margin-left: auto;">
+<div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+
+</div>
+<div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+
+</div>
+<div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+
+</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+
+</div>
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+
+</div>
+</div>
+</a>
+<p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+<a href="https://www.instagram.com/p/CC7I0BrnVmj/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Uma publicação compartilhada por Movimento Mapa Educac¸a~o (<span class="citation">@mapaeducacao</span>)</a> em <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2020-07-22T00:20:27+00:00">21 de Jul, 2020 às 5:20 PDT</time>
+</p>
+</div>
+</blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+<p><br></p>
+<p>Para obter os dados fui até o site da câmara e copiei todo o conteúdo da ordem do dia (votação) e depois deixei em formato <em>tidy</em>, fazendo mais ou menos manualmente. Se você souber uma forma de transformar texto corrido (tipo pdf) em um formato para análise, ou seja identificando variáveis e documentos deixa aqui nos comentário!</p>
+<p>Antes de iniciar o tutorial, para os curiosos já vou apresentar quais foram os resultados iniciais da análise de conteúdo das votações:</p>
+<p><img src="../../../img/resumo_fundeb.png"></p>
+<div id="agora-o-tutorial" class="section level2">
+<h2>Agora… O tutorial!</h2>
+<p>Basicamente o pacote que vou usar é o <em>tidytext</em> como é uma introdução, tudo o que realizei pode ser encontrado no Livro <a href="tidytextmining.com/">Tidytext Mining</a>, apesar de gostar mais do quanteda e do spacyr, o tidytext é um otimo pacote para começar a análise de texto, ainda mais quando a informação está estruturada em tabela.</p>
+<pre class="r"><code>library(quanteda) #pacote similar ao tidytext, vou usá-lo de forma pontual
+require(readxl) # le arquivos em excel
+library(wordcloud) #faz nuvem de palavras
+library(tidyverse) #maravilhoso pacotão
+library(tidytext) #Pote de ouro, trabalharemos com ele.
+library(topicmodels) # Pacote possui diversos modelos, usaremos o LDA (vou explicar)
+library(igraph) #para criar graficos de rede (grafos)
+library(ggraph) #para visualizar a rede</code></pre>
+<p>Vamos adicionar as stop_words agora. Porque faço isso? Quando fui analisando o texto percebi que algumas palavras não agregavam muito a análise ou que o próprio stop_word não reconhecia, assim fiz esse esqueminha:</p>
+<pre class="r"><code>stop_pt &lt;-as.data.frame(stopwords(&quot;pt&quot;)) #subindo (quanteda) e já colocando como tabela
+names(stop_pt) &lt;- &quot;stop&quot; #renomeando a coluna
+stop_sr &lt;- as.data.frame(c(&quot;sr&quot;, &quot;sra&quot;, &quot;srs&quot;, &quot;sras&quot;, &quot;é&quot;, &quot;vamos&quot;, &quot;vou&quot;, &quot;quero&quot;,
+                           &quot;neste&quot;, &quot;dorinha&quot;)) #subindo e já colocando como tabela 
+names(stop_sr) &lt;- &quot;stop&quot; #renomeando a coluna
+
+stop_pt &lt;- rbind(stop_pt, stop_sr) #juntando as duas</code></pre>
+<p>Qualquer processo de análise dos dados parte primeiro do pré-processamento e tratamento da base de dados, ou seja, temos que deixá-los bonitinhos e organizados para rodar nos nossos modelos.</p>
+<p><img src="../../../img/votfundeb.png"></p>
+</div>
+<div id="text-mining-101-mortar_board" class="section level2">
+<h2>Text mining 101 🎓</h2>
+<ul>
+<li><p><strong>Corpus</strong> é uma coleção de documentos</p></li>
+<li><p>Um documento é composto de tokens. Um documento pode ser várias coisas, depende do que você determina como documento.</p></li>
+<li><p><strong>Tokens</strong> é a divisão do texto, podendo ser:</p>
+<ul>
+<li>unigrams ( ‘amo’ , ‘bolo’ , ‘de’ , ‘chocolate’)</li>
+<li>bigrams (‘amo_bolo’, ‘bolo_de’, ‘de_chocolate’)</li>
+<li>etc..</li>
+</ul></li>
+<li><p><strong>Lowercase</strong>: deixar todos os termos em minúscula. Deve-se fazer isso porque o R não compreende a diferença entre maiúscula e minúscula, então quando você rodar análises ele não saber a perceber que ‘Banana’ e ‘banana’ são a mesma palavra.</p></li>
+<li><p><strong>Filter e Stopwords</strong>: filtrar a base de termos, retirando todas as stop_words, que são palavras como “a”, “de”, “é”… Também pode ser usado para palavras muito comuns que não vão agregar na sua análise.</p></li>
+<li><p><strong>Steeming</strong>: recorta a palavra ou coloca ela no seu radical. Infelizmente esse método para lingua portuguesa ainda está sendo construído, pro Brasil ainda que tem várias girias, acho que deve ser mais complicado ainda.Por isso, apesar de muito recomendável que seja feito, fica atenta a problemas na sua base de dados! Um recomendado é o <em>ptstem</em></p></li>
+<li><p><strong>Vetorização</strong>: para análises mais profundas devemos vetorizar a informação, para isso usamos o famoso: DFM - Document Frequency Matrix. Basicamente cada linha representa um documento e cada coluna um termo (podendo estar no método utilizado de unigram, bigram e etc)</p></li>
+</ul>
+<p><img src="../../../img/dfm.png"></p>
+<ul>
+<li><strong>Análise</strong>: Dentre os métodos de análise de texto o mais comum se chama bag-of-words <em>BOW</em> . Basicamente você coloca todas as palavras (tokenizadas) dentro de uma ‘sacola’, ou seja, sem ordem, ignorando erros de escrita, gramática e outras (por isso a importância do pré-processamento).</li>
+</ul>
+<p></br>
+<em>‘mas eu preciso da ordem, existem frases que só tem sentido juntas, como expressões comuns’</em></p>
+<p>Não tema pequeno gafanhoto 🐉! há formas de você lidar com isso.</p>
+<p><strong>Para além do modelo de BOW</strong>: Ngram Sequences, Named Entity Extraction e Topic Models.
+No caso, não vou utilizar o <em>steeming</em> porque estou acostumada a usar ele mais no quanteda. Também não vou utilizar o BOW, mas o Ngram Sequences porque eu quero analisar a ordem dos termos.</p>
+<p>Antes de começar vamos explorar rapidamente os dados…</p>
+<div id="quais-foram-os-partidos-que-mais-se-manifestaram-quais-foram-os-partidos-que-tiveram-falas-mais-longas" class="section level3">
+<h3>Quais foram os partidos que mais se manifestaram? Quais foram os partidos que tiveram falas mais longas?</h3>
+<pre class="r"><code>deputado_fala %&gt;%
+  count(Partido, sort = TRUE) %&gt;%
+  mutate(Partido = fct_reorder(Partido, n)) %&gt;%
+  ggplot(aes(Partido, n)) +
+  geom_col(fill = &quot;#956C8E&quot;) +
+  coord_flip() +
+  theme_minimal() +
+  labs(title = &quot;Partidos que mais se manifestaram&quot;)</code></pre>
+<p><img src="../../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre class="r"><code>deputado_fala %&gt;%
+  mutate(tamanho = str_length(Fala)) %&gt;%
+  group_by(Partido) %&gt;%
+  summarise(tamanho = sum(tamanho)) %&gt;%
+  mutate(Partido = fct_reorder(Partido, tamanho)) %&gt;%
+  ggplot(aes(Partido, tamanho)) +
+  geom_col(fill = &quot;#6BAB90&quot;) +
+  coord_flip() +
+  theme_minimal() +
+  labs(title = &quot;Partidos com falas mais longas&quot;)</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<p><img src="../../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Pelos gráficos é possível analisar que apesar do DEM ter se manifestado menos em relação aos demais, foi o que teve uma fala mais longa, referindo-se ao discurso da Relatora em relação ao projeto. Os demais seguem um padrão similar, com falas mais longas pelos partidos de esquerda e centro-esquerda. Estas falas mais longas por partido refere-se aos seguintes parlamentares: Professora Dorinha (DEM), Fernanda Melchionna (PSOL), Tiago Mitraud (NOVO), Soraya Santo (PL), José Guimarães (PT), Sâmia Bonfim (PSOL), Joenia Wapichana (REDE), Professora Rosa Neide (PT), Paulo Ganime (NOVO).</p>
+</div>
+<div id="quais-os-principais-termos-do-debate-speech_balloon" class="section level3">
+<h3>Quais os <strong>principais termos</strong> do debate? 💬</h3>
+<p>Para conseguir obter essa informação vamos usar o pacote <em>wordcloud2</em> muito útil e produz nuvem de palavras animadas 🎉 Explicando um pouco o código abaixo:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Token</strong>: ‘unnest tokens’ -&gt; tokeniza as palavras, no caso eu escolhi bigrams</li>
+<li><strong>Filter</strong>: todavia eu não quero as stopwords e como está em formato de bigram eu preciso primeiro separar para poder filtrar pelas stopwords.</li>
+<li><strong>Count</strong>: agora que eu quero contar, preciso unir <em>(unite)</em> novamente os termos em uma mesma coluna, e agora contar por termos com a função <em>count</em></li>
+<li><strong>Filter</strong>: percebi umas palavras que eu não tinha interesse, então resolvi tirar elas</li>
+<li><strong>wordcloud</strong> e tchanss tudo nos trinques 💫</li>
+</ol>
+<pre class="r"><code>deputado_fala %&gt;%
+  unnest_tokens(bigram, Fala, token = &quot;ngrams&quot;, n = 2) %&gt;%
+  separate(bigram, into = c(&quot;word1&quot;, &quot;word2&quot;), sep = &quot; &quot;) %&gt;%
+  filter(!word1 %in% stop_pt$stop,
+         !word2 %in% stop_pt$stop) %&gt;%
+  unite(bigram, c(&quot;word1&quot;, &quot;word2&quot;), sep = &quot; &quot;) %&gt;%
+  count(bigram, sort = T) %&gt;%
+  filter(!bigram %in% c(&quot;presidente rodrigo&quot;, &quot;presidente tábata&quot;, &quot;rodrigo maia&quot;, &quot;sra presidente&quot;, &quot;professora dorinha&quot;, &quot;deputada professora&quot;)) -&gt; wordc1
+  wordcloud(wordc1$bigram, wordc1$n)</code></pre>
+<p><img src="../../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Podemos perceber que primeira infância é um termo altamente comentado durante o processo de votação, assim como os turnos da votação (que ocorreram no mesmo dia!). Outros destaques do debate estão nos termos: <em>“escola pública”</em>, <em>“custo aluno”</em> que seria o “Custo aluno Qualidade” CAQ, altamente debatido na votação e <em>“partido novo”</em> que houve um momento de debate durante a votação envolvendo esse partido.
+<br></p>
+</div>
+<div id="quais-os-principais-tópicos-por-partido" class="section level3">
+<h3>Quais os principais <strong>Tópicos</strong> por partido?</h3>
+<p>Mas você deve estar se perguntando, como assim tópicos? O que isso significa?</p>
+</div>
+</div>
+<div id="lda-101-mortar_board" class="section level2">
+<h2><strong>LDA 101</strong> 🎓</h2>
+<p><strong>LDA</strong> = Latent Dirichlet allocation é um dos algorítmos mais comuns para modelagem de tópico no R. <strong>Modelagem de tópico</strong> pode ser definida como:</p>
+<blockquote>
+<p>Topic modeling algorithms are statistical methods that analyze the words of the original texts to discover the themes that run through them, how those themes are connected to each other, and how they change over time (Blei, 2012).</p>
+</blockquote>
+<p>Ou seja, modelagem de tópico é um método estatístico que analisa os termos dos textos originais para descobrir temas presentes nos textos, a relação e conexão entre eles e possíveis mudanças ao longo do tempo.</p>
+<p>Toda modelagem de tópico possui as mesmas bases:
+* cada documente consiste em uma distribuição de tópicos. Ou seja, um documento pode estar em mais de um tópico.
+* cada tópico consiste em uma distribuição de termos. Os termos podem estar presentes em mais de um tópico.</p>
+<blockquote>
+<p>Latent se refere a variáveis escondidas ou ocultas, Dirichlet distribution é uma distribuição de probabilidade, e Allocation significa que alguns valores são alocados baseados nesses dois critérios. <a href="https://towardsdatascience.com/a-friendly-introduction-to-text-clustering-fa996bcefd04">Koch</a></p>
+</blockquote>
+<p>Dessa forma, LDA vai encontrar a mistura de palavras associada com cada tópico enquanto também determina a mistura dos tópicos e o quanto descreve cada documento. Alguns termos possuem probabilidade maior de aparecer em um tópico e outras menos, o mesmo vale para os documentos. Parece bruxaria né, mas tudo é feito a partir de um modelo estatístico, o que não deixa de ser meio mágico também 🔮</p>
+<p>Um exemplo prático que eu roubei do post incrivel da <a href="https://towardsdatascience.com/a-friendly-introduction-to-text-clustering-fa996bcefd04">Koch</a>:</p>
+<p><img src="../../../img/lda1.JPG"></p>
+<p><br>
+No entanto na hora de programar você precisa escolher o numero de topicos “k” que você deseja que sejam criados. Escolhi k = 4, por que? Bem tive como base os blocos partidários <a href="https://www.camara.leg.br/noticias/551176-tres-blocos-parlamentares-sao-formalizados-na-camara-dos-deputados/">divulgados</a> pelo Câmara dos Deputados, há 3 blocos, em que os partidos os integram, no entanto há partidos sem bloco, dessa forma, há 4 grupos na CD.</p>
+<pre class="r"><code>dfm_partido &lt;- deputado_fala %&gt;%
+  unnest_tokens(bigram, Fala, token = &quot;ngrams&quot;, n=2)%&gt;% #colocando em token
+  separate(bigram, into = c(&quot;word1&quot;, &quot;word2&quot;), sep = &quot; &quot;) %&gt;% #separando
+  filter(!word1 %in% stop_pt$stop, 
+         !word2 %in% stop_pt$stop) %&gt;% #tirando stopwords
+  unite(bigram, c(&quot;word1&quot;, &quot;word2&quot;), sep = &quot; &quot;) %&gt;% #volta a unir
+  count(Partido, bigram, sort = T) %&gt;% #contar por partido
+  arrange(desc(n)) %&gt;%
+  filter(!bigram %in% 
+           c(&quot;presidente rodrigo&quot;, &quot;rodrigo maia&quot;, &quot;sra presidente&quot;, &quot;deputada professora&quot;)) %&gt;%
+  cast_dfm(Partido, bigram, n) #VETORIZAR
+
+partido_lda &lt;- LDA(dfm_partido, k = 4, control = list(seed = 1234)) #Transformar em LDA
+partido_topics &lt;- tidy(partido_lda, matrix = &quot;beta&quot;)
+
+top_terms &lt;- partido_topics %&gt;%
+  group_by(topic) %&gt;%
+  top_n(15, beta) %&gt;%
+  ungroup() %&gt;%
+  arrange(topic, -beta) #pegando só os 15 principais termos
+
+top_terms %&gt;%
+  mutate(term = reorder_within(term, beta, topic)) %&gt;%
+  ggplot(aes(term, beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = &quot;free&quot;) +
+  coord_flip() +
+  scale_x_reordered() #fazendo um grafico mara</code></pre>
+<p><img src="../../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>#quais partidos estao em quais topicos?
+
+td_gamma &lt;- tidy(partido_lda, matrix = &quot;gamma&quot;,                    
+                 document_names = rownames(dtm_partido)) #pegando a probabilidade dos partidos estarem presentes por topicos
+
+library(scales) #para fazer um grafico mara
+
+td_gamma %&gt;% 
+  mutate(document = factor(document, levels = rev(unique(document)))) %&gt;%
+  group_by(document) %&gt;%
+  top_n(1) %&gt;%
+  ungroup %&gt;%
+  ggplot(aes(document, gamma, label = document, fill = as.factor(topic))) +
+  geom_col() +
+  geom_text(aes(document, 0.01), hjust = 0,
+            color = &quot;white&quot;, size = 2.5) +
+  scale_fill_manual(values = c(&quot;#F48024&quot;, &quot;#0077CC&quot;, &quot;#5FBA7D&quot;, 
+                               &quot;#8C60A7&quot;, &quot;#34495E&quot;, &quot;#CDDC39&quot;)) +
+  scale_y_continuous(expand = c(0,0),
+                     labels = percent_format()) +
+  coord_flip() +
+  theme_minimal() +
+  theme(axis.text.y=element_blank()) +
+  labs(x = NULL, y = expression(gamma), fill = &quot;Topic&quot;) #grafico mara</code></pre>
+<p><img src="../../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Apesar da divisão em blocos, levando a votações mais alinhadas, percebemos que há algumas diferenças entre a probabilidade de presença dos partidos em cada tópico, levando a pensar em algumas outras suposições.</p>
+<p><img src="../../../img/blocopartidario2019.jpg"></p>
+<ul>
+<li>PSOL, PT e PSDB estão no mesmo cluster! Compreensível PSOL e PT por serem do mesmo bloco, mas me surpreendi com PSDB.</li>
+<li>Na maioria do tópico 2 está o centrão, o que era esperado, mas vemos algumas nuances interessantes como a REDE e PCdoB no mesmo tópico.</li>
+<li>DEM, PDT e PSD no topico 1, uma mistureba estranha entre centrão e centro-esquerda(?)</li>
+</ul>
+<p>Analisando o conteúdo, os tópicos são um pouco parecidos, com algumas palavras que os diferenciam entre si. Por exemplo no tópico 4 a presença do termo “partido novo”, interessante ao ter em vista o debate que ocorreu durante a votação.</p>
+<p>Fiquei assim com um interesse particular no que o Bloco de minoria e NOVO comentaram, o Bloco por ser um dos que mais se pronunciou e o NOVO por ter sido mencionado “partido novo”, de forma presente no debate.</p>
+<p>Para isso, vou usar o <strong>TF-IDF</strong>, que vou dar uma breve explicada antes:</p>
+<blockquote>
+<p>TF significa frequência do termo; IDF significa frequência inversa do documento. O método resulta na frequência das palavras mais “relevantes”, ou seja, únicas ou mais presentes entre documentos. Ele não vê similaridade, mas justamente a diferença, o que torna aquele documento especial em relação aos demais documentos analisados. Quanto mais perto de 1, mais presente é a palavra.</p>
+</blockquote>
+<p><img src="../../../img/tfidf.png"></p>
+<p><br></p>
+<pre class="r"><code>deputado_fala %&gt;%
+  unnest_tokens(bigram, Fala, token = &quot;ngrams&quot;, n = 2) %&gt;%
+  separate(bigram, into = c(&quot;word1&quot;, &quot;word2&quot;), sep = &quot; &quot;) %&gt;%
+  filter(!word1 %in% stop_pt$stop,
+         !word2 %in% stop_pt$stop) %&gt;%
+  unite(bigram, c(&quot;word1&quot;, &quot;word2&quot;), sep = &quot; &quot;) %&gt;%
+  count(Partido, bigram, sort = T) %&gt;%
+  filter(!bigram %in% c(&quot;presidente rodrigo&quot;, &quot;presidente tábata&quot;, &quot;rodrigo maia&quot;, &quot;sra presidente&quot;, &quot;professora dorinha&quot;, &quot;deputada professora&quot;, &quot;primeiro turno&quot;, &quot;segundo turno&quot;)) %&gt;%
+  bind_tf_idf(Partido, bigram, n) %&gt;%
+  filter(Partido == &quot;NOVO&quot;)-&gt; word2c
+  wordcloud(word2c$bigram, word2c$n)</code></pre>
+<p><img src="../../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Podemos perceber que um termo de grande relevância no discurso do NOVO foi “12 mil”, isso se refere a justificativa deles do custo de “12 mil reais por aluno” e serem contras a constitucionalização do CAQ (custo aluno qualidade).
+Vale explicar o que fiz: como queria verificar os termos mais “exclusivos” usados pelo novo, usei primeiro o método de TF-IDF, que basicamente me retorna isso em relação ao total de documentos, assim obtendo os termos mais relavantes e “unicos”.</p>
+<div id="já-o-bloco-de-minoria-do-congresso" class="section level4">
+<h4>Já o bloco de minoria do congresso?</h4>
+<pre class="r"><code>deputado_fala %&gt;%
+  unnest_tokens(bigram, Fala, token = &quot;ngrams&quot;, n = 2) %&gt;%
+  separate(bigram, into = c(&quot;word1&quot;, &quot;word2&quot;), sep = &quot; &quot;) %&gt;%
+  filter(!word1 %in% stop_pt$stop,
+         !word2 %in% stop_pt$stop) %&gt;%
+  unite(bigram, c(&quot;word1&quot;, &quot;word2&quot;), sep = &quot; &quot;) %&gt;%
+  count(Partido, bigram, sort = T) %&gt;%
+  filter(!bigram %in% c(&quot;presidente rodrigo&quot;, &quot;presidente tábata&quot;, &quot;rodrigo maia&quot;, &quot;sra presidente&quot;, &quot;professora dorinha&quot;, &quot;deputada professora&quot;)) %&gt;%
+  bind_tf_idf(Partido, bigram, n) %&gt;%
+  filter(Partido == &quot;PSOL&quot; | Partido == &quot;PT&quot; |
+          Partido == &quot;PSB&quot; | Partido == &quot;Rede&quot;) %&gt;%
+  top_n(tf_idf, 500) -&gt; wordc3
+  wordcloud(wordc3$bigram, wordc3$n)</code></pre>
+<p><img src="../../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Podemos ver assim, o termo “partido novo” com destaque, demonstrando o debate em relação ao tema do CAQ e sua defesa por esse bloco.</p>
+</div>
+<div id="qual-a-relação-entre-os-termos" class="section level3">
+<h3>Qual a relação entre os termos?</h3>
+<pre class="r"><code>bigram_counts &lt;- deputado_fala %&gt;%
+  unnest_tokens(bigram,Fala, token = &quot;ngrams&quot;, n = 2) %&gt;%
+  separate(bigram, c(&quot;word1&quot;, &quot;word2&quot;), sep = &quot; &quot;) %&gt;%
+  filter(!word1 %in% stop_pt$stop,
+         !word2 %in% stop_pt$stop) %&gt;%
+  count(word1, word2, sort = TRUE)
+
+library(igraph)
+bigram_graph &lt;- bigram_counts %&gt;%
+  filter(n &gt; 4) %&gt;%
+  graph_from_data_frame()
+
+
+set.seed(2016)
+
+a &lt;- grid::arrow(type = &quot;closed&quot;, length = unit(.15, &quot;inches&quot;))
+library(ggraph)
+ggraph(bigram_graph, layout = &quot;fr&quot;) +
+  geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
+                 arrow = a, end_cap = circle(.07, &#39;inches&#39;)) +
+  geom_node_point(color = &quot;lightblue&quot;, size = 5) +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
+  theme_void()</code></pre>
+<p><img src="../../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<br>
+Podemos pelo gráfico acima ver a relação entre alguns termos e palavras, como novo estar associado ao termo “partido mofo”, assim como custo aluno qualidade.
+<br>
+Bem, isso foi uma pequena grande intro ao Text Mining no R! <strong>Espero que tenham gostado. Caso tenham sugestões ou dúvidas escreve nos comentários!</strong></p>
+<p><img src="https://media.giphy.com/media/upg0i1m4DLe5q/giphy.gif" /></p>
+</div>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="../../../tag/textmining/">textmining</a>
+  
+  <a class="badge badge-light" href="../../../tag/analise-de-texto/">analise de texto</a>
+  
+  <a class="badge badge-light" href="../../../tag/fundeb/">FUNDEB</a>
+  
+  <a class="badge badge-light" href="../../../tag/camara-dos-deputados/">Câmara dos Deputados</a>
+  
+  <a class="badge badge-light" href="../../../tag/politica/">Política</a>
+  
+  <a class="badge badge-light" href="../../../tag/governo/">Governo</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=../../../post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/&amp;text=Introdu%c3%a7%c3%a3o%20ao%20text%20mining:%20O%20caso%20da%20vota%c3%a7%c3%a3o%20do%20FUNDEB" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/&amp;t=Introdu%c3%a7%c3%a3o%20ao%20text%20mining:%20O%20caso%20da%20vota%c3%a7%c3%a3o%20do%20FUNDEB" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Introdu%c3%a7%c3%a3o%20ao%20text%20mining:%20O%20caso%20da%20vota%c3%a7%c3%a3o%20do%20FUNDEB&amp;body=/post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=../../../post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/&amp;title=Introdu%c3%a7%c3%a3o%20ao%20text%20mining:%20O%20caso%20da%20vota%c3%a7%c3%a3o%20do%20FUNDEB" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Introdu%c3%a7%c3%a3o%20ao%20text%20mining:%20O%20caso%20da%20vota%c3%a7%c3%a3o%20do%20FUNDEB%20/post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=../../../post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/&amp;title=Introdu%c3%a7%c3%a3o%20ao%20text%20mining:%20O%20caso%20da%20vota%c3%a7%c3%a3o%20do%20FUNDEB" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="../../../author/monica-rocabado/avatar_hu408c643500883a95f2a2d1f1397ad7dc_48741_270x270_fill_q90_lanczos_center.jpg" alt="Mônica Rocabado">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="../../../author/monica-rocabado/">Mônica Rocabado</a></h5>
+        <h6 class="card-subtitle">Pesquisadora</h6>
+        <p class="card-text">Meus interesses de pesquisa incluem empregabilidade, desigualdade (com recorte em raça e gênero), análise de redes sociais, governo e políticas públicas.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="../../../#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/monimazz" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/monimazz" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "rdados" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://rdados.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="../../../js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="../../../privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="../../../terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
