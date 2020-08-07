@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tutorial | R-Dados: Pesquisando com R</title>
+    <link>/tag/tutorial/</link>
+      <atom:link href="/tag/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <description>tutorial</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 04 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_huceafd8746eb8365e3fcbc76ee1b2af6c_56258_512x512_fill_lanczos_center_2.png</url>
+      <title>tutorial</title>
+      <link>/tag/tutorial/</link>
+    </image>
+    
+    <item>
+      <title>Tutoriais de R</title>
+      <link>/project/tutorial/</link>
+      <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/project/tutorial/</guid>
+      <description>&lt;p&gt;Uma série de tutoriais sobre diferentes assuntos envolvendo a linguagem R e sua aplicação na ciência de dados. O que é a linguagem R? Como usar o R no dia a dia no trabalho? Como facilitar  limpeza e organização de bases de dados? Que análises inicias eu posso fazer usando o R? Estas e mais perguntas tentarão ser respondidas ao longo desses tutoriais.&lt;/p&gt;
+&lt;p&gt;Os tutoriais estarão em forma de post, todos reunidos 
+&lt;a href=&#34;https://rdados.netlify.app/category/tutorial/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;aqui&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tem algo em específico que você gostaria de saber sobre ciência de dados, o famoso data science? Alguma dúvida sobre a aplicação do R, desde pontuais até mais amplas, como &amp;ldquo;O que eu faço com isso?&amp;rdquo; &lt;strong&gt;Vamos construindo juntos!&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;escreve-aqui-nos-comentários-suas-dúvidas-e-ideias-de-tutoriais-que-você-tenha-interesse-em-aprender&#34;&gt;&lt;strong&gt;Escreve aqui nos comentários suas dúvidas e ideias de tutoriais que você tenha interesse em aprender!&lt;/strong&gt;&lt;/h3&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

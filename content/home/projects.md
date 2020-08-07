@@ -28,6 +28,10 @@ subtitle = ""
   [[content.filter_button]]
     name = "aRt"
     tag = "aRt"
+    
+  [[content.filter_button]]
+    name = "Tutoriais"
+    tag = "tutorial"
   
   [[content.filter_button]]
     name = "Other"

@@ -16,10 +16,10 @@ subtitle: ''
 summary: ''
 authors: []
 lastmod: '2020-07-30T03:22:05Z'
-featured: no
+featured: yes
 image:
   caption: ''
-  focal_point: ''
+  focal_point: '3'
   preview_only: no
 projects: []
 ---
@@ -109,7 +109,7 @@ Ver essa foto no Instagram
 </blockquote>
 <script async src="//www.instagram.com/embed.js"></script>
 <p><br></p>
-<p>Para obter os dados fui até o site da câmara e copiei todo o conteúdo da ordem do dia (votação) e depois deixei em formato <em>tidy</em>, fazendo mais ou menos manualmente. Se você souber uma forma de transformar texto corrido (tipo pdf) em um formato para análise, ou seja identificando variáveis e documentos deixa aqui nos comentário!</p>
+<p>Para obter os dados fui até o site da Câmara dos Deputados e copiei todo o conteúdo da ordem do dia (votação) e depois deixei em formato <em>tidy</em>, fazendo mais ou menos manualmente. Se você souber uma forma de transformar texto corrido (tipo pdf) em um formato para análise, ou seja, identificando as variáveis e documentos, deixa aqui nos comentário!</p>
 <p>Antes de iniciar o tutorial, para os curiosos já vou apresentar quais foram os resultados iniciais da análise de conteúdo das votações:</p>
 <p><img src="/img/resumo_fundeb.png"></p>
 <div id="agora-o-tutorial" class="section level2">
@@ -145,9 +145,9 @@ stop_pt &lt;- rbind(stop_pt, stop_sr) #juntando as duas</code></pre>
 <li>bigrams (‘amo_bolo’, ‘bolo_de’, ‘de_chocolate’)</li>
 <li>etc..</li>
 </ul></li>
-<li><p><strong>Lowercase</strong>: deixar todos os termos em minúscula. Deve-se fazer isso porque o R não compreende a diferença entre maiúscula e minúscula, então quando você rodar análises ele não saber a perceber que ‘Banana’ e ‘banana’ são a mesma palavra.</p></li>
+<li><p><strong>Lowercase</strong>: deixar todos os termos em minúscula. Deve-se fazer isso porque o R não compreende a diferença entre maiúscula e minúscula, então quando você rodar análises ele não vai perceber que ‘Banana’ e ‘banana’ são a mesma palavra.</p></li>
 <li><p><strong>Filter e Stopwords</strong>: filtrar a base de termos, retirando todas as stop_words, que são palavras como “a”, “de”, “é”… Também pode ser usado para palavras muito comuns que não vão agregar na sua análise.</p></li>
-<li><p><strong>Steeming</strong>: recorta a palavra ou coloca ela no seu radical. Infelizmente esse método para lingua portuguesa ainda está sendo construído, pro Brasil ainda que tem várias girias, acho que deve ser mais complicado ainda.Por isso, apesar de muito recomendável que seja feito, fica atenta a problemas na sua base de dados! Um recomendado é o <em>ptstem</em></p></li>
+<li><p><strong>Steeming</strong>: recorta a palavra ou coloca ela no seu radical. Infelizmente esse método para lingua portuguesa ainda está sendo construído, especialmente para o Brasil que ainda que tem várias girias, acho que deve ser ainda mais complicado.Por isso, apesar de muito recomendável que seja feito, fique atenta a problemas na sua base de dados! Um recomendado é o <em>ptstem</em></p></li>
 <li><p><strong>Vetorização</strong>: para análises mais profundas devemos vetorizar a informação, para isso usamos o famoso: DFM - Document Frequency Matrix. Basicamente cada linha representa um documento e cada coluna um termo (podendo estar no método utilizado de unigram, bigram e etc)</p></li>
 </ul>
 <p><img src="/img/dfm.png"></p>

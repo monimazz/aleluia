@@ -103,7 +103,7 @@ Ver essa foto no Instagram
 &lt;/blockquote&gt;
 &lt;script async src=&#34;//www.instagram.com/embed.js&#34;&gt;&lt;/script&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Para obter os dados fui até o site da câmara e copiei todo o conteúdo da ordem do dia (votação) e depois deixei em formato &lt;em&gt;tidy&lt;/em&gt;, fazendo mais ou menos manualmente. Se você souber uma forma de transformar texto corrido (tipo pdf) em um formato para análise, ou seja identificando variáveis e documentos deixa aqui nos comentário!&lt;/p&gt;
+&lt;p&gt;Para obter os dados fui até o site da Câmara dos Deputados e copiei todo o conteúdo da ordem do dia (votação) e depois deixei em formato &lt;em&gt;tidy&lt;/em&gt;, fazendo mais ou menos manualmente. Se você souber uma forma de transformar texto corrido (tipo pdf) em um formato para análise, ou seja, identificando as variáveis e documentos, deixa aqui nos comentário!&lt;/p&gt;
 &lt;p&gt;Antes de iniciar o tutorial, para os curiosos já vou apresentar quais foram os resultados iniciais da análise de conteúdo das votações:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../img/resumo_fundeb.png&#34;&gt;&lt;/p&gt;
 &lt;div id=&#34;agora-o-tutorial&#34; class=&#34;section level2&#34;&gt;
@@ -139,9 +139,9 @@ stop_pt &amp;lt;- rbind(stop_pt, stop_sr) #juntando as duas&lt;/code&gt;&lt;/pre
 &lt;li&gt;bigrams (‘amo_bolo’, ‘bolo_de’, ‘de_chocolate’)&lt;/li&gt;
 &lt;li&gt;etc..&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Lowercase&lt;/strong&gt;: deixar todos os termos em minúscula. Deve-se fazer isso porque o R não compreende a diferença entre maiúscula e minúscula, então quando você rodar análises ele não saber a perceber que ‘Banana’ e ‘banana’ são a mesma palavra.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Lowercase&lt;/strong&gt;: deixar todos os termos em minúscula. Deve-se fazer isso porque o R não compreende a diferença entre maiúscula e minúscula, então quando você rodar análises ele não vai perceber que ‘Banana’ e ‘banana’ são a mesma palavra.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Filter e Stopwords&lt;/strong&gt;: filtrar a base de termos, retirando todas as stop_words, que são palavras como “a”, “de”, “é”… Também pode ser usado para palavras muito comuns que não vão agregar na sua análise.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Steeming&lt;/strong&gt;: recorta a palavra ou coloca ela no seu radical. Infelizmente esse método para lingua portuguesa ainda está sendo construído, pro Brasil ainda que tem várias girias, acho que deve ser mais complicado ainda.Por isso, apesar de muito recomendável que seja feito, fica atenta a problemas na sua base de dados! Um recomendado é o &lt;em&gt;ptstem&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Steeming&lt;/strong&gt;: recorta a palavra ou coloca ela no seu radical. Infelizmente esse método para lingua portuguesa ainda está sendo construído, especialmente para o Brasil que ainda que tem várias girias, acho que deve ser ainda mais complicado.Por isso, apesar de muito recomendável que seja feito, fique atenta a problemas na sua base de dados! Um recomendado é o &lt;em&gt;ptstem&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Vetorização&lt;/strong&gt;: para análises mais profundas devemos vetorizar a informação, para isso usamos o famoso: DFM - Document Frequency Matrix. Basicamente cada linha representa um documento e cada coluna um termo (podendo estar no método utilizado de unigram, bigram e etc)&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;../../img/dfm.png&#34;&gt;&lt;/p&gt;
