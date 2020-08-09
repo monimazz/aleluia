@@ -33,22 +33,62 @@
   </url>
   
   <url>
+    <loc>/authors/</loc>
+    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/intror/</loc>
+    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/isabella-pileggi/</loc>
+    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/monica-rocabado/</loc>
+    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/o-que-e-a-linguagem-r-o-be-a-ba-para-iniciantes/</loc>
+    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/r/</loc>
+    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/tutorial/</loc>
+    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/intro-ao-r/</loc>
     <lastmod>2020-08-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/project/</loc>
-    <lastmod>2020-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-08-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -75,11 +115,6 @@
   <url>
     <loc>/tag/art/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-07-30T03:22:05+00:00</lastmod>
   </url>
   
   <url>
@@ -113,11 +148,6 @@
   </url>
   
   <url>
-    <loc>/category/tutorial/</loc>
-    <lastmod>2020-07-30T03:22:05+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
   </url>
@@ -135,11 +165,6 @@
   <url>
     <loc>/publication/preprint/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -219,11 +244,6 @@
   
   <url>
     <loc>/post/2015-07-23-r-rmarkdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/r/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   

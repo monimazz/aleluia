@@ -1,0 +1,274 @@
+---
+title: O que é a linguagem R? O be-a-bá para iniciantes
+author: monimazz, isapi
+date: '2020-08-08'
+slug: o-que-é-a-linguagem-r-o-be-a-bá-para-iniciantes
+categories:
+  - Tutorial
+  - R
+tags:
+  - introR
+subtitle: ''
+summary: 'Um tutorial de R para quem nunca se quer viu a "cara" do R, da instalação ao primeiro gráfico!'
+authors: [isapi, monimazz]
+lastmod: '2020-08-08T23:46:32Z'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<div id="tópicos-desse-post" class="section level4">
+<h4>Tópicos desse post</h4>
+<ul>
+<li>O que é a linguagem R?</li>
+<li>Como a ciência de dados funciona no R?</li>
+<li>Baixando e instalando o R</li>
+<li>O maravilhoso mundo do R</li>
+<li>Primeiro projetinho no R: Visualizando dados</li>
+</ul>
+<p>Se você gosta de desvendar problemas, compreendendo quais os principais motivos dele estar acontecendo e quais as chances de acontecer em outros momentos futuros, você pode assim como nós estar com um pézinho na ciência de dados. A ciência de dados pode ser definida como:</p>
+<blockquote>
+<p>Uma disciplina que permite você transformar uma base de dados em informação, insights e conhecimento.</p>
+</blockquote>
+<p>Com ela você pode analisar dados pensando no passado, presente e futuro, se perguntando o motivo de alguma situação como e por que ela ocorre, se existe um padrão e muito mais? Indo além e podendo usar machine learning :rocket: nas suas análises.</p>
+<p>Para se tornar um cientista de dados existe um longo caminho, que ainda estamos percorrendo, com diversas linguagens e ferramentas que irão ajudar nesse processo, como big data, python, estatística e muito mais, como se pode ver na imagem abaixo de Swami Chandrasekaran:</p>
+<p><img src="/img/roadmap2.png"></p>
+<p>Dentre todo esse redemoinho de informações, acredito que a melhor linguagem para começar a aprender, colocar a mão na massa e já ter resultados legais é o R, altamente usado para ciência de dados. Mas o que é a linguagem R?</p>
+<blockquote>
+<p>R é uma ferramenta gratuita e open-source (ou seja, de código aberto) usada para análise de dados estatísticos e visualização da informação, muito utilizada por cientistas de dados e pesquisadores. (r-project)[<a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>]</p>
+</blockquote>
+</div>
+<div id="e-por-que-o-r-é-tão-legal" class="section level2">
+<h2>E por que o R é tão legal?</h2>
+<p>Além do seu aprendizado ser intuitivo e possuir uma comunidade super aberta para troca de conhecimento, o R é uma ferramenta que agrega 3 elementos essenciais em um só programa: manipulação de dados, cálculos e display gráfico. Com ele você consegue fazer:</p>
+<ul>
+<li>Aplicativos web</li>
+<li>Gráficos</li>
+<li>Dashboards</li>
+<li>Artigos acadêmicos</li>
+<li>Blogs (esse aqui é todo feito no R)</li>
+<li>Livros</li>
+<li>Analisar dados de texto quantitativamente</li>
+<li>Machine learning</li>
+<li>Slides</li>
+<li>Minerar dados</li>
+<li>e mais!…</li>
+</ul>
+</div>
+<div id="como-a-ciência-de-dados-funciona-no-r" class="section level2">
+<h2>Como a ciência de dados funciona no R?</h2>
+<p><img src="/img/processodata.png"></p>
+<p>Essa imagem que retiramos da <em>oper</em>, representa o fluxo de trabalho que normalmente você realiza ao trabalhar com projetos no R, a ciência de dados funciona no R de acordo com essas características.</p>
+<ul>
+<li>Subir a base de dados</li>
+<li>organizar a base de dados, fazer uma limpeza dela</li>
+<li>Transformação</li>
+<li>Visualização: gráficos</li>
+<li>Modelagem.</li>
+<li>Comunicação: juntar tudo o que foi feito e transmitir informação</li>
+</ul>
+</div>
+<div id="baixando-e-instalando-o-r" class="section level2">
+<h2>Baixando e instalando o R</h2>
+<p>Para começar você precisa baixar dois programas:
+* R: para Windows e Mac - O R raíz
+* Rstudio (link) - A IDE (Integrated development environment) que você sempre vai utilizar. Todos os trabalhos, análises - e literalmente TUDO - vão ser no Rstudio, ok?</p>
+<p>Essa é a cara do Rstudio:</p>
+<p><img src="/img/rstudio.png"></p>
+<ul>
+<li><strong>Editor:</strong> você pode criar scripts, documentos e outros, basicamente lá é onde você irá salvar os seus códigos em uma pasta escolhida no seu computador. Para fazer o seu código “rodar”, você pode selecionar o código ou linha e apertar “RUN” ou na última linha do código que você quer fazer rodar apertar o comando: CTRL+ENTER</li>
+<li><strong>Console:</strong> Local que o seu código roda, tanto o que você fez no editor ou que insere diretamente no console.</li>
+<li><strong>Output:</strong> em Plots ou Viewer você poderá ver o resultado visual do seus gráficos. Files são as pastas do seu computador.</li>
+<li><strong>Global Enviroment:</strong> Todos os objetos que você criar ficarão aqui</li>
+</ul>
+<div id="tipo-de-dados-que-você-trabalhará-no-r" class="section level3">
+<h3>Tipo de dados que você trabalhará no R</h3>
+<ul>
+<li><strong>integer:</strong> números inteiros</li>
+<li><strong>numeric:</strong> números decimais</li>
+<li><strong>complex:</strong> números complexos</li>
+<li><strong>logical:</strong> FALSE, TRUE, NA</li>
+<li><strong>factor:</strong> categórica ex: (“ótimo”, “bom”, “médio”, “ruim”)</li>
+<li><strong>character:</strong> texto ex: (“eu amo bolo de chocolate”)</li>
+</ul>
+</div>
+</div>
+<div id="exercício-inicial-olá-mundo" class="section level2">
+<h2>Exercício inicial: Olá Mundo!</h2>
+<p>No seu console do R digite <code>oi &lt;- "oi mundo!"</code>. Esse código indica que você está atribuindo valor <code>&lt;-</code> ao objeto <code>oi</code>, que acabou de criar, no caso, atribuindo a variável character “oi mundo”. Se você quiser ver esse objeto é só digitar no console:<code>oi</code></p>
+<div id="principais-atalhos-no-rstudio-que-vão-te-ajudar" class="section level3">
+<h3>Principais atalhos no Rstudio que vão te ajudar!</h3>
+<ul>
+<li><strong>CTRL+ENTER:</strong> roda a linha selecionada do script.</li>
+<li><strong>ALT+-:</strong> (&lt;-) atribuir variável.</li>
+<li><strong>ALT+SHIFT+K:</strong> janela com todos os atalhos disponíveis.</li>
+</ul>
+</div>
+</div>
+<div id="o-maravilhoso-mundo-do-r-sparkles" class="section level2">
+<h2>O maravilhoso mundo do R :sparkles:</h2>
+<p>Alguns exemplos desse novo mundo
+<em>(literalmente, copie e cole os códigos abaixo e veja a mágica acontecer)</em></p>
+<p>Antes de tudo, precisamos instalar alguns pacotes do R. Mas o que raios são pacotes? Os pacotes são grande parte de onde está a mágica do R, eles são definidos como:
+&gt; Packages are the fundamental units of reproducible R code.<br />
+Mas eu prefiro entendê-los como se fossem caixas de ferramentas, que dentro há ferramentas que vão me ajudar a implementar o meu projeto. Há uma infinidade de pacotes (library), criadas diariamente por pessoas de todo o mundo (vantagens do open-source), cada uma dessas caixas, possuindo ferramentas diferentes!</p>
+<p>Instalar pacotes:</p>
+<pre class="r"><code>#Para instalar os pacotes é só tirar o # da frente, ele funciona como comentário
+#install.packages(&quot;tidyverse&quot;)
+#install.packages(&quot;geobr&quot;)
+#install.packages(&quot;gapminder&quot;)
+#install.packages(&quot;modelr&quot;)
+#install.packages(&quot;tidyverse&quot;)
+#install.packages(&quot;ggcorrplot&quot;)
+#install.packages(&quot;hexbin&quot;)
+#install.packages(&quot;sf&quot;)</code></pre>
+<pre class="r"><code>#carregar pacotes
+library(tidyverse) # o pacote mãe, soberano, é uma coleção de pacotes para data science
+# library(ggplot2)  faz gráficos (pacote dentro do tidyverse)
+# library(dplyr) manipulação de dados (pacote dentro do tidyverse)
+library(geobr) # mapas br
+library(sf) # mapas
+library(modelr)
+library(gapminder) # banco de dados
+library(lubridate) # processamento de datas
+library(hexbin) # gráficos hexagonais
+library(ggcorrplot) # correlação de dados</code></pre>
+<div id="ex-1-scatterplot-o-famoso-gráfico-de-dispersão" class="section level3">
+<h3>Ex 1: scatterplot (o famoso gráfico de dispersão)</h3>
+<p>No caso, você está analisando uma base de dados de carros, comparando o tamanho do motor <code>displ</code> e com a eficiência do combustível <code>hwy</code>. Basicamente você está informando que você quer que a base de dados <code>mpg</code> se torne um gráfico, acionando a função <code>ggplot</code> e indicando em <code>aes</code> que a variável x será a coluna <code>displ</code> que está dentro da base <code>mpg</code> e a variável y será a coluna <code>hwy</code>, que também está dentro da base <code>mpg</code>.</p>
+<pre class="r"><code>mpg %&gt;% ggplot(aes(x = displ, y = hwy, color = class)) +
+  geom_point()</code></pre>
+<p><img src="/post/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Antes de continuar é importante esclarecer o que é <code>%&gt;%</code>, isso é algo que você vai usar muito e se chama <em>“pipe”</em></p>
+<blockquote>
+<p>O pipe “pega” o que está do lado esquerdo e roda no lado direito do código, facilita sua vida porque você não precisa mil objetos, já que há diversas etapas no processo.</p>
+</blockquote>
+<p>Outro ponto importante para você entender antes de avançarmos é em relação a função <code>ggplot</code>. Basicamente quando você precisa indicar quais são os seus eixos do gráfico, dentro de <code>aes</code> e depois que tipo de gráfico que você que fazer. Atenção: a conexão entre o ggplot e o tipo de gráfico de você vai fazer é caracterizada com o sinal de <code>+</code>, NÃO o <code>%&gt;%</code></p>
+</div>
+<div id="ex-2-gráfico-de-barras" class="section level3">
+<h3>Ex 2: gráfico de barras</h3>
+<p>Aqui você está analisando a base de dados <code>diamantes</code> e verificando fazendo um gráfico de barras do corte dos diamantes! Você não precisa de uma variável y aqui porque com o <code>geom_bar</code> o R vai identificar que <code>cut</code> é uma variável não númerica e vai fazer a contagem para você!</p>
+<pre class="r"><code>diamonds %&gt;% ggplot(aes(cut)) +
+  geom_bar()</code></pre>
+<p><img src="/post/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="ex-3-mapas" class="section level3">
+<h3>Ex 3: mapas</h3>
+<p>Sim, o R também faz mapas:earth_americas:. Esse código acontece em 3 etapas:</p>
+<p><strong>1. Criar uma variável chamada “no_axis”.</strong> Seu objetivo é basicamente deixar o mapa mais limpo, sem a trama e os eixos que normalmente ficam atrás dos gráficos. Como faremos um mapa, queremos limpar todo esse “plano de fundo”.</p>
+<pre class="r"><code>no_axis &lt;- theme(axis.title=element_blank(),
+                 axis.text=element_blank(),
+                 axis.ticks=element_blank())</code></pre>
+<p><strong>2. Organizar nossa base de dados.</strong> Vamos criar a variável “states”, que vai conter as informações dos estados brasileiros contidas no pacote “geobr”. Serão 27 observações no ano de 2014, uma para cada estado brasileiro.</p>
+<pre class="r"><code>states &lt;- read_state(year=2014)</code></pre>
+<pre><code>## Using year 2014</code></pre>
+<pre><code>## Loading data for the whole country</code></pre>
+<p><strong>3. O Mapa!</strong> Agora que já temos nossa base de dados organizada, vamos dar o play. O geom_sf é o responsável por gerar o mapa e todos os argumentos dentro dele são as informações necessárias para que ele construa o que a gente quer:</p>
+<ul>
+<li>data → base de dados (no caso, é a “states”, que acabamos de criar)</li>
+<li>fill → cor do preenchimento dos estados</li>
+<li>color → cor do perímetro (linha) de cada estado</li>
+<li>size → espessura da linha (perímetro de cada estado)</li>
+<li>show.legend → está marcada como FALSE pois não queremos que ela apareça</li>
+<li>O “labs” são as labels (títulos, subtítulos, etc) que você vai dar para o seu mapa. Nesse caso queremos que ele se chame States. Por fim, estamos adicionando o plano de fundo “minimal” e a nossa variável “no_axis”, garantindo que o mapa fique o menos poluído possível.</li>
+</ul>
+<pre class="r"><code>ggplot() +
+  geom_sf(data = states, fill=&quot;#2D3E50&quot;, color=&quot;#FEBF57&quot;, size=.15, show.legend = FALSE) +
+  labs(subtitle=&quot;States&quot;, size=8) +
+  theme_minimal() +
+  no_axis</code></pre>
+<p><img src="/post/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="ex-4-gráfico-de-correlação" class="section level3">
+<h3>Ex 4: gráfico de correlação</h3>
+<p>Aqui estamos usando a base de dados Diamonds, uma base que já vem inclusa dentro do pacote ggplot. Queremos entender se existe correlação entre os dados numéricos e, para isso, estamos selecionando só as colunas com números, de 5 a 10 <code>select(5:10)</code>. O resultado será um gráfico de correlação:</p>
+<ul>
+<li>correl positiva entre 2 variáveis: cor laranja</li>
+<li>correl negativa entre 2 variáveis: cor azul</li>
+<li>sem correlação entre 2 variáveis: cor branca</li>
+</ul>
+<pre class="r"><code>diamonds %&gt;% select(5:10) %&gt;%
+  cor() %&gt;%
+  ggcorrplot(hc.order = TRUE, type = &quot;lower&quot;,
+             outline.col = &quot;white&quot;,
+             ggtheme = ggplot2::theme_gray,
+             colors = c(&quot;#6D9EC1&quot;, &quot;white&quot;, &quot;#E46726&quot;))</code></pre>
+<p><img src="/post/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="ex-5-gráfico-de-hexágonos" class="section level3">
+<h3>Ex 5: gráfico de hexágonos</h3>
+<pre class="r"><code>ggplot(diamonds, aes(carat, price)) + 
+  geom_hex(bins = 50)</code></pre>
+<p><img src="/post/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+</div>
+<div id="primeiro-projetinho-no-r-visualizando-dados" class="section level2">
+<h2>Primeiro projetinho no R: Visualizando dados</h2>
+<div id="parte-2-explorando-algumas-bases-de-dados" class="section level4">
+<h4>PARTE 2: EXPLORANDO ALGUMAS BASES DE DADOS</h4>
+<div id="caso-mpg" class="section level5">
+<h5>CASO MPG</h5>
+<p>Rode os códigos abaixo para entender o que é essa base de dados:
+<code>mpg</code>
+<code>?mpg</code></p>
+<p><strong>PERGUNTA da análise:</strong></p>
+<blockquote>
+<p>Será que existe uma relação entre displ (tamanho do motor) e hwy (eficiência do combustível)?</p>
+</blockquote>
+</div>
+<div id="por-esse-gráfico-que-vamos-rodar-agora-parece-que-sim." class="section level5">
+<h5>Por esse gráfico que vamos rodar agora, parece que sim.</h5>
+<pre class="r"><code>mpg %&gt;% ggplot(mapping = aes(x = displ, y = hwy)) +
+  geom_point()</code></pre>
+<p><img src="/post/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="podemos-adicionar-uma-linha-ao-gráfico-a-fim-de-entendermos-melhor-o-lugar-em-que-os-pontos-estão-posicionados" class="section level5">
+<h5>Podemos adicionar uma linha ao gráfico a fim de entendermos melhor o lugar em que os pontos estão posicionados</h5>
+<pre class="r"><code>mpg %&gt;% ggplot(mapping = aes(x = displ, y = hwy)) +
+  geom_point() +
+  geom_smooth(se = FALSE) # linha posicionada no lugar mais perto de todos os pontos</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/post/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="podemos-também-adicionar-mais-uma-variável-class." class="section level5">
+<h5>Podemos também adicionar mais uma variável: class.</h5>
+<p>Pra isso, nos utilizaremos de cores pra adicionar essa informação. Eu decidi usar cores, mas note que poderia ser qualquer outra coisa, como formas ou tamanho dos pontos. Para isso, troque o argumento “color” por “shape” ou “size”.</p>
+<pre class="r"><code>mpg %&gt;% ggplot(mapping = aes(x = displ, y = hwy, color = class)) +
+  geom_point()</code></pre>
+<p><img src="/post/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="agora-vamos-dividir-nosso-gráfico." class="section level5">
+<h5>Agora vamos dividir nosso gráfico.</h5>
+<p>Rode o código abaixo e você verá que agora temos 7 gráficos! Cada um deles é específico de uma “class” de carros. Ou seja, ao invés de adicionarmos essa variável “class” através de cores, formatos, etc, estamos separando cada uma em um gráfico diferente.</p>
+<pre class="r"><code>mpg %&gt;% ggplot(mapping = aes(x = displ, y = hwy)) +
+  geom_point() +
+  facet_wrap(facets = vars(class))</code></pre>
+<p><img src="/post/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+</div>
+<div id="quer-mais-conteúdo-para-se-aprofundar-aqui-vão-alguns-conteúdos-ótimos-em-português" class="section level3">
+<h3>Quer mais conteúdo para se aprofundar? Aqui vão alguns conteúdos ótimos em português:</h3>
+<ul>
+<li><a href="http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf">R para cientistas sociais</a></li>
+<li><a href="https://github.com/rladies/meetup-presentations_sao-paulo">Github R ladies SP com diversos workshops</a></li>
+<li><a href="https://github.com/R-LadiesGYN/README/blob/master/README.md">Github R ladies Goiânia</a></li>
+</ul>
+<p>Para quem se aventura no inglês, segue o livro que eu leio vira e mexe volto pra ele em momentos de dúvidas, uma fonte de aprendizado ótima: <a href="https://r4ds.had.co.nz/">R for Data Science</a></p>
+<p>Outro que tem sido meu guia principal em visualização de dados é o <a href="https://www.data-to-viz.com/">Data to viz</a></p>
+<p>Fique ligado nos eventos das R-ladies! Há sempre tutoriais e workshops super legais e gratuitos para todos! Há diversos R-ladies no mundo, aqui vão algumas dicas de perfis que eu sigo no instagram e github, recomendo!
+* <span class="citation">@rladiesp</span>
+* <span class="citation">@rladiesthe</span>
+* <span class="citation">@rladiesbh</span></p>
+<blockquote>
+<p>R-ladies é uma iniciativa global que promove diversidade na comunidade R, realizando diversos compartilhamento de conteúdo, workshops, mentorias, eventos e conexões! Quem fundou essa comunidade GLOBAL foi a Gabriela Queiroz, brasileira e cientista de dados, lá em 2012, que acabou tendo muito sucesso e expandido para várias regiões do mundo <a href="https://gqueiroz.shinyapps.io/rshinylady/"></a></p>
+</blockquote>
+</div>
+</div>
+<div id="ficou-com-alguma-dúvida-ou-sugestão-manda-nos-comentários" class="section level2">
+<h2>Ficou com alguma dúvida ou sugestão? Manda nos comentários!</h2>
+</div>

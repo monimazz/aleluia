@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: Meus interesses de pesquisa incluem empregabilidade, desigualdade (com recorte em raça e gênero), análise de redes sociais, governo e políticas públicas.
+bio: 
 #education:
  # courses:
   #- course: 
