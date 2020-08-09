@@ -39,7 +39,7 @@ Para se tornar um cientista de dados existe um longo caminho, que ainda estamos 
 
 Dentre todo esse redemoinho de informações, acredito que a melhor linguagem para começar a aprender, colocar a mão na massa e já ter resultados legais é o R, altamente usado para ciência de dados. Mas o que é a linguagem R?
 
-> R é uma ferramenta gratuita e open-source (ou seja, de código aberto) usada para análise de dados estatísticos e visualização da informação, muito utilizada por cientistas de dados e pesquisadores. (r-project)[https://www.r-project.org/]
+> R é uma ferramenta gratuita e open-source (ou seja, de código aberto) usada para análise de dados estatísticos e visualização da informação, muito utilizada por cientistas de dados e pesquisadores. https://www.r-project.org/
 
 ## E por que o R é tão legal?
 Além do seu aprendizado ser intuitivo e possuir uma comunidade super aberta para troca de conhecimento, o R é uma ferramenta que agrega 3 elementos essenciais em um só programa: manipulação de dados, cálculos e display gráfico. Com ele você consegue fazer: 
