@@ -291,6 +291,8 @@ mpg %>% ggplot(mapping = aes(x = displ, y = hwy)) +
 * [R para cientistas sociais](http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf)
 * [Github R ladies SP com diversos workshops](https://github.com/rladies/meetup-presentations_sao-paulo)
 * [Github R ladies Goiânia](https://github.com/R-LadiesGYN/README/blob/master/README.md)
+* [Youtube Rladies BH com intro ao R](https://www.youtube.com/channel/UCtpGCWyRdscfs6KflWjACKw)
+* [Blog Rladies BH](https://medium.com/rladiesbh)
 
 Para quem se aventura no inglês, segue o livro que eu leio vira e mexe volto pra ele em momentos de dúvidas, uma fonte de aprendizado ótima: [R for Data Science](https://r4ds.had.co.nz/)
 
@@ -308,6 +310,7 @@ Fique ligado nos eventos das R-ladies! Há sempre tutoriais e workshops super le
 
 ### _Ficou com alguma dúvida ou sugestão? Manda nos comentários!_
 
+<br>
 
 <iframe src="https://giphy.com/embed/xULW8v7LtZrgcaGvC0" width="300" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/justin-barnaby-xULW8v7LtZrgcaGvC0">via GIPHY</a></p>
 
