@@ -7,7 +7,7 @@
     <description>Isabella Pileggi</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu2f74f05811508a2184a91481bf98faed_24816_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu20f2dd5d5a57a0025df5079063041a29_26908_512x512_fill_lanczos_center_2.png</url>
       <title>Isabella Pileggi</title>
       <link>/author/isabella-pileggi/</link>
     </image>
@@ -29,21 +29,22 @@
 &lt;li&gt;O maravilhoso mundo do R&lt;/li&gt;
 &lt;li&gt;Primeiro projetinho no R: Visualizando dados&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Se você gosta de desvendar problemas, compreendendo quais os principais motivos dele estar acontecendo e quais as chances de acontecer em outros momentos futuros, você pode assim como nós estar com um pézinho na ciência de dados. A ciência de dados pode ser definida como:&lt;/p&gt;
+&lt;p&gt;Se você gosta de desvendar problemas, compreender quais suas principais causas e quais as chances deles se repetirem no futuro, você pode ter um pézinho na ciência de dados - assim como nós. Uma das definições da Ciência de Dados é:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Uma disciplina que permite você transformar uma base de dados em informação, insights e conhecimento.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Com ela você pode analisar dados pensando no passado, presente e futuro, se perguntando o motivo de alguma situação como e por que ela ocorre, se existe um padrão e muito mais? Indo além e podendo usar machine learning 🚀 nas suas análises.&lt;/p&gt;
-&lt;p&gt;Para se tornar um cientista de dados existe um longo caminho, que ainda estamos percorrendo, com diversas linguagens e ferramentas que irão ajudar nesse processo, como big data, python, estatística e muito mais, como se pode ver na imagem abaixo de Swami Chandrasekaran:&lt;/p&gt;
+&lt;p&gt;Com ela você pode analisar dados olhando ao mesmo tempo para o passado, presente e futuro. Você pode entender os motivos de dada situação, perceber a existência de padrões e criar modelos para - literalmente - prever o comportamento dessa situação no futuro. 🚀&lt;/p&gt;
+&lt;p&gt;Para se tornar um cientista de dados é preciso trilhar um longo caminho - que ainda estamos percorrendo - e que envolve o aprendizado de diversas linguagens e ferramentas que irão ajudar nesse processo, como big data, python, estatística e muito mais. A imagem abaixo de Swami Chandrasekaran pode ajudar a visualizar esse caminho:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../img/roadmap2.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Dentre todo esse redemoinho de informações, acredito que a melhor linguagem para começar a aprender, colocar a mão na massa e já ter resultados legais é o R, altamente usado para ciência de dados. Mas o que é a linguagem R?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(A gente jura que nosso objetivo não é desanimar mostrando esse monstro.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Dentre todo esse redemoinho de informações, a gente acredita que o R é a melhor linguagem para começar a aprender a ciência de dados, colocar a mão na massa e já conseguir obter resultados visíveis. Mas o que é a linguagem R?&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;R é uma ferramenta gratuita e open-source (ou seja, de código aberto) usada para análise de dados estatísticos e visualização da informação, muito utilizada por cientistas de dados e pesquisadores. &lt;a href=&#34;https://www.r-project.org/&#34; class=&#34;uri&#34;&gt;https://www.r-project.org/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;div id=&#34;e-por-que-o-r-é-tão-legal&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;E por que o R é tão legal?&lt;/h2&gt;
-&lt;p&gt;Além do seu aprendizado ser intuitivo e possuir uma comunidade super aberta para troca de conhecimento, o R é uma ferramenta que agrega 3 elementos essenciais em um só programa: manipulação de dados, cálculos e display gráfico. Com ele você consegue fazer:&lt;/p&gt;
+&lt;p&gt;Além do seu aprendizado ser intuitivo e possuir uma comunidade super aberta para troca de conhecimento, o R é uma ferramenta que agrega 3 elementos essenciais em um só programa: manipulação de dados, cálculos e display gráfico. Com ele você consegue fazer muitas coisas, começando por blogs (esse aqui por acaso - ou nem tanto - é feito com R). Alguns outros exemplos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Aplicativos web&lt;/li&gt;
 &lt;li&gt;Gráficos&lt;/li&gt;
@@ -61,21 +62,23 @@
 &lt;div id=&#34;como-a-ciência-de-dados-funciona-no-r&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Como a ciência de dados funciona no R?&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;../../img/processodata.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Essa imagem que retiramos da &lt;em&gt;oper&lt;/em&gt;, representa o fluxo de trabalho que normalmente você realiza ao trabalhar com projetos no R, a ciência de dados funciona no R de acordo com essas características.&lt;/p&gt;
+&lt;p&gt;Essa imagem que retiramos da &lt;em&gt;oper&lt;/em&gt; representa o fluxo de trabalho que normalmente você realiza ao trabalhar com projetos no R, a ciência de dados funciona no R de acordo com essas características.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Subir a base de dados&lt;/li&gt;
-&lt;li&gt;organizar a base de dados, fazer uma limpeza dela&lt;/li&gt;
-&lt;li&gt;Transformação&lt;/li&gt;
-&lt;li&gt;Visualização: gráficos&lt;/li&gt;
-&lt;li&gt;Modelagem.&lt;/li&gt;
-&lt;li&gt;Comunicação: juntar tudo o que foi feito e transmitir informação&lt;/li&gt;
+&lt;li&gt;Importação: Importar a base de dados para o R&lt;/li&gt;
+&lt;li&gt;Organização: Organizá-la de acordo com suas necessidades&lt;/li&gt;
+&lt;li&gt;Transformação: fazer as alterações necessárias de acordo com suas necessidades (adicionar dados, unir tabelas, etc)&lt;/li&gt;
+&lt;li&gt;Visualização: transformar a informação em gráficos&lt;/li&gt;
+&lt;li&gt;Modelagem: criar modelos preditivos&lt;/li&gt;
+&lt;li&gt;Comunicação: juntar tudo o que foi feito, selecionar a informação relevante e transmitir informação&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div id=&#34;baixando-e-instalando-o-r&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Baixando e instalando o R&lt;/h2&gt;
-&lt;p&gt;Para começar você precisa baixar dois programas:
-* R: para Windows e Mac - O R raíz
-* Rstudio (link) - A IDE (Integrated development environment) que você sempre vai utilizar. Todos os trabalhos, análises - e literalmente TUDO - vão ser no Rstudio, ok?&lt;/p&gt;
+&lt;p&gt;Para começar você precisa baixar dois programas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;R: para &lt;a href=&#34;https://cran.r-project.org/bin/windows/base/&#34;&gt;Windows&lt;/a&gt; e &lt;a href=&#34;https://cran.r-project.org/bin/macosx/&#34;&gt;Mac&lt;/a&gt; - A raíz do programa&lt;/li&gt;
+&lt;li&gt;Rstudio &lt;a href=&#34;https://rstudio.com/products/rstudio/download/#download&#34;&gt;link&lt;/a&gt; - A IDE (Integrated development environment) que você sempre vai utilizar. Todos os trabalhos, análises - e literalmente TUDO - vão ser no Rstudio, ok?&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Essa é a cara do Rstudio:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../img/rstudio.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -110,11 +113,11 @@
 &lt;/div&gt;
 &lt;div id=&#34;o-maravilhoso-mundo-do-r-sparkles&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;O maravilhoso mundo do R ✨&lt;/h2&gt;
-&lt;p&gt;Alguns exemplos desse novo mundo
-&lt;em&gt;(literalmente, copie e cole os códigos abaixo e veja a mágica acontecer)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Vamos ver alguns exemplos desse novo mundo.&lt;/p&gt;
 &lt;p&gt;Antes de tudo, precisamos instalar alguns pacotes do R. Mas o que raios são pacotes? Os pacotes são grande parte de onde está a mágica do R, eles são definidos como:
 &amp;gt; Packages are the fundamental units of reproducible R code.&lt;br /&gt;
-Mas eu prefiro entendê-los como se fossem caixas de ferramentas, que dentro há ferramentas que vão me ajudar a implementar o meu projeto. Há uma infinidade de pacotes (library), criadas diariamente por pessoas de todo o mundo (vantagens do open-source), cada uma dessas caixas, possuindo ferramentas diferentes!&lt;/p&gt;
+Mas eu prefiro entendê-los como se fossem caixas de ferramentas, que dentro há ferramentas que vão me ajudar a implementar o meu projeto. Há uma infinidade de pacotes (libraries), criadas diariamente por pessoas de todo o mundo (vantagens do open-source), cada uma dessas caixas, possuindo ferramentas diferentes!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(literalmente, copie e cole os códigos abaixo e veja a mágica acontecer)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Instalar pacotes:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Para instalar os pacotes é só tirar o # da frente, ele funciona como comentário
 #install.packages(&amp;quot;tidyverse&amp;quot;)
@@ -150,7 +153,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-2-gráfico-de-barras&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 2: gráfico de barras&lt;/h3&gt;
-&lt;p&gt;Aqui você está analisando a base de dados &lt;code&gt;diamantes&lt;/code&gt; e verificando fazendo um gráfico de barras do corte dos diamantes! Você não precisa de uma variável y aqui porque com o &lt;code&gt;geom_bar&lt;/code&gt; o R vai identificar que &lt;code&gt;cut&lt;/code&gt; é uma variável não númerica e vai fazer a contagem para você!&lt;/p&gt;
+&lt;p&gt;Aqui você está analisando a base de dados &lt;code&gt;diamantes&lt;/code&gt; e fazendo um gráfico de barras do corte dos diamantes! Você não precisa de uma variável y aqui porque com o &lt;code&gt;geom_bar&lt;/code&gt; o R vai identificar que &lt;code&gt;cut&lt;/code&gt; é uma variável não númerica e vai fazer a contagem para você!&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;diamonds %&amp;gt;% ggplot(aes(cut)) +
   geom_bar()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
@@ -184,7 +187,17 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-4-gráfico-de-correlação&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 4: gráfico de correlação&lt;/h3&gt;
-&lt;p&gt;Aqui estamos usando a base de dados Diamonds, uma base que já vem inclusa dentro do pacote ggplot. Queremos entender se existe correlação entre os dados numéricos e, para isso, estamos selecionando só as colunas com números, de 5 a 10 &lt;code&gt;select(5:10)&lt;/code&gt;. O resultado será um gráfico de correlação:&lt;/p&gt;
+&lt;p&gt;Aqui estamos usando a base de dados Diamonds, uma base que já vem inclusa dentro do pacote ggplot. Queremos entender se existe correlação entre os dados numéricos,ou seja:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;x = comprimento (milímetro)&lt;/li&gt;
+&lt;li&gt;y = largura (milímetro)&lt;/li&gt;
+&lt;li&gt;z = profundidade (milímetro)&lt;/li&gt;
+&lt;li&gt;price = preço
+&lt;em&gt;medidas complexinhas, entededores de dimantes entenderam, rs ~ não foca nessas informações, o foco é entender o gráfico.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;depth = percentual de profundidade total&lt;/li&gt;
+&lt;li&gt;table = largura do topo do diamante relativa ao seu ponto mais largo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para isso, estamos selecionando só as colunas com números &lt;code&gt;select(5:10)&lt;/code&gt;. O resultado será um gráfico de correlação:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;correl positiva entre 2 variáveis: cor laranja&lt;/li&gt;
 &lt;li&gt;correl negativa entre 2 variáveis: cor azul&lt;/li&gt;
@@ -200,6 +213,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-5-gráfico-de-hexágonos&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 5: gráfico de hexágonos&lt;/h3&gt;
+&lt;p&gt;Esse gráfico é uma solução para quando você tem &lt;em&gt;muuuuitos&lt;/em&gt; dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando duas a relação entre duas variáveis numéricas, preço e peso.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(diamonds, aes(carat, price)) + 
   geom_hex(bins = 50)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
@@ -211,9 +225,9 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;PARTE 2: EXPLORANDO ALGUMAS BASES DE DADOS&lt;/h4&gt;
 &lt;div id=&#34;caso-mpg&#34; class=&#34;section level5&#34;&gt;
 &lt;h5&gt;CASO MPG&lt;/h5&gt;
-&lt;p&gt;Rode os códigos abaixo para entender o que é essa base de dados:
-&lt;code&gt;mpg&lt;/code&gt;
-&lt;code&gt;?mpg&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Rode os códigos abaixo para entender o que é essa base de dados:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;code&gt;mpg&lt;/code&gt;
+&lt;/em&gt;&lt;code&gt;?mpg&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;PERGUNTA da análise:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Será que existe uma relação entre displ (tamanho do motor) e hwy (eficiência do combustível)?&lt;/p&gt;
@@ -258,17 +272,24 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;p&gt;Para quem se aventura no inglês, segue o livro que eu leio vira e mexe volto pra ele em momentos de dúvidas, uma fonte de aprendizado ótima: &lt;a href=&#34;https://r4ds.had.co.nz/&#34;&gt;R for Data Science&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Outro que tem sido meu guia principal em visualização de dados é o &lt;a href=&#34;https://www.data-to-viz.com/&#34;&gt;Data to viz&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Fique ligado nos eventos das R-ladies! Há sempre tutoriais e workshops super legais e gratuitos para todos! Há diversos R-ladies no mundo, aqui vão algumas dicas de perfis que eu sigo no instagram e github, recomendo!
-* &lt;span class=&#34;citation&#34;&gt;@rladiesp&lt;/span&gt;
-* &lt;span class=&#34;citation&#34;&gt;@rladiesthe&lt;/span&gt;
-* &lt;span class=&#34;citation&#34;&gt;@rladiesbh&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Fique ligado nos eventos das R-ladies! Há sempre tutoriais e workshops super legais e gratuitos para todos! Há diversos R-ladies no mundo, aqui vão algumas dicas de perfis que eu sigo no instagram e github, recomendo!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;citation&#34;&gt;@rladiesp&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;citation&#34;&gt;@rladiesthe&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;citation&#34;&gt;@rladiesbh&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;R-ladies é uma iniciativa global que promove diversidade na comunidade R, realizando diversos compartilhamento de conteúdo, workshops, mentorias, eventos e conexões! Quem fundou essa comunidade GLOBAL foi a Gabriela Queiroz, brasileira e cientista de dados, lá em 2012, que acabou tendo muito sucesso e expandido para várias regiões do mundo &lt;a href=&#34;https://gqueiroz.shinyapps.io/rshinylady/&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
+&lt;div id=&#34;ficou-com-alguma-dúvida-ou-sugestão-manda-nos-comentários&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;&lt;em&gt;Ficou com alguma dúvida ou sugestão? Manda nos comentários!&lt;/em&gt;&lt;/h3&gt;
+&lt;iframe src=&#34;https://giphy.com/embed/xULW8v7LtZrgcaGvC0&#34; width=&#34;300&#34; height=&#34;280&#34; frameBorder=&#34;0&#34; class=&#34;giphy-embed&#34; allowFullScreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://giphy.com/gifs/justin-barnaby-xULW8v7LtZrgcaGvC0&#34;&gt;via GIPHY&lt;/a&gt;
+&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;ficou-com-alguma-dúvida-ou-sugestão-manda-nos-comentários&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Ficou com alguma dúvida ou sugestão? Manda nos comentários!&lt;/h2&gt;
 &lt;/div&gt;
 </description>
     </item>

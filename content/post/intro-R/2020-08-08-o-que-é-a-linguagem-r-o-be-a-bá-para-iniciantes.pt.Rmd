@@ -27,22 +27,25 @@ projects: []
 * O maravilhoso mundo do R
 * Primeiro projetinho no R: Visualizando dados
 
-Se você gosta de desvendar problemas, compreendendo quais os principais motivos dele estar acontecendo e quais as chances de acontecer em outros momentos futuros, você pode assim como nós estar com um pézinho na ciência de dados. A ciência de dados pode ser definida como:
+Se você gosta de desvendar problemas, compreender quais suas principais causas e quais as chances deles se repetirem no futuro, você pode ter um pézinho na ciência de dados - assim como nós. Uma das definições da Ciência de Dados é:
 
 > Uma disciplina que permite você transformar uma base de dados em informação, insights e conhecimento.
 
-Com ela você pode analisar dados pensando no passado, presente e futuro, se perguntando o motivo de alguma situação como e por que ela ocorre, se existe um padrão e muito mais? Indo além e podendo usar machine learning :rocket: nas suas análises.
+Com ela você pode analisar dados olhando ao mesmo tempo para o passado, presente e futuro. Você pode entender os motivos de dada situação, perceber a existência de padrões e criar modelos para - literalmente - prever o comportamento dessa situação no futuro. :rocket:
 
-Para se tornar um cientista de dados existe um longo caminho, que ainda estamos percorrendo, com diversas linguagens e ferramentas que irão ajudar nesse processo, como big data, python, estatística e muito mais, como se pode ver na imagem abaixo de Swami Chandrasekaran:
+Para se tornar um cientista de dados é preciso trilhar um longo caminho - que ainda estamos percorrendo - e que envolve o aprendizado de diversas linguagens e ferramentas que irão ajudar nesse processo, como big data, python, estatística e muito mais. A imagem abaixo de Swami Chandrasekaran pode ajudar a visualizar esse caminho:
  
 <img src="/img/roadmap2.png">
 
-Dentre todo esse redemoinho de informações, acredito que a melhor linguagem para começar a aprender, colocar a mão na massa e já ter resultados legais é o R, altamente usado para ciência de dados. Mas o que é a linguagem R?
+_(A gente jura que nosso objetivo não é desanimar mostrando esse monstro.)_
+
+Dentre todo esse redemoinho de informações, a gente acredita que o R é a melhor linguagem para começar a aprender a ciência de dados, colocar a mão na massa e já conseguir obter resultados visíveis. Mas o que é a linguagem R?
+
 
 > R é uma ferramenta gratuita e open-source (ou seja, de código aberto) usada para análise de dados estatísticos e visualização da informação, muito utilizada por cientistas de dados e pesquisadores. https://www.r-project.org/
 
 ## E por que o R é tão legal?
-Além do seu aprendizado ser intuitivo e possuir uma comunidade super aberta para troca de conhecimento, o R é uma ferramenta que agrega 3 elementos essenciais em um só programa: manipulação de dados, cálculos e display gráfico. Com ele você consegue fazer: 
+Além do seu aprendizado ser intuitivo e possuir uma comunidade super aberta para troca de conhecimento, o R é uma ferramenta que agrega 3 elementos essenciais em um só programa: manipulação de dados, cálculos e display gráfico. Com ele você consegue fazer muitas coisas, começando por blogs (esse aqui por acaso - ou nem tanto - é feito com R). Alguns outros exemplos: 
 
 * Aplicativos web
 * Gráficos
@@ -60,26 +63,29 @@ Além do seu aprendizado ser intuitivo e possuir uma comunidade super aberta par
 
 <img src="/img/processodata.png">
 
-Essa imagem que retiramos da _oper_, representa o fluxo de trabalho que normalmente você realiza ao trabalhar com projetos no R, a ciência de dados funciona no R de acordo com essas características. 
+Essa imagem que retiramos da _oper_ representa o fluxo de trabalho que normalmente você realiza ao trabalhar com projetos no R, a ciência de dados funciona no R de acordo com essas características. 
 
-* Subir a base de dados
-* organizar a base de dados, fazer uma limpeza dela
-* Transformação
-* Visualização: gráficos
-* Modelagem.
-* Comunicação: juntar tudo o que foi feito e transmitir informação
+* Importação: Importar a base de dados para o R
+* Organização: Organizá-la de acordo com suas necessidades
+* Transformação: fazer as alterações necessárias de acordo com suas necessidades (adicionar dados, unir tabelas, etc)
+* Visualização: transformar a informação em gráficos
+* Modelagem: criar modelos preditivos
+* Comunicação: juntar tudo o que foi feito, selecionar a informação relevante e transmitir informação
+
 
 ## Baixando e instalando o R
 Para começar você precisa baixar dois programas:
-*  R: para Windows e Mac - O R raíz
-*  Rstudio (link) - A IDE (Integrated development environment) que você sempre vai utilizar. Todos os trabalhos, análises - e literalmente TUDO - vão ser no Rstudio, ok? 
+
+*  R: para [Windows](https://cran.r-project.org/bin/windows/base/) e [Mac](https://cran.r-project.org/bin/macosx/) - A raíz do programa
+*  Rstudio [link](https://rstudio.com/products/rstudio/download/#download) - A IDE (Integrated development environment) que você sempre vai utilizar. Todos os trabalhos, análises - e literalmente TUDO - vão ser no Rstudio, ok? 
 
 Essa é a cara do Rstudio:
 
 <img src="/img/rstudio.png">
 
-* **Editor:** você pode criar scripts, documentos e outros, basicamente lá é onde você irá salvar os seus códigos em uma pasta escolhida no seu computador. Para fazer o seu código “rodar”, você pode selecionar o código ou linha e apertar “RUN” ou na última linha do código que você quer fazer rodar apertar o comando: CTRL+ENTER
-* **Console:** Local que o seu código roda, tanto o que você fez no editor ou que insere  diretamente no console.
+
+* **Editor:** você pode criar scripts, documentos e outros, basicamente lá é onde você irá salvar os seus códigos em uma pasta escolhida no seu computador.  Para fazer o seu código “rodar”, você pode selecionar o código ou linha e apertar “RUN” ou na última linha do código que você quer fazer rodar apertar o comando: CTRL+ENTER
+* **Console:** Local que o seu código roda, tanto o que você fez no editor ou que insere diretamente no console.
 * **Output:** em Plots ou Viewer você poderá ver o resultado visual do seus gráficos. Files são as pastas do seu computador.
 * **Global Enviroment:** Todos os objetos que você criar ficarão aqui
 
@@ -98,18 +104,20 @@ No seu console do R digite `oi <- "oi mundo!"`. Esse código indica que você es
 
 
 ### Principais atalhos no Rstudio que vão te ajudar!
+
 * **CTRL+ENTER:** roda a linha selecionada do script.
 * **ALT+-:** (<-) atribuir variável.
 * **ALT+SHIFT+K:** janela com todos os atalhos disponíveis.
 
 
 ## O maravilhoso mundo do R :sparkles:
-Alguns exemplos desse novo mundo
-_(literalmente, copie e cole os códigos abaixo e veja a mágica acontecer)_
+Vamos ver alguns exemplos desse novo mundo. 
 
 Antes de tudo, precisamos instalar alguns pacotes do R. Mas o que raios são pacotes? Os pacotes são grande parte de onde está a mágica do R, eles são definidos como:
 > Packages are the fundamental units of reproducible R code.  
-Mas eu prefiro entendê-los como se fossem caixas de ferramentas, que dentro há ferramentas que vão me ajudar a implementar o meu projeto. Há uma infinidade de pacotes (library), criadas diariamente por pessoas de todo o mundo (vantagens do open-source), cada uma dessas caixas, possuindo ferramentas diferentes!
+Mas eu prefiro entendê-los como se fossem caixas de ferramentas, que dentro há ferramentas que vão me ajudar a implementar o meu projeto. Há uma infinidade de pacotes (libraries), criadas diariamente por pessoas de todo o mundo (vantagens do open-source), cada uma dessas caixas, possuindo ferramentas diferentes!
+
+_(literalmente, copie e cole os códigos abaixo e veja a mágica acontecer)_
 
 Instalar pacotes:
 ```{r}
@@ -154,7 +162,7 @@ Antes de continuar é importante esclarecer o que é `%>%`, isso é algo que voc
 Outro ponto importante para você entender antes de avançarmos é em relação a função `ggplot`. Basicamente quando você precisa indicar quais são os seus eixos do gráfico, dentro de `aes` e depois que tipo de gráfico que você que fazer. Atenção: a conexão entre o ggplot e o tipo de gráfico de você vai fazer é caracterizada com o sinal de `+`, NÃO o `%>%` 
 
 ### Ex 2: gráfico de barras
-Aqui você está analisando a base de dados `diamantes` e verificando fazendo um gráfico de barras do corte dos diamantes! Você não precisa de uma variável y aqui porque com o `geom_bar` o R vai identificar que `cut` é uma variável não númerica e vai fazer a contagem para você!
+Aqui você está analisando a base de dados `diamantes` e fazendo um gráfico de barras do corte dos diamantes! Você não precisa de uma variável y aqui porque com o `geom_bar` o R vai identificar que `cut` é uma variável não númerica e vai fazer a contagem para você!
 ```{r}
 diamonds %>% ggplot(aes(cut)) +
   geom_bar()
@@ -198,7 +206,17 @@ ggplot() +
 
 
 ### Ex 4: gráfico de correlação
-Aqui estamos usando a base de dados Diamonds, uma base que já vem inclusa dentro do pacote ggplot. Queremos entender se existe correlação entre os dados numéricos e, para isso, estamos selecionando só as colunas com números, de 5 a 10 `select(5:10)`. O resultado será um gráfico de correlação:
+Aqui estamos usando a base de dados Diamonds, uma base que já vem inclusa dentro do pacote ggplot. Queremos entender se existe correlação entre os dados numéricos,ou seja: 
+
+* x = comprimento (milímetro)
+* y = largura (milímetro)
+* z = profundidade (milímetro)
+* price = preço
+_medidas complexinhas, entededores de dimantes entenderam, rs ~ não foca nessas informações, o foco é entender o gráfico._
+* depth = percentual de profundidade total 
+* table = largura do topo do diamante relativa ao seu ponto mais largo
+
+Para isso, estamos selecionando só as colunas com números `select(5:10)`. O resultado será um gráfico de correlação:
 
 * correl positiva entre 2 variáveis: cor laranja
 * correl negativa entre 2 variáveis: cor azul
@@ -215,6 +233,7 @@ diamonds %>% select(5:10) %>%
 
 
 ### Ex 5: gráfico de hexágonos
+Esse gráfico é uma solução para quando você tem _muuuuitos_ dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando duas a relação entre duas variáveis numéricas, preço e peso.  
 ```{r}
 ggplot(diamonds, aes(carat, price)) + 
   geom_hex(bins = 50)
@@ -227,8 +246,9 @@ ggplot(diamonds, aes(carat, price)) +
 
 ##### CASO MPG
 Rode os códigos abaixo para entender o que é essa base de dados:
-`mpg`
-`?mpg`
+
+*`mpg`
+*`?mpg`
 
 **PERGUNTA da análise:** 
 
@@ -278,6 +298,7 @@ Para quem se aventura no inglês, segue o livro que eu leio vira e mexe volto pr
 Outro que tem sido meu guia principal em visualização de dados é o [Data to viz](https://www.data-to-viz.com/)
 
 Fique ligado nos eventos das R-ladies! Há sempre tutoriais e workshops super legais e gratuitos para todos! Há diversos R-ladies no mundo, aqui vão algumas dicas de perfis que eu sigo no instagram e github, recomendo!
+
 * @rladiesp
 * @rladiesthe
 * @rladiesbh
@@ -286,5 +307,8 @@ Fique ligado nos eventos das R-ladies! Há sempre tutoriais e workshops super le
 > R-ladies é uma iniciativa global que promove diversidade na comunidade R, realizando diversos compartilhamento de conteúdo, workshops, mentorias, eventos e conexões! Quem fundou essa comunidade GLOBAL foi a Gabriela Queiroz, brasileira e cientista de dados, lá em 2012, que acabou tendo muito sucesso e expandido para várias regiões do mundo [](https://gqueiroz.shinyapps.io/rshinylady/)
 
 
-## Ficou com alguma dúvida ou sugestão? Manda nos comentários!
+### _Ficou com alguma dúvida ou sugestão? Manda nos comentários!_
+
+
+<iframe src="https://giphy.com/embed/xULW8v7LtZrgcaGvC0" width="300" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/justin-barnaby-xULW8v7LtZrgcaGvC0">via GIPHY</a></p>
 

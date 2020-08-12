@@ -23,7 +23,7 @@ social:
   link: '#contact'
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/isabella-pileggi
 superuser: false
 title: Isabella Pileggi
 user_groups:
