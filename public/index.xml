@@ -169,9 +169,9 @@
 &lt;div id=&#34;principais-atalhos-no-rstudio-que-vão-te-ajudar&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Principais atalhos no Rstudio que vão te ajudar!&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;CTRL+ENTER:&lt;/strong&gt; roda a linha selecionada do script.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ALT+-:&lt;/strong&gt; (&amp;lt;-) atribuir variável.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ALT+SHIFT+K:&lt;/strong&gt; janela com todos os atalhos disponíveis.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CTRL&lt;/code&gt;+ &lt;code&gt;ENTER&lt;/code&gt; roda a linha selecionada do script.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ALT&lt;/code&gt;+&lt;code&gt;-&lt;/code&gt;: atribuir variável (&amp;lt;-) .&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ALT&lt;/code&gt;+ &lt;code&gt;SHIFT&lt;/code&gt;+&lt;code&gt;K&lt;/code&gt; : janela com todos os atalhos disponíveis.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -224,7 +224,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-3-mapas&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 3: mapas&lt;/h3&gt;
-&lt;p&gt;Sim, o R também faz mapas🌎. Esse código acontece em 3 etapas:&lt;/p&gt;
+&lt;p&gt;Sim, o R também faz mapas 🌎. Esse código acontece em 3 etapas:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. Criar uma variável chamada “no_axis”.&lt;/strong&gt; Seu objetivo é basicamente deixar o mapa mais limpo, sem a trama e os eixos que normalmente ficam atrás dos gráficos. Como faremos um mapa, queremos limpar todo esse “plano de fundo”.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;no_axis &amp;lt;- theme(axis.title=element_blank(),
                  axis.text=element_blank(),
@@ -256,8 +256,10 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;x = comprimento (milímetro)&lt;/li&gt;
 &lt;li&gt;y = largura (milímetro)&lt;/li&gt;
 &lt;li&gt;z = profundidade (milímetro)&lt;/li&gt;
-&lt;li&gt;price = preço
-&lt;em&gt;medidas complexinhas, entededores de dimantes entenderam, rs ~ não foca nessas informações, o foco é entender o gráfico.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;price = preço&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Medidas complexinhas, entendedores de diamantes entenderão, rs ~ não foca nessas informações, o foco é entender o gráfico.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;depth = percentual de profundidade total&lt;/li&gt;
 &lt;li&gt;table = largura do topo do diamante relativa ao seu ponto mais largo&lt;/li&gt;
 &lt;/ul&gt;
@@ -277,7 +279,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-5-gráfico-de-hexágonos&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 5: gráfico de hexágonos&lt;/h3&gt;
-&lt;p&gt;Esse gráfico é uma solução para quando você tem &lt;em&gt;muuuuitos&lt;/em&gt; dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando duas a relação entre duas variáveis numéricas, preço e peso.&lt;/p&gt;
+&lt;p&gt;Esse gráfico é uma solução para quando você tem &lt;em&gt;muuuuitos&lt;/em&gt; dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando a relação entre duas variáveis numéricas, preço e peso.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(diamonds, aes(carat, price)) + 
   geom_hex(bins = 50)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;./post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
@@ -289,9 +291,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;PARTE 2: EXPLORANDO ALGUMAS BASES DE DADOS&lt;/h4&gt;
 &lt;div id=&#34;caso-mpg&#34; class=&#34;section level5&#34;&gt;
 &lt;h5&gt;CASO MPG&lt;/h5&gt;
-&lt;p&gt;Rode os códigos abaixo para entender o que é essa base de dados:&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;code&gt;mpg&lt;/code&gt;
-&lt;/em&gt;&lt;code&gt;?mpg&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Rode os códigos abaixo para entender o que é essa base de dados: &lt;code&gt;mpg&lt;/code&gt; e &lt;code&gt;?mpg&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;PERGUNTA da análise:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Será que existe uma relação entre displ (tamanho do motor) e hwy (eficiência do combustível)?&lt;/p&gt;

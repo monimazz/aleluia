@@ -781,9 +781,9 @@
 <div id="principais-atalhos-no-rstudio-que-vão-te-ajudar" class="section level3">
 <h3>Principais atalhos no Rstudio que vão te ajudar!</h3>
 <ul>
-<li><strong>CTRL+ENTER:</strong> roda a linha selecionada do script.</li>
-<li><strong>ALT+-:</strong> (&lt;-) atribuir variável.</li>
-<li><strong>ALT+SHIFT+K:</strong> janela com todos os atalhos disponíveis.</li>
+<li><code>CTRL</code>+ <code>ENTER</code> roda a linha selecionada do script.</li>
+<li><code>ALT</code>+<code>-</code>: atribuir variável (&lt;-) .</li>
+<li><code>ALT</code>+ <code>SHIFT</code>+<code>K</code> : janela com todos os atalhos disponíveis.</li>
 </ul>
 </div>
 </div>
@@ -836,7 +836,7 @@ library(ggcorrplot) # correlação de dados</code></pre>
 </div>
 <div id="ex-3-mapas" class="section level3">
 <h3>Ex 3: mapas</h3>
-<p>Sim, o R também faz mapas🌎. Esse código acontece em 3 etapas:</p>
+<p>Sim, o R também faz mapas 🌎. Esse código acontece em 3 etapas:</p>
 <p><strong>1. Criar uma variável chamada “no_axis”.</strong> Seu objetivo é basicamente deixar o mapa mais limpo, sem a trama e os eixos que normalmente ficam atrás dos gráficos. Como faremos um mapa, queremos limpar todo esse “plano de fundo”.</p>
 <pre class="r"><code>no_axis &lt;- theme(axis.title=element_blank(),
                  axis.text=element_blank(),
@@ -868,8 +868,10 @@ library(ggcorrplot) # correlação de dados</code></pre>
 <li>x = comprimento (milímetro)</li>
 <li>y = largura (milímetro)</li>
 <li>z = profundidade (milímetro)</li>
-<li>price = preço
-<em>medidas complexinhas, entededores de dimantes entenderam, rs ~ não foca nessas informações, o foco é entender o gráfico.</em></li>
+<li>price = preço</li>
+</ul>
+<p><em>Medidas complexinhas, entendedores de diamantes entenderão, rs ~ não foca nessas informações, o foco é entender o gráfico.</em></p>
+<ul>
 <li>depth = percentual de profundidade total</li>
 <li>table = largura do topo do diamante relativa ao seu ponto mais largo</li>
 </ul>
@@ -889,7 +891,7 @@ library(ggcorrplot) # correlação de dados</code></pre>
 </div>
 <div id="ex-5-gráfico-de-hexágonos" class="section level3">
 <h3>Ex 5: gráfico de hexágonos</h3>
-<p>Esse gráfico é uma solução para quando você tem <em>muuuuitos</em> dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando duas a relação entre duas variáveis numéricas, preço e peso.</p>
+<p>Esse gráfico é uma solução para quando você tem <em>muuuuitos</em> dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando a relação entre duas variáveis numéricas, preço e peso.</p>
 <pre class="r"><code>ggplot(diamonds, aes(carat, price)) + 
   geom_hex(bins = 50)</code></pre>
 <p><img src="../../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
@@ -901,9 +903,7 @@ library(ggcorrplot) # correlação de dados</code></pre>
 <h4>PARTE 2: EXPLORANDO ALGUMAS BASES DE DADOS</h4>
 <div id="caso-mpg" class="section level5">
 <h5>CASO MPG</h5>
-<p>Rode os códigos abaixo para entender o que é essa base de dados:</p>
-<p><em><code>mpg</code>
-</em><code>?mpg</code></p>
+<p>Rode os códigos abaixo para entender o que é essa base de dados: <code>mpg</code> e <code>?mpg</code></p>
 <p><strong>PERGUNTA da análise:</strong></p>
 <blockquote>
 <p>Será que existe uma relação entre displ (tamanho do motor) e hwy (eficiência do combustível)?</p>

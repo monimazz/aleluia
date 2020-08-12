@@ -105,9 +105,9 @@ No seu console do R digite `oi <- "oi mundo!"`. Esse código indica que você es
 
 ### Principais atalhos no Rstudio que vão te ajudar!
 
-* **CTRL+ENTER:** roda a linha selecionada do script.
-* **ALT+-:** (<-) atribuir variável.
-* **ALT+SHIFT+K:** janela com todos os atalhos disponíveis.
+* `CTRL`+ `ENTER` roda a linha selecionada do script.
+* `ALT`+`-`: atribuir variável (<-) .
+* `ALT`+ `SHIFT`+`K` : janela com todos os atalhos disponíveis.
 
 
 ## O maravilhoso mundo do R :sparkles:
@@ -171,7 +171,7 @@ diamonds %>% ggplot(aes(cut)) +
 
 
 ### Ex 3: mapas
-Sim, o R também faz mapas:earth_americas:. Esse código acontece em 3 etapas:
+Sim, o R também faz mapas :earth_americas:. Esse código acontece em 3 etapas:
 
 **1. Criar uma variável chamada “no_axis”.** Seu objetivo é basicamente deixar o mapa mais limpo, sem a trama e os eixos que normalmente ficam atrás dos gráficos. Como faremos um mapa, queremos limpar todo esse “plano de fundo”. 
 ```{r results = FALSE}
@@ -212,7 +212,9 @@ Aqui estamos usando a base de dados Diamonds, uma base que já vem inclusa dentr
 * y = largura (milímetro)
 * z = profundidade (milímetro)
 * price = preço
-_medidas complexinhas, entededores de dimantes entenderam, rs ~ não foca nessas informações, o foco é entender o gráfico._
+
+_Medidas complexinhas, entendedores de diamantes entenderão, rs ~ não foca nessas informações, o foco é entender o gráfico._
+
 * depth = percentual de profundidade total 
 * table = largura do topo do diamante relativa ao seu ponto mais largo
 
@@ -233,7 +235,7 @@ diamonds %>% select(5:10) %>%
 
 
 ### Ex 5: gráfico de hexágonos
-Esse gráfico é uma solução para quando você tem _muuuuitos_ dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando duas a relação entre duas variáveis numéricas, preço e peso.  
+Esse gráfico é uma solução para quando você tem _muuuuitos_ dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando a relação entre duas variáveis numéricas, preço e peso.  
 ```{r}
 ggplot(diamonds, aes(carat, price)) + 
   geom_hex(bins = 50)
@@ -245,10 +247,7 @@ ggplot(diamonds, aes(carat, price)) +
 #### PARTE 2: EXPLORANDO ALGUMAS BASES DE DADOS 
 
 ##### CASO MPG
-Rode os códigos abaixo para entender o que é essa base de dados:
-
-*`mpg`
-*`?mpg`
+Rode os códigos abaixo para entender o que é essa base de dados: `mpg` e `?mpg`
 
 **PERGUNTA da análise:** 
 
