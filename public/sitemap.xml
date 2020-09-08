@@ -33,12 +33,52 @@
   </url>
   
   <url>
-    <loc>/authors/</loc>
-    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2020-09-07T04:53:42+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/tag/covid/</loc>
+    <lastmod>2020-09-07T04:53:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/google-trends-no-r-covid-19/</loc>
+    <lastmod>2020-09-07T04:53:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/googletrends/</loc>
+    <lastmod>2020-09-07T04:53:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-09-07T04:53:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-09-07T04:53:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/tutorial/</loc>
+    <lastmod>2020-09-07T04:53:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/google-trends-no-r-todo-mundo-mente/</loc>
+    <lastmod>2020-09-06T23:56:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/tutorial/</loc>
+    <lastmod>2020-09-06T23:56:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
     <lastmod>2020-08-08T23:46:32+00:00</lastmod>
   </url>
   
@@ -63,22 +103,7 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/category/r/</loc>
-    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-08-08T23:46:32+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/tutorial/</loc>
     <lastmod>2020-08-08T23:46:32+00:00</lastmod>
   </url>
   
@@ -94,11 +119,6 @@
   
   <url>
     <loc>/project/tutorial/</loc>
-    <lastmod>2020-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/tutorial/</loc>
     <lastmod>2020-08-04T00:00:00+00:00</lastmod>
   </url>
   

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>covid | R-Dados: Pesquisando com R</title>
+    <link>/tag/covid/</link>
+      <atom:link href="/tag/covid/index.xml" rel="self" type="application/rss+xml" />
+    <description>covid</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu20f2dd5d5a57a0025df5079063041a29_26908_512x512_fill_lanczos_center_2.png</url>
+      <title>covid</title>
+      <link>/tag/covid/</link>
+    </image>
+    
+    <item>
+      <title>Google Trends no R - Covid 19</title>
+      <link>/post/google-trends-no-r-covid-19/</link>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/google-trends-no-r-covid-19/</guid>
+      <description>&lt;p&gt;Inspirada no livro &amp;ldquo;Todo Mundo Mente&amp;rdquo; de XXXX e no Dia do Sexo 06/09, quais tem sido as tendencias relacionadas a sexo dos brasileiros durante a pandemia? Quais seus principais questionamentos?&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;O poder do Google está no fato de as pessoas &amp;ldquo;contarem&amp;rdquo; ao gigantesco mecanismo de busca o que não diriam a mais ninguém. [&amp;hellip;] As buscas do google são o conjunto de dados mais importante jamais coletado sobre a pisque humana.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Porque isso acontece?&lt;/p&gt;
+&lt;p&gt;Devido ao anonimato das buscas, o google parece um grande confidente ou confessionário, assim, permite que possamos analisar buscas que refletem desejos, medos e comportamentos do ser humano.&lt;/p&gt;
+&lt;p&gt;Para acessar o R tem uma API através do pacote 
+&lt;a href=&#34;https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gtrends&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Instalar o pacote gtrendsR
+# devtools::install_github(&#39;PMassicotte/gtrendsR&#39;)
+
+#Carregar os pacotes
+library(gtrendsR)
+library(tidyverse)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Se você quiser explorar mais o pacote, tem um site que eu acompanho que fez uma intro super fácil, recomendo acessar o 
+&lt;a href=&#34;http://data7.blog/gtrendsr-google-trends-r/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;post&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Agora analisando os dados&lt;/p&gt;
+&lt;p&gt;Buscando os dados&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;resultados_all &amp;lt;- gtrends(c(&amp;quot;ansiedade&amp;quot;), geo = &amp;quot;BR&amp;quot;, time = &amp;quot;all&amp;quot;)
+
+resultados_tres &amp;lt;- gtrends(c(&amp;quot;ansiedade&amp;quot;), geo = &amp;quot;BR&amp;quot;, time = &amp;quot;today 3-m&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Topicos relacionados&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;topic_all &amp;lt;- resultados_all$related_topics
+topic_all &amp;lt;- topic_all %&amp;gt;% mutate(tipo = &amp;quot;2004-hoje&amp;quot;)
+
+topic_tres &amp;lt;- resultados_tres$related_topics
+topic_tres &amp;lt;- topic_tres %&amp;gt;% mutate(tipo = &amp;quot;Últimos 3 meses&amp;quot;)
+
+topic &amp;lt;- rbind(topic_all, topic_tres)
+
+topic %&amp;gt;%
+  mutate(peso = as.numeric(subject)) %&amp;gt;%
+  top_n(peso, 10) %&amp;gt;%
+  ggplot(aes(x=value, y=peso)) +
+  geom_segment( aes(xend=value, yend=0)) +
+  geom_point( size=4, color=&amp;quot;orange&amp;quot;) +
+  facet_grid(cols = vars(tipo)) +
+  coord_flip()+
+  theme_minimal() +
+  labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Principais tópicos relacionados&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
+Interessante perceber que insonia e meditação são termos novos.&lt;/p&gt;
+&lt;p&gt;Buscas relacionadas&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;search_all &amp;lt;- resultados_all$related_queries
+search_all &amp;lt;- search_all %&amp;gt;% mutate(tipo = &amp;quot;2004-hoje&amp;quot;)
+
+search_tres &amp;lt;- resultados_tres$related_queries
+search_tres &amp;lt;- search_tres %&amp;gt;% mutate(tipo = &amp;quot;Últimos 3 meses&amp;quot;)
+
+search &amp;lt;- rbind(search_all, search_tres)
+
+search %&amp;gt;%
+  mutate(peso = as.numeric(subject)) %&amp;gt;%
+  top_n(peso, 10) %&amp;gt;%
+  ggplot(aes(x=value, y=peso)) +
+  geom_segment( aes(xend=value, yend=0)) +
+  geom_point( size=4, color=&amp;quot;orange&amp;quot;) +
+  facet_grid(cols = vars(tipo)) +
+  coord_flip()+
+  theme_minimal() +
+  labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Principais buscas relacionadas&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Interessante notar as buscas novas nos ultimos meses de pandemia&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;crise de ansiedade sintomas&lt;/li&gt;
+&lt;li&gt;ansiedade o que é&lt;/li&gt;
+&lt;li&gt;falta de ar ansiedade&lt;/li&gt;
+&lt;li&gt;falta de ar&lt;/li&gt;
+&lt;li&gt;depressão e ansiedade&lt;/li&gt;
+&lt;li&gt;teste ansiedade&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Vemos um pico de buscas sobre ansiedade ao longo do tempo&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;resultados_all$interest_over_time %&amp;gt;%
+  ggplot(aes(x=date, y=hits)) +
+  geom_line() +
+  theme_minimal() +
+  labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Buscas no tempo&amp;quot;)+
+  gghighlight::gghighlight(hits %in% 83:100)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
