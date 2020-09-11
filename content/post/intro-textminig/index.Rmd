@@ -2,6 +2,17 @@
 title: 'Introdução ao text mining: O caso da votação do FUNDEB'
 author: monimazz
 date: '2020-07-30'
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: "Smart"
+  preview_only: true
+  
 slug: introdução-ao-text-mining-o-caso-da-votação-do-fundeb
 categories:
   - Tutorial
@@ -16,11 +27,6 @@ subtitle: ''
 summary: ''
 authors: [monimazz]
 lastmod: '2020-07-30T03:22:05Z'
-featured: no
-image: 
-  caption: ''
-  focal_point: '3'
-  preview_only: no
 projects: []
 ---
 
@@ -103,7 +109,9 @@ No caso, não vou utilizar o _steeming_ porque estou acostumada a usar ele mais 
 
 ```{r,echo=FALSE}
 library(readxl)
-deputado_fala <- read_excel("/cloud/project/content/post/intro-textminig/deputados_consolidado.xlsx")
+library(here)
+here()
+deputado_fala <- read_excel("deputados_consolidado.xlsx")
 ```
 
 

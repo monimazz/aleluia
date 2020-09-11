@@ -14,9 +14,10 @@ authors: [isapi, monimazz]
 lastmod: '2020-08-08T23:46:32Z'
 featured: no
 image:
+  placement: 1
   caption: ''
-  focal_point: ''
-  preview_only: no
+  focal_point: 'Center'
+  preview_only: false
 projects: []
 ---
 
@@ -146,7 +147,7 @@ library(ggcorrplot) # correlação de dados</code></pre>
 <p>No caso, você está analisando uma base de dados de carros, comparando o tamanho do motor <code>displ</code> e com a eficiência do combustível <code>hwy</code>. Basicamente você está informando que você quer que a base de dados <code>mpg</code> se torne um gráfico, acionando a função <code>ggplot</code> e indicando em <code>aes</code> que a variável x será a coluna <code>displ</code> que está dentro da base <code>mpg</code> e a variável y será a coluna <code>hwy</code>, que também está dentro da base <code>mpg</code>.</p>
 <pre class="r"><code>mpg %&gt;% ggplot(aes(x = displ, y = hwy, color = class)) +
   geom_point()</code></pre>
-<p><img src="/post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/post/intro-R/2020-08-08-o-que-é-a-linguagem-r-o-be-a-bá-para-iniciantes.pt_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Antes de continuar é importante esclarecer o que é <code>%&gt;%</code>, isso é algo que você vai usar muito e se chama <em>“pipe”</em></p>
 <blockquote>
 <p>O pipe “pega” o que está do lado esquerdo e roda no lado direito do código, facilita sua vida porque você não precisa mil objetos, já que há diversas etapas no processo.</p>
@@ -158,7 +159,7 @@ library(ggcorrplot) # correlação de dados</code></pre>
 <p>Aqui você está analisando a base de dados <code>diamantes</code> e fazendo um gráfico de barras do corte dos diamantes! Você não precisa de uma variável y aqui porque com o <code>geom_bar</code> o R vai identificar que <code>cut</code> é uma variável não númerica e vai fazer a contagem para você!</p>
 <pre class="r"><code>diamonds %&gt;% ggplot(aes(cut)) +
   geom_bar()</code></pre>
-<p><img src="/post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/post/intro-R/2020-08-08-o-que-é-a-linguagem-r-o-be-a-bá-para-iniciantes.pt_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="ex-3-mapas" class="section level3">
 <h3>Ex 3: mapas</h3>
@@ -185,7 +186,7 @@ library(ggcorrplot) # correlação de dados</code></pre>
   labs(subtitle=&quot;States&quot;, size=8) +
   theme_minimal() +
   no_axis</code></pre>
-<p><img src="/post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/post/intro-R/2020-08-08-o-que-é-a-linguagem-r-o-be-a-bá-para-iniciantes.pt_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 <div id="ex-4-gráfico-de-correlação" class="section level3">
 <h3>Ex 4: gráfico de correlação</h3>
@@ -213,14 +214,14 @@ library(ggcorrplot) # correlação de dados</code></pre>
              outline.col = &quot;white&quot;,
              ggtheme = ggplot2::theme_gray,
              colors = c(&quot;#6D9EC1&quot;, &quot;white&quot;, &quot;#E46726&quot;))</code></pre>
-<p><img src="/post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/post/intro-R/2020-08-08-o-que-é-a-linguagem-r-o-be-a-bá-para-iniciantes.pt_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 <div id="ex-5-gráfico-de-hexágonos" class="section level3">
 <h3>Ex 5: gráfico de hexágonos</h3>
 <p>Esse gráfico é uma solução para quando você tem <em>muuuuitos</em> dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando a relação entre duas variáveis numéricas, preço e peso.</p>
 <pre class="r"><code>ggplot(diamonds, aes(carat, price)) + 
   geom_hex(bins = 50)</code></pre>
-<p><img src="/post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/post/intro-R/2020-08-08-o-que-é-a-linguagem-r-o-be-a-bá-para-iniciantes.pt_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 </div>
 <div id="primeiro-projetinho-no-r-visualizando-dados" class="section level2">
@@ -239,7 +240,7 @@ library(ggcorrplot) # correlação de dados</code></pre>
 <h5>Por esse gráfico que vamos rodar agora, parece que sim.</h5>
 <pre class="r"><code>mpg %&gt;% ggplot(mapping = aes(x = displ, y = hwy)) +
   geom_point()</code></pre>
-<p><img src="/post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/post/intro-R/2020-08-08-o-que-é-a-linguagem-r-o-be-a-bá-para-iniciantes.pt_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="podemos-adicionar-uma-linha-ao-gráfico-a-fim-de-entendermos-melhor-o-lugar-em-que-os-pontos-estão-posicionados" class="section level5">
 <h5>Podemos adicionar uma linha ao gráfico a fim de entendermos melhor o lugar em que os pontos estão posicionados</h5>
@@ -247,14 +248,14 @@ library(ggcorrplot) # correlação de dados</code></pre>
   geom_point() +
   geom_smooth(se = FALSE) # linha posicionada no lugar mais perto de todos os pontos</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="/post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/post/intro-R/2020-08-08-o-que-é-a-linguagem-r-o-be-a-bá-para-iniciantes.pt_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="podemos-também-adicionar-mais-uma-variável-class." class="section level5">
 <h5>Podemos também adicionar mais uma variável: class.</h5>
 <p>Pra isso, nos utilizaremos de cores pra adicionar essa informação. Eu decidi usar cores, mas note que poderia ser qualquer outra coisa, como formas ou tamanho dos pontos. Para isso, troque o argumento “color” por “shape” ou “size”.</p>
 <pre class="r"><code>mpg %&gt;% ggplot(mapping = aes(x = displ, y = hwy, color = class)) +
   geom_point()</code></pre>
-<p><img src="/post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/post/intro-R/2020-08-08-o-que-é-a-linguagem-r-o-be-a-bá-para-iniciantes.pt_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="agora-vamos-dividir-nosso-gráfico." class="section level5">
 <h5>Agora vamos dividir nosso gráfico.</h5>
@@ -262,7 +263,7 @@ library(ggcorrplot) # correlação de dados</code></pre>
 <pre class="r"><code>mpg %&gt;% ggplot(mapping = aes(x = displ, y = hwy)) +
   geom_point() +
   facet_wrap(facets = vars(class))</code></pre>
-<p><img src="/post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="/post/intro-R/2020-08-08-o-que-é-a-linguagem-r-o-be-a-bá-para-iniciantes.pt_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 </div>
 <div id="quer-mais-conteúdo-para-se-aprofundar-aqui-vão-alguns-conteúdos-ótimos-em-português" class="section level3">

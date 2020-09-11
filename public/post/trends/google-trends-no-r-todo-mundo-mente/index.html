@@ -1,0 +1,1470 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Mônica Rocabado">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="O Google é hoje a maior base de dados sobre o comportamento humano, conseguindo refletir nossos desejos, medos, gostos, angustias, dúvidas e mais, só é necessário fazer as perguntas certas. Isto é o defende Seth Stephens-Davidowitz no livro &ldquo;Todo Mundo Mente&rdquo;, explicando que:">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/trends/google-trends-no-r-todo-mundo-mente/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174155598-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-174155598-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu20f2dd5d5a57a0025df5079063041a29_26908_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu20f2dd5d5a57a0025df5079063041a29_26908_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/trends/google-trends-no-r-todo-mundo-mente/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@monimazz">
+  <meta property="twitter:creator" content="@monimazz">
+  
+  <meta property="og:site_name" content="R-Dados: Pesquisando com R">
+  <meta property="og:url" content="/post/trends/google-trends-no-r-todo-mundo-mente/">
+  <meta property="og:title" content="Como a pandemia afetou as relações interpessoais? Analisando dados do Google Trends no R | R-Dados: Pesquisando com R">
+  <meta property="og:description" content="O Google é hoje a maior base de dados sobre o comportamento humano, conseguindo refletir nossos desejos, medos, gostos, angustias, dúvidas e mais, só é necessário fazer as perguntas certas. Isto é o defende Seth Stephens-Davidowitz no livro &ldquo;Todo Mundo Mente&rdquo;, explicando que:"><meta property="og:image" content="/images/icon_hu20f2dd5d5a57a0025df5079063041a29_26908_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu20f2dd5d5a57a0025df5079063041a29_26908_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-09-06T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-09-06T23:56:50&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/trends/google-trends-no-r-todo-mundo-mente/"
+  },
+  "headline": "Como a pandemia afetou as relações interpessoais? Analisando dados do Google Trends no R",
+  
+  "datePublished": "2020-09-06T00:00:00Z",
+  "dateModified": "2020-09-06T23:56:50Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Mônica Rocabado"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "R-Dados: Pesquisando com R",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu20f2dd5d5a57a0025df5079063041a29_26908_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "O Google é hoje a maior base de dados sobre o comportamento humano, conseguindo refletir nossos desejos, medos, gostos, angustias, dúvidas e mais, só é necessário fazer as perguntas certas. Isto é o defende Seth Stephens-Davidowitz no livro \u0026ldquo;Todo Mundo Mente\u0026rdquo;, explicando que:"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Como a pandemia afetou as relações interpessoais? Analisando dados do Google Trends no R | R-Dados: Pesquisando com R</title>
+
+</head>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">R-Dados: Pesquisando com R</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">R-Dados: Pesquisando com R</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Sobre</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projetos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Como a pandemia afetou as relações interpessoais? Analisando dados do Google Trends no R</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Sep 6, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/trends/google-trends-no-r-todo-mundo-mente/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/tutorial/">Tutorial</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p><strong>O Google é hoje a maior base de dados sobre o comportamento humano</strong>, conseguindo refletir nossos desejos, medos, gostos, angustias, dúvidas e mais, só é necessário fazer as perguntas certas. Isto é o defende Seth Stephens-Davidowitz no livro &ldquo;Todo Mundo Mente&rdquo;, explicando que:</p>
+<blockquote>
+<p>&ldquo;O poder do Google está no fato de as pessoas &ldquo;contarem&rdquo; ao gigantesco mecanismo de busca o que não diriam a mais ninguém. [&hellip;] As buscas do google são o conjunto de dados mais importante jamais coletado sobre a pisque humana.</p>
+</blockquote>
+<h3 id="por-que-isso-acontece">Por que isso acontece?</h3>
+<p>Devido ao anonimato das buscas, o google parece um grande confidente ou confessionário, assim, as pessoas não sentem a pressão ou julgamento em relação a um assunto, algo que poderiam ter em uma pesquisa ou em uma conversa com um amigo, parente, levando-as a mentir, até para sí próprias.</p>
+<p>No livro, Davidowitz apresenta um estudo super interessante que fez utilizando o Google Trends, analisando buscas realizadas por pessoas racistas, construindo assim um mapa dos locais mais racistas nos Estados Unidos. Este mapa é muito similar as regiões que elegeram Trump em 2016.</p>
+<p><img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/3276NB3DTQ6KBEYT5AFX7KW33U.png&amp;w=916" alt=""></p>
+<p>Dessa forma, inspirada no livro e porque recentemente foi Dia do Sexo (06/09), fiquei me perguntando: o que o brasileiro busca no google em relação a sexo? quais têm sido as tendências desde o início da pandemia? Resolvi escolher esse tema justamente pelo tabu social envolvido e ser algo extremamente intímo, potencialmente revelando algo interessante sobre o comportamento do brasileiro no assunto que pouco sabemos, justamente pelo tabu do assunto.</p>
+<p>Para isso, vou utilizar o pacote <code>gtrends</code>, que permite capturar informações do Google Trends pelo R e fazer análises! Para mais informações do pacote, acessar o CRAN: 
+<a href="https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf" target="_blank" rel="noopener">gtrends</a>. Se você quiser explorar mais o pacote, tem um site que eu acompanho que fez uma intro super fácil, recomendo acessar o 
+<a href="http://data7.blog/gtrendsr-google-trends-r/" target="_blank" rel="noopener">post</a>.</p>
+<p>Primeiro é necessário baixar o pacote e as librays que vão ser utilizadas.</p>
+<pre><code class="language-r"># Instalar o pacote gtrendsR
+devtools::install_github('PMassicotte/gtrendsR')
+</code></pre>
+<pre><code class="language-r">#Carregar os pacotes
+library(gtrendsR)
+library(tidyverse)
+</code></pre>
+<h3 id="buscar-a-informação">Buscar a informação</h3>
+<p>Primeiro específicamos as palavras ou palavaras, depois o localização que queremos, no caso Brasil e o tempo de busca. Resolvi procurar de forma suuuper genérica mesmo, só o termo, não necessáriamente é a &ldquo;pergunta correta&rdquo;</p>
+<pre><code class="language-r">resultados_all &lt;- gtrends(c(&quot;sexo&quot;), geo = &quot;BR&quot;, time = &quot;all&quot;)
+
+resultados_tres &lt;- gtrends(&quot;sexo&quot;, geo = &quot;BR&quot;, time = &quot;2020-03-01 2020-09-07&quot;)
+</code></pre>
+<p>A partir dessa busca com um termo amplo, vou analisar quais os tópicos e buscas relacionadas, comparando os últimos 3 meses com o período atual, houve aumento de alguma busca? Quais os termos?</p>
+<p>Vale ressaltar que tanto em tópicos quanto em buscas para realizar o gráfico estou excluindo os assuntos em ascensão e deixando somente o que está como principais buscas relaciondas, no entanto ainda dando destaque os que estão em ascensão por meio de uma tabela, por possuírem uma escala diferente que não vai de 0 a 100.</p>
+<h3 id="topicos-relacionados">Topicos relacionados</h3>
+<pre><code class="language-r">topic_all &lt;- resultados_all$related_topics
+topic_all &lt;- topic_all %&gt;% mutate(tipo = &quot;2004-hoje&quot;)
+
+topic_tres &lt;- resultados_tres$related_topics
+topic_tres &lt;- topic_tres %&gt;% mutate(tipo = &quot;Março (01) - Setembro (07)&quot;)
+
+topic &lt;- rbind(topic_all, topic_tres)
+
+topic %&gt;%
+  mutate(topics = case_when(value == &quot;Video&quot; ~ &quot;Vídeo&quot;,
+                            value == &quot;Scene&quot; ~ &quot;Cena&quot;,
+                            value == &quot;Property caretaker&quot; ~ &quot;Caseiro - Profissão&quot;,
+                            value == &quot;Position&quot; ~ &quot;Posição&quot;,
+                            value == &quot;GIF&quot; ~ &quot;GIF&quot;,
+                            value == &quot;Crown&quot; ~ &quot;Coroa&quot;,
+                            value == &quot;couple&quot; ~ &quot;Casal&quot;,
+                            value == &quot;Amateur&quot; ~ &quot;Amador&quot;,
+                            value == &quot;Virtual sex&quot; ~ &quot;Sexo virtual&quot;, TRUE ~ &quot;Outros&quot;)
+  ) %&gt;%
+  filter(related_topics != &quot;rising&quot;) %&gt;%
+  mutate(peso = as.numeric(subject)) %&gt;%
+  ggplot(aes(x=topics, y=peso)) +
+  geom_segment( aes(xend=topics, yend=0)) +
+  geom_point( size=4, color=&quot;purple&quot;) +
+  facet_grid(cols = vars(tipo)) +
+  coord_flip()+
+  theme_minimal() +
+  labs(x= &quot;&quot;, y= &quot;&quot;, title = &quot;Principais tópicos relacionados&quot;)
+</code></pre>
+<p><img src="/post/trends/2020-09-06-google-trends-no-r-todo-mundo-mente.en_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+Os tópicos relacionados não tiveram grande mudança, no entanto, em vista de tempos de isolamento social <strong>GIF</strong> apareceu como um tópico novo, será é uma nova forma das pessoas continuarem suas relações e se comunicando? Vou explorar esse assunto. Casal (couple) também é um termo que está como um dos principais nas buscas nesse período de quarentena.</p>
+<p>Explorando mais o contexto de isolamento social, é possível perceber um grande aumento de buscas relacionadas a &ldquo;sexo virtual&rdquo;, justamente no período de maior isolamento no país</p>
+<pre><code class="language-r">result2_all &lt;- gtrends(c(&quot;sexo virtual&quot;), geo = &quot;BR&quot;, time = &quot;today 12-m&quot;, cookie_url = &quot;http://trends.google.com/Cookies/NID&quot;,   onlyInterest = TRUE)
+
+result2_all$interest_over_time %&gt;%
+  ggplot(aes(x=date, y=hits)) +
+  geom_line() +
+  theme_minimal() +
+  labs(x= &quot;&quot;, y= &quot;&quot;, title = &quot;Buscas nos ultimos 12 meses&quot;)
+</code></pre>
+<p><img src="/post/trends/2020-09-06-google-trends-no-r-todo-mundo-mente.en_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<h3 id="buscas-relacionadas">Buscas relacionadas</h3>
+<pre><code class="language-r">search_all &lt;- resultados_all$related_queries
+search_all &lt;- search_all %&gt;% mutate(tipo = &quot;2004-hoje&quot;)
+
+search_tres &lt;- resultados_tres$related_queries
+search_tres &lt;- search_tres %&gt;% mutate(tipo = &quot;Março (01) - Setembro (06)&quot;)
+
+search &lt;- rbind(search_all, search_tres)
+
+search %&gt;%
+  filter(related_queries != &quot;rising&quot;) %&gt;%
+  mutate(peso = as.numeric(subject)) %&gt;%
+  ggplot(aes(x=value, y=peso)) +
+  geom_segment( aes(xend=value, yend=0)) +
+  geom_point( size=4, color=&quot;purple&quot;) +
+  facet_grid(cols = vars(tipo)) +
+  coord_flip()+
+  theme_minimal() +
+  labs(x= &quot;&quot;, y= &quot;&quot;, title = &quot;Principais buscas relacionadas&quot;)
+</code></pre>
+<p><img src="/post/trends/2020-09-06-google-trends-no-r-todo-mundo-mente.en_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Algo interessante de notar é o aumento durante o período da pandemia que houve um aumento nas buscas sobre &ldquo;sonhar com sexo&rdquo;, será que os desejos das pessoas e o isolamento está levando que isso ocorra com maior frequencia?</p>
+<h4 id="gifs-quais-as-buscas-relacionadas">GIFS, quais as buscas relacionadas?</h4>
+<p>Olhando somente os termos em ascensão de busca, nota-se que a relação do uso de GIFS sexuais, possivelmente uma forma que passou a ser mais amplamente utilizada durante o período de isolamento para se comunicar em relação a sexo.</p>
+<pre><code class="language-r">library(kableExtra)
+library(knitr)
+gif &lt;- gtrends(&quot;GIF&quot;, geo = &quot;BR&quot;, time = &quot;all&quot;, cookie_url = &quot;http://trends.google.com/Cookies/NID&quot;)
+
+gif$related_queries %&gt;% filter(related_queries == &quot;rising&quot;) %&gt;% 
+  kable() %&gt;%
+  row_spec(c(6, 11, 18, 20), bold = T, color = &quot;white&quot;,background = &quot;#D7261E&quot; )
+</code></pre>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> subject </th>
+   <th style="text-align:left;"> related_queries </th>
+   <th style="text-align:left;"> value </th>
+   <th style="text-align:left;"> geo </th>
+   <th style="text-align:left;"> keyword </th>
+   <th style="text-align:right;"> category </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif tumblr </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif bom dia </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif boa noite </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif whatsapp </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif facebook </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> Breakout </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> rising </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> gif gay </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> BR </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> GIF </td>
+   <td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif de bom dia </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif de boa noite </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif instagram </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> beijo gif </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> Breakout </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> rising </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> gif para whatsapp </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> BR </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> GIF </td>
+   <td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif aniversario </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif sexy </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif gretchen </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif no facebook </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> naruto gif </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif boa tarde </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> Breakout </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> rising </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> gif para tumblr </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> BR </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> GIF </td>
+   <td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> como salvar gif </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> Breakout </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> rising </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> ass gif </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> BR </td>
+   <td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;"> GIF </td>
+   <td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif casal </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> como baixar gif </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Breakout </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> bom dia com gif </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> +750% </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> baixar gif </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> +500% </td>
+   <td style="text-align:left;"> rising </td>
+   <td style="text-align:left;"> gif anime </td>
+   <td style="text-align:left;"> BR </td>
+   <td style="text-align:left;"> GIF </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
+<p>Algo que não apareceu, mas estou curiosa, será que a busca por sexshop aumentou devido a quarentena?</p>
+<pre><code class="language-r">shop_all &lt;- gtrends(c(&quot;sex shop&quot;), geo = &quot;BR&quot;, time = &quot;today 12-m&quot;)
+
+shop_all$interest_over_time %&gt;%
+  ggplot(aes(x=date, y=hits)) +
+  geom_line() +
+  theme_minimal() +
+  labs(x= &quot;&quot;, y= &quot;&quot;, title = &quot;Buscas no tempo por Sex Shop no Brasil&quot;)
+</code></pre>
+<p><img src="/post/trends/2020-09-06-google-trends-no-r-todo-mundo-mente.en_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>SIM e muito!!! nos últimos 12 meses houve um pico das buscas por sexshop no google.</p>
+<p>Pra quem acha interessante (e necessário) falar sobre sexo para além dos tabus, recomendo muito o @prazerela e @prazerele.</p>
+<p>Fizeram uma 
+<a href="https://www.instagram.com/p/CE0I1YWHZ9J/" target="_blank" rel="noopener">live</a> muito interessante pensando no dia do <strong>Dia do Sexo</strong>, sobre sexo, sexualidade e pandemia respondendo diversas perguntas e mostrando como nossas relações sexuais moldam nossa vida cultural e reproduzem o machismo, entre outros.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/googletrends/">googletrends</a>
+  
+  <a class="badge badge-light" href="/tag/tutorial/">tutorial</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/trends/google-trends-no-r-todo-mundo-mente/&amp;text=Como%20a%20pandemia%20afetou%20as%20rela%c3%a7%c3%b5es%20interpessoais?%20Analisando%20dados%20do%20Google%20Trends%20no%20R" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/trends/google-trends-no-r-todo-mundo-mente/&amp;t=Como%20a%20pandemia%20afetou%20as%20rela%c3%a7%c3%b5es%20interpessoais?%20Analisando%20dados%20do%20Google%20Trends%20no%20R" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Como%20a%20pandemia%20afetou%20as%20rela%c3%a7%c3%b5es%20interpessoais?%20Analisando%20dados%20do%20Google%20Trends%20no%20R&amp;body=/post/trends/google-trends-no-r-todo-mundo-mente/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/trends/google-trends-no-r-todo-mundo-mente/&amp;title=Como%20a%20pandemia%20afetou%20as%20rela%c3%a7%c3%b5es%20interpessoais?%20Analisando%20dados%20do%20Google%20Trends%20no%20R" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Como%20a%20pandemia%20afetou%20as%20rela%c3%a7%c3%b5es%20interpessoais?%20Analisando%20dados%20do%20Google%20Trends%20no%20R%20/post/trends/google-trends-no-r-todo-mundo-mente/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/trends/google-trends-no-r-todo-mundo-mente/&amp;title=Como%20a%20pandemia%20afetou%20as%20rela%c3%a7%c3%b5es%20interpessoais?%20Analisando%20dados%20do%20Google%20Trends%20no%20R" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/monica-rocabado/avatar_hua6da54d9675e8e144c9e4be61bdcbc15_134135_270x270_fill_q90_lanczos_center.jpeg" alt="Mônica Rocabado">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="/author/monica-rocabado/">Mônica Rocabado</a></h5>
+        <h6 class="card-subtitle">Pesquisadora</h6>
+        <p class="card-text">Meus interesses de pesquisa incluem empregabilidade, desigualdade (com recorte em raça e gênero), análise de redes sociais, governo e políticas públicas.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/monimazz" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/monimazz" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://br.linkedin.com/in/monicarocabado" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "rdados" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/google-trends-no-r-covid-19/">Google Trends no R - Covid 19</a></li>
+      
+      <li><a href="/post/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/">Introdução ao text mining: O caso da votação do FUNDEB</a></li>
+      
+      <li><a href="/project/tutorial/">Tutoriais de R</a></li>
+      
+      <li><a href="/post/intro-r/o-que-e-a-linguagem-r-o-be-a-ba-para-iniciantes/">O que é a linguagem R? O be-a-bá para iniciantes</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://rdados.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

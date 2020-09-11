@@ -60,7 +60,7 @@ topic %&amp;gt;%
   theme_minimal() +
   labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Principais tópicos relacionados&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
 Interessante perceber que insonia e meditação são termos novos.&lt;/p&gt;
 &lt;p&gt;Buscas relacionadas&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;search_all &amp;lt;- resultados_all$related_queries
@@ -82,7 +82,7 @@ search %&amp;gt;%
   theme_minimal() +
   labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Principais buscas relacionadas&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Interessante notar as buscas novas nos ultimos meses de pandemia&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;crise de ansiedade sintomas&lt;/li&gt;
@@ -100,7 +100,7 @@ search %&amp;gt;%
   labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Buscas no tempo&amp;quot;)+
   gghighlight::gghighlight(hits %in% 83:100)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

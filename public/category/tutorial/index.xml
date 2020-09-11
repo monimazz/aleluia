@@ -60,7 +60,7 @@ topic %&amp;gt;%
   theme_minimal() +
   labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Principais tópicos relacionados&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
 Interessante perceber que insonia e meditação são termos novos.&lt;/p&gt;
 &lt;p&gt;Buscas relacionadas&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;search_all &amp;lt;- resultados_all$related_queries
@@ -82,7 +82,7 @@ search %&amp;gt;%
   theme_minimal() +
   labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Principais buscas relacionadas&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Interessante notar as buscas novas nos ultimos meses de pandemia&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;crise de ansiedade sintomas&lt;/li&gt;
@@ -100,31 +100,32 @@ search %&amp;gt;%
   labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Buscas no tempo&amp;quot;)+
   gghighlight::gghighlight(hits %in% 83:100)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-09-07-google-trends-no-r-covid-19.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Google Trends no R - Qual o comportamento do brasileiro em relação a sexo durante a pandemia?</title>
+      <title>Como a pandemia afetou as relações interpessoais? Analisando dados do Google Trends no R</title>
       <link>/post/google-trends-no-r-todo-mundo-mente/</link>
       <pubDate>Sun, 06 Sep 2020 00:00:00 +0000</pubDate>
       <guid>/post/google-trends-no-r-todo-mundo-mente/</guid>
-      <description>&lt;p&gt;Você já procurou no google coisas que nunca contou a ninguém? Que tem medo ou vergonha de compartilhar?&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;O Google é hoje a maior base de dados sobre o comportamento humano&lt;/strong&gt;, conseguindo refletir nossos desejos, medos, gostos, angustias, dúvidas e mais, só é necessário fazer as perguntas certas. Isto é o defende Seth Stephens-Davidowitz no livro &amp;ldquo;Todo Mundo Mente&amp;rdquo;, explicando que:&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;O Google é hoje a maior base de dados sobre o comportamento humano&lt;/strong&gt;, conseguindo refletir nossos desejos, medos, gostos, angustias, dúvidas e mais, só é necessário fazer as perguntas certas. Isto é o defende Seth Stephens-Davidowitz no livro &amp;ldquo;Todo Mundo Mente&amp;rdquo;, explicando que:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;O poder do Google está no fato de as pessoas &amp;ldquo;contarem&amp;rdquo; ao gigantesco mecanismo de busca o que não diriam a mais ninguém. [&amp;hellip;] As buscas do google são o conjunto de dados mais importante jamais coletado sobre a pisque humana.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;por-que-isso-acontece&#34;&gt;Por que isso acontece?&lt;/h3&gt;
 &lt;p&gt;Devido ao anonimato das buscas, o google parece um grande confidente ou confessionário, assim, as pessoas não sentem a pressão ou julgamento em relação a um assunto, algo que poderiam ter em uma pesquisa ou em uma conversa com um amigo, parente, levando-as a mentir, até para sí próprias.&lt;/p&gt;
+&lt;p&gt;No livro, Davidowitz apresenta um estudo super interessante que fez utilizando o Google Trends, analisando buscas realizadas por pessoas racistas, construindo assim um mapa dos locais mais racistas nos Estados Unidos. Este mapa é muito similar as regiões que elegeram Trump em 2016.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/3276NB3DTQ6KBEYT5AFX7KW33U.png&amp;amp;w=916&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Dessa forma, inspirada no livro e porque recentemente foi Dia do Sexo (06/09), fiquei me perguntando: o que o brasileiro busca no google em relação a sexo? quais têm sido as tendências desde o início da pandemia? Resolvi escolher esse tema justamente pelo tabu social envolvido e ser algo extremamente intímo, potencialmente revelando algo interessante sobre o comportamento do brasileiro no assunto que pouco sabemos, justamente pelo tabu do assunto.&lt;/p&gt;
 &lt;p&gt;Para isso, vou utilizar o pacote &lt;code&gt;gtrends&lt;/code&gt;, que permite capturar informações do Google Trends pelo R e fazer análises! Para mais informações do pacote, acessar o CRAN: 
 &lt;a href=&#34;https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gtrends&lt;/a&gt;. Se você quiser explorar mais o pacote, tem um site que eu acompanho que fez uma intro super fácil, recomendo acessar o 
 &lt;a href=&#34;http://data7.blog/gtrendsr-google-trends-r/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;post&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Primeiro é necessário baixar o pacote e as librays que vão ser utilizadas.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Instalar o pacote gtrendsR
-# devtools::install_github(&#39;PMassicotte/gtrendsR&#39;)
-
-#Carregar os pacotes
+devtools::install_github(&#39;PMassicotte/gtrendsR&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#Carregar os pacotes
 library(gtrendsR)
 library(tidyverse)
 &lt;/code&gt;&lt;/pre&gt;
@@ -132,10 +133,7 @@ library(tidyverse)
 &lt;p&gt;Primeiro específicamos as palavras ou palavaras, depois o localização que queremos, no caso Brasil e o tempo de busca. Resolvi procurar de forma suuuper genérica mesmo, só o termo, não necessáriamente é a &amp;ldquo;pergunta correta&amp;rdquo;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;resultados_all &amp;lt;- gtrends(c(&amp;quot;sexo&amp;quot;), geo = &amp;quot;BR&amp;quot;, time = &amp;quot;all&amp;quot;)
 
-resultados_tres &amp;lt;- gtrends(c(&amp;quot;sexo&amp;quot;), geo = &amp;quot;BR&amp;quot;, time = &amp;quot;2020-03-01 2020-09-06&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in system(&amp;quot;timedatectl&amp;quot;, intern = TRUE): running command &#39;timedatectl&#39;
-## had status 1
+resultados_tres &amp;lt;- gtrends(&amp;quot;sexo&amp;quot;, geo = &amp;quot;BR&amp;quot;, time = &amp;quot;2020-03-01 2020-09-07&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;A partir dessa busca com um termo amplo, vou analisar quais os tópicos e buscas relacionadas, comparando os últimos 3 meses com o período atual, houve aumento de alguma busca? Quais os termos?&lt;/p&gt;
 &lt;p&gt;Vale ressaltar que tanto em tópicos quanto em buscas para realizar o gráfico estou excluindo os assuntos em ascensão e deixando somente o que está como principais buscas relaciondas, no entanto ainda dando destaque os que estão em ascensão por meio de uma tabela, por possuírem uma escala diferente que não vai de 0 a 100.&lt;/p&gt;
@@ -144,98 +142,43 @@ resultados_tres &amp;lt;- gtrends(c(&amp;quot;sexo&amp;quot;), geo = &amp;quot;B
 topic_all &amp;lt;- topic_all %&amp;gt;% mutate(tipo = &amp;quot;2004-hoje&amp;quot;)
 
 topic_tres &amp;lt;- resultados_tres$related_topics
-topic_tres &amp;lt;- topic_tres %&amp;gt;% mutate(tipo = &amp;quot;Março (01) - Setembro (06)&amp;quot;)
+topic_tres &amp;lt;- topic_tres %&amp;gt;% mutate(tipo = &amp;quot;Março (01) - Setembro (07)&amp;quot;)
 
 topic &amp;lt;- rbind(topic_all, topic_tres)
 
 topic %&amp;gt;%
+  mutate(topics = case_when(value == &amp;quot;Video&amp;quot; ~ &amp;quot;Vídeo&amp;quot;,
+                            value == &amp;quot;Scene&amp;quot; ~ &amp;quot;Cena&amp;quot;,
+                            value == &amp;quot;Property caretaker&amp;quot; ~ &amp;quot;Caseiro - Profissão&amp;quot;,
+                            value == &amp;quot;Position&amp;quot; ~ &amp;quot;Posição&amp;quot;,
+                            value == &amp;quot;GIF&amp;quot; ~ &amp;quot;GIF&amp;quot;,
+                            value == &amp;quot;Crown&amp;quot; ~ &amp;quot;Coroa&amp;quot;,
+                            value == &amp;quot;couple&amp;quot; ~ &amp;quot;Casal&amp;quot;,
+                            value == &amp;quot;Amateur&amp;quot; ~ &amp;quot;Amador&amp;quot;,
+                            value == &amp;quot;Virtual sex&amp;quot; ~ &amp;quot;Sexo virtual&amp;quot;, TRUE ~ &amp;quot;Outros&amp;quot;)
+  ) %&amp;gt;%
   filter(related_topics != &amp;quot;rising&amp;quot;) %&amp;gt;%
   mutate(peso = as.numeric(subject)) %&amp;gt;%
-  ggplot(aes(x=value, y=peso)) +
-  geom_segment( aes(xend=value, yend=0)) +
-  geom_point( size=4, color=&amp;quot;orange&amp;quot;) +
+  ggplot(aes(x=topics, y=peso)) +
+  geom_segment( aes(xend=topics, yend=0)) +
+  geom_point( size=4, color=&amp;quot;purple&amp;quot;) +
   facet_grid(cols = vars(tipo)) +
   coord_flip()+
   theme_minimal() +
   labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Principais tópicos relacionados&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-09-06-google-trends-no-r-todo-mundo-mente.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
-Os tópicos relacionados não tiveram grande mudança, no entanto, em vista de tempos de isolamento social &lt;strong&gt;GIF&lt;/strong&gt; apareceu como um tópico novo, será é uma nova forma das pessoas continuarem suas relações e se comunicando? Vou explorar esse assunto. Casal (couple) também é um termo que está como um dos principais nas buscas nesse período de quarentena. Outra interessante que pode estar relacionada é &lt;strong&gt;&amp;ldquo;Sexo virtual&amp;rdquo;&lt;/strong&gt; e &lt;strong&gt;casal&lt;/strong&gt;, pessoas buscando novas formas de se relacionar?&lt;/p&gt;
-&lt;p&gt;Já os assuntos em ascensão:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;topic %&amp;gt;% filter(related_topics == &amp;quot;rising&amp;quot;) %&amp;gt;% knitr::kable()
+&lt;p&gt;&lt;img src=&#34;/post/trends/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
+Os tópicos relacionados não tiveram grande mudança, no entanto, em vista de tempos de isolamento social &lt;strong&gt;GIF&lt;/strong&gt; apareceu como um tópico novo, será é uma nova forma das pessoas continuarem suas relações e se comunicando? Vou explorar esse assunto. Casal (couple) também é um termo que está como um dos principais nas buscas nesse período de quarentena.&lt;/p&gt;
+&lt;p&gt;Explorando mais o contexto de isolamento social, é possível perceber um grande aumento de buscas relacionadas a &amp;ldquo;sexo virtual&amp;rdquo;, justamente no período de maior isolamento no país&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;result2_all &amp;lt;- gtrends(c(&amp;quot;sexo virtual&amp;quot;), geo = &amp;quot;BR&amp;quot;, time = &amp;quot;today 12-m&amp;quot;, cookie_url = &amp;quot;http://trends.google.com/Cookies/NID&amp;quot;,   onlyInterest = TRUE)
+
+result2_all$interest_over_time %&amp;gt;%
+  ggplot(aes(x=date, y=hits)) +
+  geom_line() +
+  theme_minimal() +
+  labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Buscas nos ultimos 12 meses&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;subject&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;related_topics&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;value&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;geo&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;keyword&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;category&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;tipo&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+170%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Property caretaker&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2004-hoje&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+130%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Amateur&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2004-hoje&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+90%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Position&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2004-hoje&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+60%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Scene&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2004-hoje&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+50%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Virtual sex&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Março (01) - Setembro (06)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+40%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;No Strings Attached&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Março (01) - Setembro (06)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Nos termos em ascensão, nota-se os vídeos (no período desde de 2004), já no período mais recente está &amp;ldquo;sexo virtual&amp;rdquo; e &amp;ldquo;sem compromisso&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;Olhando o gráfico, o que é presente e de certa forma mostra o lado &amp;ldquo;escondido&amp;rdquo; do comportamento (ainda que há várias pesquisas sobre isso em relação a pornografia) são os termos &lt;strong&gt;padrasto&lt;/strong&gt;, não vou explorar profundamente o assunto pois já existem pesquisas, mas em uma busca pelos tópicos similares os termos incesto, erotismo, estupro e outros estão fortemente relacionados ao tópico, o que demonstra o problema em nosso país relacionado a pedofilia, uma reportagem da 
-&lt;a href=&#34;https://www.gazetadopovo.com.br/vida-e-cidadania/alerta-aos-pais-pedofilia-virtual-aumenta-no-brasil-em-meio-a-pandemia/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gazeta do Povo&lt;/a&gt; tratou do assunto que infelizmente aumentou virtualmente na quarentena.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/trends/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;buscas-relacionadas&#34;&gt;Buscas relacionadas&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;search_all &amp;lt;- resultados_all$related_queries
 search_all &amp;lt;- search_all %&amp;gt;% mutate(tipo = &amp;quot;2004-hoje&amp;quot;)
@@ -250,315 +193,236 @@ search %&amp;gt;%
   mutate(peso = as.numeric(subject)) %&amp;gt;%
   ggplot(aes(x=value, y=peso)) +
   geom_segment( aes(xend=value, yend=0)) +
-  geom_point( size=4, color=&amp;quot;orange&amp;quot;) +
+  geom_point( size=4, color=&amp;quot;purple&amp;quot;) +
   facet_grid(cols = vars(tipo)) +
   coord_flip()+
   theme_minimal() +
   labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Principais buscas relacionadas&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-09-06-google-trends-no-r-todo-mundo-mente.en_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;
-As buscas relacionadas ao termo trazem questões interessantes, os termos foram: &amp;ldquo;viciado em sexo&amp;rdquo;, &amp;ldquo;perguntas sobre sexo&amp;rdquo;, &amp;ldquo;sexo tantrico&amp;rdquo;, não tenho respostas sobre o  porque as pessoas fizeram essas buscas, o que as motivou. &lt;strong&gt;O que você acha que pode ter sido? Quais as suas hipóteses? Comenta aí!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Já os assuntos em ascensão:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;search %&amp;gt;% filter(related_queries == &amp;quot;rising&amp;quot;) %&amp;gt;% knitr::kable()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;subject&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;related_queries&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;value&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;geo&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;keyword&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;category&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;tipo&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+350%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;videos de amor&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2004-hoje&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+350%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;se&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2004-hoje&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+300%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo sem compromisso&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2004-hoje&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+150%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;frases de sexo&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2004-hoje&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+50%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sonhar com sexo&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Março (01) - Setembro (06)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+40%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo sem compromisso&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;sexo&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Março (01) - Setembro (06)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;/post/trends/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Algo interessante de notar é o aumento durante o período da pandemia que houve um aumento nas buscas sobre &amp;ldquo;sonhar com sexo&amp;rdquo;, será que os desejos das pessoas e o isolamento está levando que isso ocorra com maior frequencia?&lt;/p&gt;
-&lt;p&gt;Explorando mais o contexto de isolamento social, é possível perceber um grande aumento de buscas relacionadas a &amp;ldquo;sexo virtual&amp;rdquo;, justamente no período de maior isolamento no país&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;result2_all &amp;lt;- gtrends(c(&amp;quot;sexo virtual&amp;quot;), geo = &amp;quot;BR&amp;quot;, time = &amp;quot;today 12-m&amp;quot;, cookie_url = &amp;quot;http://trends.google.com/Cookies/NID&amp;quot;,   onlyInterest = TRUE)
-
-result2_all$interest_over_time %&amp;gt;%
-  ggplot(aes(x=date, y=hits)) +
-  geom_line() +
-  theme_minimal() +
-  labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Buscas nos ultimos 12 meses&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-09-06-google-trends-no-r-todo-mundo-mente.en_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;h4 id=&#34;gifs-quais-as-buscas-relacionadas&#34;&gt;GIFS, quais as buscas relacionadas?&lt;/h4&gt;
-&lt;p&gt;Olhando somente os termos em ascensão de busca, nota-se que há uma grande relação do uso de GIFS sexuais, possivelmente uma forma que passou a ser mais amplamente utilizada durante o período de isolamento para se comunicar em relação a sexo.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;gif &amp;lt;- gtrends(&amp;quot;GIF&amp;quot;, geo = &amp;quot;BR&amp;quot;, time = &amp;quot;all&amp;quot;, cookie_url = &amp;quot;http://trends.google.com/Cookies/NID&amp;quot;)
+&lt;p&gt;Olhando somente os termos em ascensão de busca, nota-se que a relação do uso de GIFS sexuais, possivelmente uma forma que passou a ser mais amplamente utilizada durante o período de isolamento para se comunicar em relação a sexo.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(kableExtra)
+library(knitr)
+gif &amp;lt;- gtrends(&amp;quot;GIF&amp;quot;, geo = &amp;quot;BR&amp;quot;, time = &amp;quot;all&amp;quot;, cookie_url = &amp;quot;http://trends.google.com/Cookies/NID&amp;quot;)
 
-gif$related_queries %&amp;gt;% filter(related_queries == &amp;quot;rising&amp;quot;) %&amp;gt;% knitr::kable()
+gif$related_queries %&amp;gt;% filter(related_queries == &amp;quot;rising&amp;quot;) %&amp;gt;% 
+  kable() %&amp;gt;%
+  row_spec(c(6, 11, 18, 20), bold = T, color = &amp;quot;white&amp;quot;,background = &amp;quot;#D7261E&amp;quot; )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;subject&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;related_queries&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;value&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;geo&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;keyword&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;category&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; subject &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; related_queries &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; value &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; geo &lt;/th&gt;
+   &lt;th style=&#34;text-align:left;&#34;&gt; keyword &lt;/th&gt;
+   &lt;th style=&#34;text-align:right;&#34;&gt; category &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
 &lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;tumblr gif&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif bom dia&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif boa noite&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif whatsapp&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif facebook&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif de bom dia&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif de boa noite&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif instagram&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif youtube&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif beijo&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif para whatsapp&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif sexy&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;oral gif&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gretchen gif&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif no facebook&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;como criar gif&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif no whatsapp&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif boa tarde&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif dançando&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif para tumblr&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;wallpaper gif&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif para celular&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif engraçado&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Breakout&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;como baixar gif&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;+900%&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;rising&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;gif gay&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;BR&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;GIF&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif tumblr &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; bom dia gif &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; boa noite gif &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif whatsapp &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif facebook &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; gif de bom dia &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif de boa noite &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif online &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif instagram &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif para whatsapp &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; gif aniversario &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif oral &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gretchen gif &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif sexy &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif orkut &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; naruto gif &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; como criar gif &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; boa tarde gif &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif no whatsapp &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; gif para tumblr &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; como salvar gif &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; como baixar gif &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif engraÃ§ado &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; Breakout &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif para orkut &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; +850% &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; rising &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; gif gay &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; BR &lt;/td&gt;
+   &lt;td style=&#34;text-align:left;&#34;&gt; GIF &lt;/td&gt;
+   &lt;td style=&#34;text-align:right;&#34;&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Algo que não apareceu, mas estou curiosa, será que a busca por sexshop aumentou devido a quarentena?&lt;/p&gt;
@@ -570,19 +434,19 @@ shop_all$interest_over_time %&amp;gt;%
   theme_minimal() +
   labs(x= &amp;quot;&amp;quot;, y= &amp;quot;&amp;quot;, title = &amp;quot;Buscas no tempo por Sex Shop no Brasil&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-09-06-google-trends-no-r-todo-mundo-mente.en_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/trends/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;SIM e muito!!! nos últimos 12 meses houve um pico das buscas por sexshop no google.&lt;/p&gt;
 &lt;p&gt;Pra quem acha interessante (e necessário) falar sobre sexo para além dos tabus, recomendo muito o @prazerela e @prazerele.&lt;/p&gt;
-&lt;p&gt;Fizeram uma live muito interessante pensando no dia do &lt;strong&gt;Dia do Sexo&lt;/strong&gt;, sobre sexo, sexualidade e pandemia respondendo diversas perguntas e mostrando como nossas relações sexuais moldam nossa vida cultural e reproduzem o machismo, entre outros.&lt;/p&gt;
-&lt;blockquote class=&#34;instagram-media&#34; data-instgrm-captioned data-instgrm-permalink=&#34;https://www.instagram.com/tv/CE0I1YWHZ9J/?utm_source=ig_embed&amp;amp;utm_campaign=loading&#34; data-instgrm-version=&#34;12&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;&lt;div style=&#34;padding:16px;&#34;&gt; &lt;a href=&#34;https://www.instagram.com/tv/CE0I1YWHZ9J/?utm_source=ig_embed&amp;amp;utm_campaign=loading&#34; style=&#34; background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;&#34; target=&#34;_blank&#34;&gt; &lt;div style=&#34; display: flex; flex-direction: row; align-items: center;&#34;&gt; &lt;div style=&#34;background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;&#34;&gt;&lt;/div&gt; &lt;div style=&#34;display: flex; flex-direction: column; flex-grow: 1; justify-content: center;&#34;&gt; &lt;div style=&#34; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;&#34;&gt;&lt;/div&gt; &lt;div style=&#34; background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;&#34;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&#34;padding: 19% 0;&#34;&gt;&lt;/div&gt; &lt;div style=&#34;display:block; height:50px; margin:0 auto 12px; width:50px;&#34;&gt;&lt;svg width=&#34;50px&#34; height=&#34;50px&#34; viewBox=&#34;0 0 60 60&#34; version=&#34;1.1&#34; xmlns=&#34;https://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;https://www.w3.org/1999/xlink&#34;&gt;&lt;g stroke=&#34;none&#34; stroke-width=&#34;1&#34; fill=&#34;none&#34; fill-rule=&#34;evenodd&#34;&gt;&lt;g transform=&#34;translate(-511.000000, -20.000000)&#34; fill=&#34;#000000&#34;&gt;&lt;g&gt;&lt;path d=&#34;M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631&#34;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/div&gt;&lt;div style=&#34;padding-top: 8px;&#34;&gt; &lt;div style=&#34; color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;&#34;&gt; Ver essa foto no Instagram&lt;/div&gt;&lt;/div&gt;&lt;div style=&#34;padding: 12.5% 0;&#34;&gt;&lt;/div&gt; &lt;div style=&#34;display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;&#34;&gt;&lt;div&gt; &lt;div style=&#34;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);&#34;&gt;&lt;/div&gt; &lt;div style=&#34;background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;&#34;&gt;&lt;/div&gt; &lt;div style=&#34;background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);&#34;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&#34;margin-left: 8px;&#34;&gt; &lt;div style=&#34; background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;&#34;&gt;&lt;/div&gt; &lt;div style=&#34; width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)&#34;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&#34;margin-left: auto;&#34;&gt; &lt;div style=&#34; width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);&#34;&gt;&lt;/div&gt; &lt;div style=&#34; background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);&#34;&gt;&lt;/div&gt; &lt;div style=&#34; width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);&#34;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/a&gt; &lt;p style=&#34; margin:8px 0 0 0; padding:0 4px;&#34;&gt; &lt;a href=&#34;https://www.instagram.com/tv/CE0I1YWHZ9J/?utm_source=ig_embed&amp;amp;utm_campaign=loading&#34; style=&#34; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&#34; target=&#34;_blank&#34;&gt;um papo descontraído sobre sexo e sexualidade com Prazerela e @prazerele vem ver!&lt;/a&gt;&lt;/p&gt; &lt;p style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&#34;&gt;Uma publicação compartilhada por &lt;a href=&#34;https://www.instagram.com/prazerela/?utm_source=ig_embed&amp;amp;utm_campaign=loading&#34; style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&#34; target=&#34;_blank&#34;&gt; Prazerela por Mariana Stock&lt;/a&gt; (@prazerela) em &lt;time style=&#34; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&#34; datetime=&#34;2020-09-07T00:09:02+00:00&#34;&gt;6 de Set, 2020 às 5:09 PDT&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt; &lt;script async src=&#34;//www.instagram.com/embed.js&#34;&gt;&lt;/script&gt;
+&lt;p&gt;Fizeram uma 
+&lt;a href=&#34;https://www.instagram.com/p/CE0I1YWHZ9J/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;live&lt;/a&gt; muito interessante pensando no dia do &lt;strong&gt;Dia do Sexo&lt;/strong&gt;, sobre sexo, sexualidade e pandemia respondendo diversas perguntas e mostrando como nossas relações sexuais moldam nossa vida cultural e reproduzem o machismo, entre outros.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>O que é a linguagem R? O be-a-bá para iniciantes</title>
-      <link>/post/intro-r/o-que-e-a-linguagem-r-o-be-a-ba-para-iniciantes/</link>
+      <link>/post/o-que-e-a-linguagem-r-o-be-a-ba-para-iniciantes/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/post/intro-r/o-que-e-a-linguagem-r-o-be-a-ba-para-iniciantes/</guid>
+      <guid>/post/o-que-e-a-linguagem-r-o-be-a-ba-para-iniciantes/</guid>
       <description>
 
 
@@ -601,7 +465,7 @@ shop_all$interest_over_time %&amp;gt;%
 &lt;/blockquote&gt;
 &lt;p&gt;Com ela você pode analisar dados olhando ao mesmo tempo para o passado, presente e futuro. Você pode entender os motivos de dada situação, perceber a existência de padrões e criar modelos para - literalmente - prever o comportamento dessa situação no futuro. 🚀&lt;/p&gt;
 &lt;p&gt;Para se tornar um cientista de dados é preciso trilhar um longo caminho - que ainda estamos percorrendo - e que envolve o aprendizado de diversas linguagens e ferramentas que irão ajudar nesse processo, como big data, python, estatística e muito mais. A imagem abaixo de Swami Chandrasekaran pode ajudar a visualizar esse caminho:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/roadmap2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/roadmap2.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(A gente jura que nosso objetivo não é desanimar mostrando esse monstro.)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Dentre todo esse redemoinho de informações, a gente acredita que o R é a melhor linguagem para começar a aprender a ciência de dados, colocar a mão na massa e já conseguir obter resultados visíveis. Mas o que é a linguagem R?&lt;/p&gt;
 &lt;blockquote&gt;
@@ -627,7 +491,7 @@ shop_all$interest_over_time %&amp;gt;%
 &lt;/div&gt;
 &lt;div id=&#34;como-a-ciência-de-dados-funciona-no-r&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Como a ciência de dados funciona no R?&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/processodata.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/processodata.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Essa imagem que retiramos da &lt;em&gt;oper&lt;/em&gt; representa o fluxo de trabalho que normalmente você realiza ao trabalhar com projetos no R, a ciência de dados funciona no R de acordo com essas características.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Importação: Importar a base de dados para o R&lt;/li&gt;
@@ -646,7 +510,7 @@ shop_all$interest_over_time %&amp;gt;%
 &lt;li&gt;Rstudio &lt;a href=&#34;https://rstudio.com/products/rstudio/download/#download&#34;&gt;link&lt;/a&gt; - A IDE (Integrated development environment) que você sempre vai utilizar. Todos os trabalhos, análises - e literalmente TUDO - vão ser no Rstudio, ok?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Essa é a cara do Rstudio:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/rstudio.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/rstudio.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Editor:&lt;/strong&gt; você pode criar scripts, documentos e outros, basicamente lá é onde você irá salvar os seus códigos em uma pasta escolhida no seu computador. Para fazer o seu código “rodar”, você pode selecionar o código ou linha e apertar “RUN” ou na última linha do código que você quer fazer rodar apertar o comando: CTRL+ENTER&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Console:&lt;/strong&gt; Local que o seu código roda, tanto o que você fez no editor ou que insere diretamente no console.&lt;/li&gt;
@@ -710,7 +574,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;No caso, você está analisando uma base de dados de carros, comparando o tamanho do motor &lt;code&gt;displ&lt;/code&gt; e com a eficiência do combustível &lt;code&gt;hwy&lt;/code&gt;. Basicamente você está informando que você quer que a base de dados &lt;code&gt;mpg&lt;/code&gt; se torne um gráfico, acionando a função &lt;code&gt;ggplot&lt;/code&gt; e indicando em &lt;code&gt;aes&lt;/code&gt; que a variável x será a coluna &lt;code&gt;displ&lt;/code&gt; que está dentro da base &lt;code&gt;mpg&lt;/code&gt; e a variável y será a coluna &lt;code&gt;hwy&lt;/code&gt;, que também está dentro da base &lt;code&gt;mpg&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mpg %&amp;gt;% ggplot(aes(x = displ, y = hwy, color = class)) +
   geom_point()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Antes de continuar é importante esclarecer o que é &lt;code&gt;%&amp;gt;%&lt;/code&gt;, isso é algo que você vai usar muito e se chama &lt;em&gt;“pipe”&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;O pipe “pega” o que está do lado esquerdo e roda no lado direito do código, facilita sua vida porque você não precisa mil objetos, já que há diversas etapas no processo.&lt;/p&gt;
@@ -722,7 +586,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Aqui você está analisando a base de dados &lt;code&gt;diamantes&lt;/code&gt; e fazendo um gráfico de barras do corte dos diamantes! Você não precisa de uma variável y aqui porque com o &lt;code&gt;geom_bar&lt;/code&gt; o R vai identificar que &lt;code&gt;cut&lt;/code&gt; é uma variável não númerica e vai fazer a contagem para você!&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;diamonds %&amp;gt;% ggplot(aes(cut)) +
   geom_bar()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-3-mapas&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 3: mapas&lt;/h3&gt;
@@ -749,7 +613,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
   labs(subtitle=&amp;quot;States&amp;quot;, size=8) +
   theme_minimal() +
   no_axis&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-4-gráfico-de-correlação&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 4: gráfico de correlação&lt;/h3&gt;
@@ -777,14 +641,14 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
              outline.col = &amp;quot;white&amp;quot;,
              ggtheme = ggplot2::theme_gray,
              colors = c(&amp;quot;#6D9EC1&amp;quot;, &amp;quot;white&amp;quot;, &amp;quot;#E46726&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-5-gráfico-de-hexágonos&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 5: gráfico de hexágonos&lt;/h3&gt;
 &lt;p&gt;Esse gráfico é uma solução para quando você tem &lt;em&gt;muuuuitos&lt;/em&gt; dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando a relação entre duas variáveis numéricas, preço e peso.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(diamonds, aes(carat, price)) + 
   geom_hex(bins = 50)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;primeiro-projetinho-no-r-visualizando-dados&#34; class=&#34;section level2&#34;&gt;
@@ -803,7 +667,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;h5&gt;Por esse gráfico que vamos rodar agora, parece que sim.&lt;/h5&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mpg %&amp;gt;% ggplot(mapping = aes(x = displ, y = hwy)) +
   geom_point()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;podemos-adicionar-uma-linha-ao-gráfico-a-fim-de-entendermos-melhor-o-lugar-em-que-os-pontos-estão-posicionados&#34; class=&#34;section level5&#34;&gt;
 &lt;h5&gt;Podemos adicionar uma linha ao gráfico a fim de entendermos melhor o lugar em que os pontos estão posicionados&lt;/h5&gt;
@@ -811,14 +675,14 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
   geom_point() +
   geom_smooth(se = FALSE) # linha posicionada no lugar mais perto de todos os pontos&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &amp;#39;loess&amp;#39; and formula &amp;#39;y ~ x&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;podemos-também-adicionar-mais-uma-variável-class.&#34; class=&#34;section level5&#34;&gt;
 &lt;h5&gt;Podemos também adicionar mais uma variável: class.&lt;/h5&gt;
 &lt;p&gt;Pra isso, nos utilizaremos de cores pra adicionar essa informação. Eu decidi usar cores, mas note que poderia ser qualquer outra coisa, como formas ou tamanho dos pontos. Para isso, troque o argumento “color” por “shape” ou “size”.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mpg %&amp;gt;% ggplot(mapping = aes(x = displ, y = hwy, color = class)) +
   geom_point()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;agora-vamos-dividir-nosso-gráfico.&#34; class=&#34;section level5&#34;&gt;
 &lt;h5&gt;Agora vamos dividir nosso gráfico.&lt;/h5&gt;
@@ -826,7 +690,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mpg %&amp;gt;% ggplot(mapping = aes(x = displ, y = hwy)) +
   geom_point() +
   facet_wrap(facets = vars(class))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;quer-mais-conteúdo-para-se-aprofundar-aqui-vão-alguns-conteúdos-ótimos-em-português&#34; class=&#34;section level3&#34;&gt;
@@ -865,9 +729,9 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Introdução ao text mining: O caso da votação do FUNDEB</title>
-      <link>/post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/</link>
+      <link>/post/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>/post/intro-textminig/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/</guid>
+      <guid>/post/introducao-ao-text-mining-o-caso-da-votacao-do-fundeb/</guid>
       <description>
 
 
@@ -956,7 +820,7 @@ Ver essa foto no Instagram
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Para obter os dados fui até o site da Câmara dos Deputados e copiei todo o conteúdo da ordem do dia (votação) e depois deixei em formato &lt;em&gt;tidy&lt;/em&gt;, fazendo mais ou menos manualmente. Se você souber uma forma de transformar texto corrido (tipo pdf) em um formato para análise, ou seja, identificando as variáveis e documentos, deixa aqui nos comentário!&lt;/p&gt;
 &lt;p&gt;Antes de iniciar o tutorial, para os curiosos já vou apresentar quais foram os resultados iniciais da análise de conteúdo das votações:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/resumo_fundeb.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/resumo_fundeb.png&#34;&gt;&lt;/p&gt;
 &lt;div id=&#34;agora-o-tutorial&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Agora… O tutorial!&lt;/h2&gt;
 &lt;p&gt;Basicamente o pacote que vou usar é o &lt;em&gt;tidytext&lt;/em&gt; como é uma introdução, tudo o que realizei pode ser encontrado no Livro &lt;a href=&#34;tidytextmining.com/&#34;&gt;Tidytext Mining&lt;/a&gt;, apesar de gostar mais do quanteda e do spacyr, o tidytext é um otimo pacote para começar a análise de texto, ainda mais quando a informação está estruturada em tabela.&lt;/p&gt;
@@ -977,7 +841,7 @@ names(stop_sr) &amp;lt;- &amp;quot;stop&amp;quot; #renomeando a coluna
 
 stop_pt &amp;lt;- rbind(stop_pt, stop_sr) #juntando as duas&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Qualquer processo de análise dos dados parte primeiro do pré-processamento e tratamento da base de dados, ou seja, temos que deixá-los bonitinhos e organizados para rodar nos nossos modelos.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/votfundeb.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/votfundeb.png&#34;&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;text-mining-101-mortar_board&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Text mining 101 🎓&lt;/h2&gt;
@@ -995,7 +859,7 @@ stop_pt &amp;lt;- rbind(stop_pt, stop_sr) #juntando as duas&lt;/code&gt;&lt;/pre
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Steeming&lt;/strong&gt;: recorta a palavra ou coloca ela no seu radical. Infelizmente esse método para lingua portuguesa ainda está sendo construído, especialmente para o Brasil que ainda que tem várias girias, acho que deve ser ainda mais complicado.Por isso, apesar de muito recomendável que seja feito, fique atenta a problemas na sua base de dados! Um recomendado é o &lt;em&gt;ptstem&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Vetorização&lt;/strong&gt;: para análises mais profundas devemos vetorizar a informação, para isso usamos o famoso: DFM - Document Frequency Matrix. Basicamente cada linha representa um documento e cada coluna um termo (podendo estar no método utilizado de unigram, bigram e etc)&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/dfm.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/dfm.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Análise&lt;/strong&gt;: Dentre os métodos de análise de texto o mais comum se chama bag-of-words &lt;em&gt;BOW&lt;/em&gt; . Basicamente você coloca todas as palavras (tokenizadas) dentro de uma ‘sacola’, ou seja, sem ordem, ignorando erros de escrita, gramática e outras (por isso a importância do pré-processamento).&lt;/li&gt;
 &lt;/ul&gt;
@@ -1004,6 +868,8 @@ stop_pt &amp;lt;- rbind(stop_pt, stop_sr) #juntando as duas&lt;/code&gt;&lt;/pre
 &lt;p&gt;Não tema pequeno gafanhoto 🐉! há formas de você lidar com isso.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Para além do modelo de BOW&lt;/strong&gt;: Ngram Sequences, Named Entity Extraction e Topic Models.
 No caso, não vou utilizar o &lt;em&gt;steeming&lt;/em&gt; porque estou acostumada a usar ele mais no quanteda. Também não vou utilizar o BOW, mas o Ngram Sequences porque eu quero analisar a ordem dos termos.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## here() starts at C:/Users/User/Documents/Blog rdados/aleluia&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;C:/Users/User/Documents/Blog rdados/aleluia&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Antes de começar vamos explorar rapidamente os dados…&lt;/p&gt;
 &lt;div id=&#34;quais-foram-os-partidos-que-mais-se-manifestaram-quais-foram-os-partidos-que-tiveram-falas-mais-longas&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Quais foram os partidos que mais se manifestaram? Quais foram os partidos que tiveram falas mais longas?&lt;/h3&gt;
@@ -1015,7 +881,7 @@ No caso, não vou utilizar o &lt;em&gt;steeming&lt;/em&gt; porque estou acostuma
   coord_flip() +
   theme_minimal() +
   labs(title = &amp;quot;Partidos que mais se manifestaram&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-textminig/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;deputado_fala %&amp;gt;%
   mutate(tamanho = str_length(Fala)) %&amp;gt;%
   group_by(Partido) %&amp;gt;%
@@ -1026,8 +892,7 @@ No caso, não vou utilizar o &lt;em&gt;steeming&lt;/em&gt; porque estou acostuma
   coord_flip() +
   theme_minimal() +
   labs(title = &amp;quot;Partidos com falas mais longas&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## `summarise()` ungrouping output (override with `.groups` argument)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-textminig/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Pelos gráficos é possível analisar que apesar do DEM ter se manifestado menos em relação aos demais, foi o que teve uma fala mais longa, referindo-se ao discurso da Relatora em relação ao projeto. Os demais seguem um padrão similar, com falas mais longas pelos partidos de esquerda e centro-esquerda. Estas falas mais longas por partido refere-se aos seguintes parlamentares: Professora Dorinha (DEM), Fernanda Melchionna (PSOL), Tiago Mitraud (NOVO), Soraya Santo (PL), José Guimarães (PT), Sâmia Bonfim (PSOL), Joenia Wapichana (REDE), Professora Rosa Neide (PT), Paulo Ganime (NOVO).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;quais-os-principais-termos-do-debate-speech_balloon&#34; class=&#34;section level3&#34;&gt;
@@ -1049,7 +914,7 @@ No caso, não vou utilizar o &lt;em&gt;steeming&lt;/em&gt; porque estou acostuma
   count(bigram, sort = T) %&amp;gt;%
   filter(!bigram %in% c(&amp;quot;presidente rodrigo&amp;quot;, &amp;quot;presidente tábata&amp;quot;, &amp;quot;rodrigo maia&amp;quot;, &amp;quot;sra presidente&amp;quot;, &amp;quot;professora dorinha&amp;quot;, &amp;quot;deputada professora&amp;quot;)) -&amp;gt; wordc1
   wordcloud(wordc1$bigram, wordc1$n)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-textminig/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Podemos perceber que primeira infância é um termo altamente comentado durante o processo de votação, assim como os turnos da votação (que ocorreram no mesmo dia!). Outros destaques do debate estão nos termos: &lt;em&gt;“escola pública”&lt;/em&gt;, &lt;em&gt;“custo aluno”&lt;/em&gt; que seria o “Custo aluno Qualidade” CAQ, altamente debatido na votação e &lt;em&gt;“partido novo”&lt;/em&gt; que houve um momento de debate durante a votação envolvendo esse partido.
 &lt;br&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -1073,7 +938,7 @@ No caso, não vou utilizar o &lt;em&gt;steeming&lt;/em&gt; porque estou acostuma
 &lt;/blockquote&gt;
 &lt;p&gt;Dessa forma, LDA vai encontrar a mistura de palavras associada com cada tópico enquanto também determina a mistura dos tópicos e o quanto descreve cada documento. Alguns termos possuem probabilidade maior de aparecer em um tópico e outras menos, o mesmo vale para os documentos. Parece bruxaria né, mas tudo é feito a partir de um modelo estatístico, o que não deixa de ser meio mágico também 🔮&lt;/p&gt;
 &lt;p&gt;Um exemplo prático que eu roubei do post incrivel da &lt;a href=&#34;https://towardsdatascience.com/a-friendly-introduction-to-text-clustering-fa996bcefd04&#34;&gt;Koch&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/lda1.JPG&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/lda1.JPG&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;
 No entanto na hora de programar você precisa escolher o numero de topicos “k” que você deseja que sejam criados. Escolhi k = 4, por que? Bem tive como base os blocos partidários &lt;a href=&#34;https://www.camara.leg.br/noticias/551176-tres-blocos-parlamentares-sao-formalizados-na-camara-dos-deputados/&#34;&gt;divulgados&lt;/a&gt; pelo Câmara dos Deputados, há 3 blocos, em que os partidos os integram, no entanto há partidos sem bloco, dessa forma, há 4 grupos na CD.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dfm_partido &amp;lt;- deputado_fala %&amp;gt;%
@@ -1104,7 +969,7 @@ top_terms %&amp;gt;%
   facet_wrap(~ topic, scales = &amp;quot;free&amp;quot;) +
   coord_flip() +
   scale_x_reordered() #fazendo um grafico mara&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-textminig/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#quais partidos estao em quais topicos?
 
 td_gamma &amp;lt;- tidy(partido_lda, matrix = &amp;quot;gamma&amp;quot;,                    
@@ -1129,9 +994,9 @@ td_gamma %&amp;gt;%
   theme_minimal() +
   theme(axis.text.y=element_blank()) +
   labs(x = NULL, y = expression(gamma), fill = &amp;quot;Topic&amp;quot;) #grafico mara&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-textminig/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Apesar da divisão em blocos, levando a votações mais alinhadas, percebemos que há algumas diferenças entre a probabilidade de presença dos partidos em cada tópico, levando a pensar em algumas outras suposições.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/blocopartidario2019.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/blocopartidario2019.jpg&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;PSOL, PT e PSDB estão no mesmo cluster! Compreensível PSOL e PT por serem do mesmo bloco, mas me surpreendi com PSDB.&lt;/li&gt;
 &lt;li&gt;Na maioria do tópico 2 está o centrão, o que era esperado, mas vemos algumas nuances interessantes como a REDE e PCdoB no mesmo tópico.&lt;/li&gt;
@@ -1143,7 +1008,7 @@ td_gamma %&amp;gt;%
 &lt;blockquote&gt;
 &lt;p&gt;TF significa frequência do termo; IDF significa frequência inversa do documento. O método resulta na frequência das palavras mais “relevantes”, ou seja, únicas ou mais presentes entre documentos. Ele não vê similaridade, mas justamente a diferença, o que torna aquele documento especial em relação aos demais documentos analisados. Quanto mais perto de 1, mais presente é a palavra.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/tfidf.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/tfidf.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;deputado_fala %&amp;gt;%
   unnest_tokens(bigram, Fala, token = &amp;quot;ngrams&amp;quot;, n = 2) %&amp;gt;%
@@ -1156,7 +1021,7 @@ td_gamma %&amp;gt;%
   bind_tf_idf(Partido, bigram, n) %&amp;gt;%
   filter(Partido == &amp;quot;NOVO&amp;quot;)-&amp;gt; word2c
   wordcloud(word2c$bigram, word2c$n)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-textminig/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Podemos perceber que um termo de grande relevância no discurso do NOVO foi “12 mil”, isso se refere a justificativa deles do custo de “12 mil reais por aluno” e serem contras a constitucionalização do CAQ (custo aluno qualidade).
 Vale explicar o que fiz: como queria verificar os termos mais “exclusivos” usados pelo novo, usei primeiro o método de TF-IDF, que basicamente me retorna isso em relação ao total de documentos, assim obtendo os termos mais relavantes e “unicos”.&lt;/p&gt;
 &lt;div id=&#34;já-o-bloco-de-minoria-do-congresso&#34; class=&#34;section level4&#34;&gt;
@@ -1174,7 +1039,7 @@ Vale explicar o que fiz: como queria verificar os termos mais “exclusivos” u
           Partido == &amp;quot;PSB&amp;quot; | Partido == &amp;quot;Rede&amp;quot;) %&amp;gt;%
   top_n(tf_idf, 500) -&amp;gt; wordc3
   wordcloud(wordc3$bigram, wordc3$n)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-textminig/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Podemos ver assim, o termo “partido novo” com destaque, demonstrando o debate em relação ao tema do CAQ e sua defesa por esse bloco.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;qual-a-relação-entre-os-termos&#34; class=&#34;section level3&#34;&gt;
@@ -1202,7 +1067,7 @@ ggraph(bigram_graph, layout = &amp;quot;fr&amp;quot;) +
   geom_node_point(color = &amp;quot;lightblue&amp;quot;, size = 5) +
   geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
   theme_void()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-textminig/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;br&gt;
 Podemos pelo gráfico acima ver a relação entre alguns termos e palavras, como novo estar associado ao termo “partido mofo”, assim como custo aluno qualidade.
 &lt;br&gt;

@@ -7,16 +7,16 @@
     <description>Isabella Pileggi</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu20f2dd5d5a57a0025df5079063041a29_26908_512x512_fill_lanczos_center_2.png</url>
+      <url>/author/isabella-pileggi/avatar_hu2b710ae892550f2cc88feca17519b95a_743437_270x270_fill_q90_lanczos_center.jpg</url>
       <title>Isabella Pileggi</title>
       <link>/author/isabella-pileggi/</link>
     </image>
     
     <item>
       <title>O que é a linguagem R? O be-a-bá para iniciantes</title>
-      <link>/post/intro-r/o-que-e-a-linguagem-r-o-be-a-ba-para-iniciantes/</link>
+      <link>/post/o-que-e-a-linguagem-r-o-be-a-ba-para-iniciantes/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/post/intro-r/o-que-e-a-linguagem-r-o-be-a-ba-para-iniciantes/</guid>
+      <guid>/post/o-que-e-a-linguagem-r-o-be-a-ba-para-iniciantes/</guid>
       <description>
 
 
@@ -35,7 +35,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;Com ela você pode analisar dados olhando ao mesmo tempo para o passado, presente e futuro. Você pode entender os motivos de dada situação, perceber a existência de padrões e criar modelos para - literalmente - prever o comportamento dessa situação no futuro. 🚀&lt;/p&gt;
 &lt;p&gt;Para se tornar um cientista de dados é preciso trilhar um longo caminho - que ainda estamos percorrendo - e que envolve o aprendizado de diversas linguagens e ferramentas que irão ajudar nesse processo, como big data, python, estatística e muito mais. A imagem abaixo de Swami Chandrasekaran pode ajudar a visualizar esse caminho:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/roadmap2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/roadmap2.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(A gente jura que nosso objetivo não é desanimar mostrando esse monstro.)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Dentre todo esse redemoinho de informações, a gente acredita que o R é a melhor linguagem para começar a aprender a ciência de dados, colocar a mão na massa e já conseguir obter resultados visíveis. Mas o que é a linguagem R?&lt;/p&gt;
 &lt;blockquote&gt;
@@ -61,7 +61,7 @@
 &lt;/div&gt;
 &lt;div id=&#34;como-a-ciência-de-dados-funciona-no-r&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Como a ciência de dados funciona no R?&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/processodata.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/processodata.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Essa imagem que retiramos da &lt;em&gt;oper&lt;/em&gt; representa o fluxo de trabalho que normalmente você realiza ao trabalhar com projetos no R, a ciência de dados funciona no R de acordo com essas características.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Importação: Importar a base de dados para o R&lt;/li&gt;
@@ -80,7 +80,7 @@
 &lt;li&gt;Rstudio &lt;a href=&#34;https://rstudio.com/products/rstudio/download/#download&#34;&gt;link&lt;/a&gt; - A IDE (Integrated development environment) que você sempre vai utilizar. Todos os trabalhos, análises - e literalmente TUDO - vão ser no Rstudio, ok?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Essa é a cara do Rstudio:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/rstudio.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/rstudio.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Editor:&lt;/strong&gt; você pode criar scripts, documentos e outros, basicamente lá é onde você irá salvar os seus códigos em uma pasta escolhida no seu computador. Para fazer o seu código “rodar”, você pode selecionar o código ou linha e apertar “RUN” ou na última linha do código que você quer fazer rodar apertar o comando: CTRL+ENTER&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Console:&lt;/strong&gt; Local que o seu código roda, tanto o que você fez no editor ou que insere diretamente no console.&lt;/li&gt;
@@ -144,7 +144,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;No caso, você está analisando uma base de dados de carros, comparando o tamanho do motor &lt;code&gt;displ&lt;/code&gt; e com a eficiência do combustível &lt;code&gt;hwy&lt;/code&gt;. Basicamente você está informando que você quer que a base de dados &lt;code&gt;mpg&lt;/code&gt; se torne um gráfico, acionando a função &lt;code&gt;ggplot&lt;/code&gt; e indicando em &lt;code&gt;aes&lt;/code&gt; que a variável x será a coluna &lt;code&gt;displ&lt;/code&gt; que está dentro da base &lt;code&gt;mpg&lt;/code&gt; e a variável y será a coluna &lt;code&gt;hwy&lt;/code&gt;, que também está dentro da base &lt;code&gt;mpg&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mpg %&amp;gt;% ggplot(aes(x = displ, y = hwy, color = class)) +
   geom_point()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Antes de continuar é importante esclarecer o que é &lt;code&gt;%&amp;gt;%&lt;/code&gt;, isso é algo que você vai usar muito e se chama &lt;em&gt;“pipe”&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;O pipe “pega” o que está do lado esquerdo e roda no lado direito do código, facilita sua vida porque você não precisa mil objetos, já que há diversas etapas no processo.&lt;/p&gt;
@@ -156,7 +156,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Aqui você está analisando a base de dados &lt;code&gt;diamantes&lt;/code&gt; e fazendo um gráfico de barras do corte dos diamantes! Você não precisa de uma variável y aqui porque com o &lt;code&gt;geom_bar&lt;/code&gt; o R vai identificar que &lt;code&gt;cut&lt;/code&gt; é uma variável não númerica e vai fazer a contagem para você!&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;diamonds %&amp;gt;% ggplot(aes(cut)) +
   geom_bar()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-3-mapas&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 3: mapas&lt;/h3&gt;
@@ -183,7 +183,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
   labs(subtitle=&amp;quot;States&amp;quot;, size=8) +
   theme_minimal() +
   no_axis&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-4-gráfico-de-correlação&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 4: gráfico de correlação&lt;/h3&gt;
@@ -211,14 +211,14 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
              outline.col = &amp;quot;white&amp;quot;,
              ggtheme = ggplot2::theme_gray,
              colors = c(&amp;quot;#6D9EC1&amp;quot;, &amp;quot;white&amp;quot;, &amp;quot;#E46726&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ex-5-gráfico-de-hexágonos&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ex 5: gráfico de hexágonos&lt;/h3&gt;
 &lt;p&gt;Esse gráfico é uma solução para quando você tem &lt;em&gt;muuuuitos&lt;/em&gt; dados e a visualização no gráfico de dispersão fica poluída e te dificulta tirar qualquer conclusão. Basicamente, para evitar que os dados se sobreponham esse gráfico divide a área em pequenos fragmentos, no caso hexágonos, dividindo os valores dentro desses hexágonos (bin), por isso possui a legenda ao lado indicando a contagem, quanto mais escuro maior a presença de dados dentro daquele hexágono. No caso estamos analisando a relação entre duas variáveis numéricas, preço e peso.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(diamonds, aes(carat, price)) + 
   geom_hex(bins = 50)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;primeiro-projetinho-no-r-visualizando-dados&#34; class=&#34;section level2&#34;&gt;
@@ -237,7 +237,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;h5&gt;Por esse gráfico que vamos rodar agora, parece que sim.&lt;/h5&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mpg %&amp;gt;% ggplot(mapping = aes(x = displ, y = hwy)) +
   geom_point()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;podemos-adicionar-uma-linha-ao-gráfico-a-fim-de-entendermos-melhor-o-lugar-em-que-os-pontos-estão-posicionados&#34; class=&#34;section level5&#34;&gt;
 &lt;h5&gt;Podemos adicionar uma linha ao gráfico a fim de entendermos melhor o lugar em que os pontos estão posicionados&lt;/h5&gt;
@@ -245,14 +245,14 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
   geom_point() +
   geom_smooth(se = FALSE) # linha posicionada no lugar mais perto de todos os pontos&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &amp;#39;loess&amp;#39; and formula &amp;#39;y ~ x&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;podemos-também-adicionar-mais-uma-variável-class.&#34; class=&#34;section level5&#34;&gt;
 &lt;h5&gt;Podemos também adicionar mais uma variável: class.&lt;/h5&gt;
 &lt;p&gt;Pra isso, nos utilizaremos de cores pra adicionar essa informação. Eu decidi usar cores, mas note que poderia ser qualquer outra coisa, como formas ou tamanho dos pontos. Para isso, troque o argumento “color” por “shape” ou “size”.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mpg %&amp;gt;% ggplot(mapping = aes(x = displ, y = hwy, color = class)) +
   geom_point()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;agora-vamos-dividir-nosso-gráfico.&#34; class=&#34;section level5&#34;&gt;
 &lt;h5&gt;Agora vamos dividir nosso gráfico.&lt;/h5&gt;
@@ -260,7 +260,7 @@ library(ggcorrplot) # correlação de dados&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mpg %&amp;gt;% ggplot(mapping = aes(x = displ, y = hwy)) +
   geom_point() +
   facet_wrap(facets = vars(class))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/intro-R/2020-08-08-o-que-%C3%A9-a-linguagem-r-o-be-a-b%C3%A1-para-iniciantes.pt_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/intro-R/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;quer-mais-conteúdo-para-se-aprofundar-aqui-vão-alguns-conteúdos-ótimos-em-português&#34; class=&#34;section level3&#34;&gt;

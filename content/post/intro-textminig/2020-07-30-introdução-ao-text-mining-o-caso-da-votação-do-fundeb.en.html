@@ -2,6 +2,17 @@
 title: 'Introdução ao text mining: O caso da votação do FUNDEB'
 author: monimazz
 date: '2020-07-30'
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ""
+  focal_point: ""
+  preview_only: true
+  
 slug: introdução-ao-text-mining-o-caso-da-votação-do-fundeb
 categories:
   - Tutorial
@@ -16,11 +27,6 @@ subtitle: ''
 summary: ''
 authors: [monimazz]
 lastmod: '2020-07-30T03:22:05Z'
-featured: no
-image: 
-  caption: ''
-  focal_point: '3'
-  preview_only: no
 projects: []
 ---
 
@@ -159,6 +165,8 @@ stop_pt &lt;- rbind(stop_pt, stop_sr) #juntando as duas</code></pre>
 <p>Não tema pequeno gafanhoto :dragon:! há formas de você lidar com isso.</p>
 <p><strong>Para além do modelo de BOW</strong>: Ngram Sequences, Named Entity Extraction e Topic Models.
 No caso, não vou utilizar o <em>steeming</em> porque estou acostumada a usar ele mais no quanteda. Também não vou utilizar o BOW, mas o Ngram Sequences porque eu quero analisar a ordem dos termos.</p>
+<pre><code>## here() starts at C:/Users/User/Documents/Blog rdados/aleluia</code></pre>
+<pre><code>## [1] &quot;C:/Users/User/Documents/Blog rdados/aleluia&quot;</code></pre>
 <p>Antes de começar vamos explorar rapidamente os dados…</p>
 <div id="quais-foram-os-partidos-que-mais-se-manifestaram-quais-foram-os-partidos-que-tiveram-falas-mais-longas" class="section level3">
 <h3>Quais foram os partidos que mais se manifestaram? Quais foram os partidos que tiveram falas mais longas?</h3>
@@ -170,7 +178,7 @@ No caso, não vou utilizar o <em>steeming</em> porque estou acostumada a usar el
   coord_flip() +
   theme_minimal() +
   labs(title = &quot;Partidos que mais se manifestaram&quot;)</code></pre>
-<p><img src="/post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/post/intro-textminig/2020-07-30-introdução-ao-text-mining-o-caso-da-votação-do-fundeb.en_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <pre class="r"><code>deputado_fala %&gt;%
   mutate(tamanho = str_length(Fala)) %&gt;%
   group_by(Partido) %&gt;%
@@ -181,8 +189,7 @@ No caso, não vou utilizar o <em>steeming</em> porque estou acostumada a usar el
   coord_flip() +
   theme_minimal() +
   labs(title = &quot;Partidos com falas mais longas&quot;)</code></pre>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<p><img src="/post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/post/intro-textminig/2020-07-30-introdução-ao-text-mining-o-caso-da-votação-do-fundeb.en_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Pelos gráficos é possível analisar que apesar do DEM ter se manifestado menos em relação aos demais, foi o que teve uma fala mais longa, referindo-se ao discurso da Relatora em relação ao projeto. Os demais seguem um padrão similar, com falas mais longas pelos partidos de esquerda e centro-esquerda. Estas falas mais longas por partido refere-se aos seguintes parlamentares: Professora Dorinha (DEM), Fernanda Melchionna (PSOL), Tiago Mitraud (NOVO), Soraya Santo (PL), José Guimarães (PT), Sâmia Bonfim (PSOL), Joenia Wapichana (REDE), Professora Rosa Neide (PT), Paulo Ganime (NOVO).</p>
 </div>
 <div id="quais-os-principais-termos-do-debate-speech_balloon" class="section level3">
@@ -204,7 +211,7 @@ No caso, não vou utilizar o <em>steeming</em> porque estou acostumada a usar el
   count(bigram, sort = T) %&gt;%
   filter(!bigram %in% c(&quot;presidente rodrigo&quot;, &quot;presidente tábata&quot;, &quot;rodrigo maia&quot;, &quot;sra presidente&quot;, &quot;professora dorinha&quot;, &quot;deputada professora&quot;)) -&gt; wordc1
   wordcloud(wordc1$bigram, wordc1$n)</code></pre>
-<p><img src="/post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/post/intro-textminig/2020-07-30-introdução-ao-text-mining-o-caso-da-votação-do-fundeb.en_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Podemos perceber que primeira infância é um termo altamente comentado durante o processo de votação, assim como os turnos da votação (que ocorreram no mesmo dia!). Outros destaques do debate estão nos termos: <em>“escola pública”</em>, <em>“custo aluno”</em> que seria o “Custo aluno Qualidade” CAQ, altamente debatido na votação e <em>“partido novo”</em> que houve um momento de debate durante a votação envolvendo esse partido.
 <br></p>
 </div>
@@ -259,7 +266,7 @@ top_terms %&gt;%
   facet_wrap(~ topic, scales = &quot;free&quot;) +
   coord_flip() +
   scale_x_reordered() #fazendo um grafico mara</code></pre>
-<p><img src="/post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/post/intro-textminig/2020-07-30-introdução-ao-text-mining-o-caso-da-votação-do-fundeb.en_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre class="r"><code>#quais partidos estao em quais topicos?
 
 td_gamma &lt;- tidy(partido_lda, matrix = &quot;gamma&quot;,                    
@@ -284,7 +291,7 @@ td_gamma %&gt;%
   theme_minimal() +
   theme(axis.text.y=element_blank()) +
   labs(x = NULL, y = expression(gamma), fill = &quot;Topic&quot;) #grafico mara</code></pre>
-<p><img src="/post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/post/intro-textminig/2020-07-30-introdução-ao-text-mining-o-caso-da-votação-do-fundeb.en_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Apesar da divisão em blocos, levando a votações mais alinhadas, percebemos que há algumas diferenças entre a probabilidade de presença dos partidos em cada tópico, levando a pensar em algumas outras suposições.</p>
 <p><img src="/img/blocopartidario2019.jpg"></p>
 <ul>
@@ -311,7 +318,7 @@ td_gamma %&gt;%
   bind_tf_idf(Partido, bigram, n) %&gt;%
   filter(Partido == &quot;NOVO&quot;)-&gt; word2c
   wordcloud(word2c$bigram, word2c$n)</code></pre>
-<p><img src="/post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/post/intro-textminig/2020-07-30-introdução-ao-text-mining-o-caso-da-votação-do-fundeb.en_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Podemos perceber que um termo de grande relevância no discurso do NOVO foi “12 mil”, isso se refere a justificativa deles do custo de “12 mil reais por aluno” e serem contras a constitucionalização do CAQ (custo aluno qualidade).
 Vale explicar o que fiz: como queria verificar os termos mais “exclusivos” usados pelo novo, usei primeiro o método de TF-IDF, que basicamente me retorna isso em relação ao total de documentos, assim obtendo os termos mais relavantes e “unicos”.</p>
 <div id="já-o-bloco-de-minoria-do-congresso" class="section level4">
@@ -329,7 +336,7 @@ Vale explicar o que fiz: como queria verificar os termos mais “exclusivos” u
           Partido == &quot;PSB&quot; | Partido == &quot;Rede&quot;) %&gt;%
   top_n(tf_idf, 500) -&gt; wordc3
   wordcloud(wordc3$bigram, wordc3$n)</code></pre>
-<p><img src="/post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/post/intro-textminig/2020-07-30-introdução-ao-text-mining-o-caso-da-votação-do-fundeb.en_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Podemos ver assim, o termo “partido novo” com destaque, demonstrando o debate em relação ao tema do CAQ e sua defesa por esse bloco.</p>
 </div>
 <div id="qual-a-relação-entre-os-termos" class="section level3">
@@ -357,7 +364,7 @@ ggraph(bigram_graph, layout = &quot;fr&quot;) +
   geom_node_point(color = &quot;lightblue&quot;, size = 5) +
   geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
   theme_void()</code></pre>
-<p><img src="/post/intro-textminig/2020-07-30-introdu%C3%A7%C3%A3o-ao-text-mining-o-caso-da-vota%C3%A7%C3%A3o-do-fundeb.en_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<p><img src="/post/intro-textminig/2020-07-30-introdução-ao-text-mining-o-caso-da-votação-do-fundeb.en_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 <br>
 Podemos pelo gráfico acima ver a relação entre alguns termos e palavras, como novo estar associado ao termo “partido mofo”, assim como custo aluno qualidade.
 <br>
