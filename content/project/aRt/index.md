@@ -10,10 +10,10 @@ links:
   name: Follow
   url: https://twitter.com/monimazz
 slides: 
-summary: Você sabia que é possível criar arte com o R? Durante 6 meses vou explorar o tema aRt, criando arte através do R com o uso de algorítimos e demais funcionalidades da linguagem.
+summary: Você sabia que é possível criar arte com o R? Vou explorar o tema aRt, criando arte através do R com o uso de algorítimos e demais funcionalidades da linguagem.
 tags:
 - aRt
-title: 6 meses de aRt 
+title: aRt 
 url_code: ""
 url_pdf: ""
 url_slides: ""
@@ -24,7 +24,7 @@ Sou apaixonada :heart_eyes: por arte e visualização de dados e informações, 
 
 Criar aRt é um processo complexo, não só pela criação em si, mas pelos códigos que irão levar você a criá-lo. Logo, um ótimo exercício para praticar a linguagem R!
 
-Inspirada por William Chase no desafio [12 Months of Art](https://www.williamrchase.com/work/art/), resolvi criar meu próprio desafio para 2020: 6 meses de aRt :art:, em que eu me proponho a 1 vez por mês desevolver um projeto relacionado ao tema. 
+Inspirada por William Chase no desafio [12 Months of Art](https://www.williamrchase.com/work/art/), resolvi explorar o pacote R para criar arte! 
 
 Como minhas referências principais tenho
 * [William Chase](https://www.williamrchase.com/work/art/) 

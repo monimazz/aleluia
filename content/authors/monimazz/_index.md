@@ -21,10 +21,11 @@ interests:
 - Governo e Políticas Públicas
 - Análise de redes sociais
 - Estudos sobre desigualdade
+- Empregabilidade Jovem
 organizations:
 - name: "Aspirante a cientista de dados"
   url: ""
-role: Pesquisadora
+role: Data Analyst/Pesquisadora
 social:
 # - icon: envelope
 #  icon_pack: fas
@@ -44,5 +45,7 @@ user_groups:
 - Researchers
 - Visitors
 ---
-
-Administradora Pública e pesquisadora, interessada em políticas e ações para redução de desigualdades pautada em evidências com uso de dados. Apaixonada em análise de dados com ferramentas de programação, buscando gerar visualizações acessíveis da informação.
+<br>
+<br>
+Prazer, Mônica!<br>
+Sou Bacharel em Administração Pública pela FGV-EAESP, pesquisadora, analista de dados e cientista de dados e designer em formação. Sou apaixonada em compreender, descobrir e sintetizar informações complexas em conteúdo visual e agradável ao leitor, para isso utilizando principalmente a linguagem. Já trabalhei no governo em um laboratório de inovação, em consultoria política e agora integro um núcleo de pesquisa voltado a empresas e direitos humanos. Também realizo trabalho voluntário no Youth Voices Brasil, no time de pesquisa. Amo arte, adoro desenhar, pintar aquarelas e agora estudo pintura digital. Sonho com as reduções de desigualdades do país, em que todos possam ampliar e exercer seus talentos e capacidades, com todos seus direitos contemplados.
