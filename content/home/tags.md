@@ -13,10 +13,21 @@ subtitle = ""
   taxonomy = "tags"
   
   # Choose how many tags you would like to display (0 = all tags)
-  count = 20
+  count = 0
 
 [design]
   # Minimum and maximum font sizes (1.0 = 100%).
-  font_size_min = 0.7
-  font_size_max = 2.0
+  font_size_min = 0.8
+  font_size_max = 1.0
+
+
+[design.background]
+  # Apply a background color, gradient, or image.
+  #   Uncomment (by removing `#`) an option to apply it.
+  #   Choose a light or dark text color by setting `text_color_light`.
+  #   Any HTML color name or Hex value is valid.
+  
+  # Background color.
+  gradient_start = "#F7F7F7"
+  gradient_end = "#efbc9b"
 +++

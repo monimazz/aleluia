@@ -14,17 +14,15 @@ bio:
 #    institution:
 #    year: 
 email: ""
-interests:
-- Dataviz
-- Text Mining
-- Governo e Políticas Públicas
-- Análise de redes sociais
-- Estudos sobre desigualdade
+#interests:
 organizations:
 - name: "Aspirante a cientista de dados"
   url: ""
 role: Pesquisadora
 social:
+- icon: cv
+  icon_pack: ai
+  link: '/files/cv.pdf'
 - icon: envelope
   icon_pack: fas
   link: '#contact'
@@ -43,9 +41,7 @@ user_groups:
 - Researchers
 - Visitors
 ---
-
-Um blog com notas, ideias, digressões e análises, especialmente usando a linguagem R, tudo em portugues-br, para ser mais um canal de troca de conhecimento sobre a linguagem e ciência de dados.
-
-Durante meus estudos (contínuos) em análise de dados, percebi que há diversos sites e páginas de apoio para aprendizado gratuito, no entanto, poucos em português, assim, com intuito de publicar algumas análises que venho fazendo e trocar conhecimento, resolvi criar o **R-dados: Pesquisando com R.**
-
->Um blog de análise de dados por Mônica Rocabado.
+<br>
+<br>
+Prazer, Mônica!<br>
+Sou Bacharel em Administração Pública pela FGV-EAESP, pesquisadora, analista de dados e cientista de dados e designer em formação. Sou apaixonada em compreender, descobrir e sintetizar informações complexas em conteúdo visual e agradável ao leitor, para isso utilizando principalmente a linguagem R. Já trabalhei no governo em um laboratório de inovação, em consultoria política e agora integro um núcleo de pesquisa voltado a empresas e direitos humanos. Também realizo trabalho voluntário no Youth Voices Brasil, no time de pesquisa. Amo arte, adoro desenhar, pintar aquarelas e agora estudo pintura digital. Sonho com as reduções de desigualdades do país, em que todos possam ampliar e exercer seus talentos e capacidades, com todos seus direitos contemplados.

@@ -27,9 +27,12 @@ organizations:
   url: ""
 role: Data Analyst/Pesquisadora
 social:
-# - icon: envelope
-#  icon_pack: fas
-#  link: '#contact'
+- icon: cv
+  icon_pack: ai
+  link: '/files/cv.pdf'
+- icon: envelope
+  icon_pack: fas
+  link: '#contact'
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/monimazz
@@ -47,5 +50,7 @@ user_groups:
 ---
 <br>
 <br>
-Prazer, Mônica!<br>
-Sou Bacharel em Administração Pública pela FGV-EAESP, pesquisadora, analista de dados e cientista de dados e designer em formação. Sou apaixonada em compreender, descobrir e sintetizar informações complexas em conteúdo visual e agradável ao leitor, para isso utilizando principalmente a linguagem. Já trabalhei no governo em um laboratório de inovação, em consultoria política e agora integro um núcleo de pesquisa voltado a empresas e direitos humanos. Também realizo trabalho voluntário no Youth Voices Brasil, no time de pesquisa. Amo arte, adoro desenhar, pintar aquarelas e agora estudo pintura digital. Sonho com as reduções de desigualdades do país, em que todos possam ampliar e exercer seus talentos e capacidades, com todos seus direitos contemplados.
+Bacharel em Administração Pública pela FGV-EAESP e cientista de dados em formação, sou apaixonada por análise e visualização de dados. Aqui compartilho alguns tutoriais e dicas que vou aprendendo nessa jornada de programação e projetos que estou desenvolvendo. Para para colaborar em projetos e freelas me mande uma   <a href="#contact">mensagem</a>
+<br>
+<br>
+ <a href="/sobre">Mais sobre mim <i class="fas fa-long-arrow-alt-right"></i></a>

@@ -1,0 +1,104 @@
+---
+title: Como transformar seu dashboard em site
+author: monimazz
+date: '2020-11-22'
+slug: como-transformar-seu-dashboard-em-site
+categories:
+  - Tutorial
+  - dashboard
+tags:
+  - tutorial
+  - dashboard
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-11-22T00:26:23-03:00'
+featured: false
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: yes
+projects: []
+---
+
+Recentemente trabalhei com a visualização de dados das [eleições municipais de 2020](https://monimazz.github.io/eleicoes2020/): 
+<br>
+<img src="/img/eleicoes2020.PNG">
+<br>
+Após muitas horas fazendo muita exploração descritiva dos dados, selecionei as informações que achei mais interessantes, criei as visualizações, dashboard prontinho e.....**Como eu transformo ele em um site?**
+
+Após procurar por essa informação, encontrei um [tutorial](https://ramikrispin.github.io/2020/09/deploying-flexdashboard-on-github-pages/) super prático que recomendo, aqui eu vou reproduzir em português os passos, um destaque para uma etapa essencial e dicas do que você realmente precisa subir no seu github.
+
+## Para começar você precisa de:
+
+- Uma conta no github;
+- Um dashboard pronto (aqui estou trabalhando no formato flexdahsboard);
+- Ter um arquivo html de seu flexdashboard (para isso você só precisa dar `knit` no arquivo do dashboard);
+- Seu github já configurado com seu RStudio.
+
+
+## Passo a passo para transformar o dashboard em site :dizzy: :
+
+### 1 - Criar um repositório no github
+Vá até o seu github e crie um repositório que irá guardar seu site, :warning: **importante**: esse também será o nome do seu site. 
+
+<img src="/img/repo.PNG">
+
+Nesse primeiro momento você :warning: **NÃO** irá selecionar nenhuma das opções de inicialização do repositório.
+
+### 2 - Criar um projeto no R linkado com seu repositório
+Com essa etapa concluída, selecione o link gerado do seu repositório, vá até seu Rstudio e crie um novo projeto com versionamento
+
+<img src="/img/versioncontrol.PNG">
+
+Selecione a opção Github
+
+<img src="/img/clonegit.PNG">
+
+Agora adicione o link do seu repositório do github nos locais especificados.
+<img src="/img/clonegitgo.PNG">
+
+Após fazer isso você terá um projeto no R associado com seu repositório no github.
+
+### 3 - Copiar somente arquivos relevantes para seu projeto
+Copie os arquivos importantes do dashboard para o projeto, :rotating_light: **ATENÇÃO:** você não precisa copiar todos os arquivos, somente o `html` e o arquivo `Rmd`.
+
+Para que o site funcione, crie uma pasta `docs` no seu projeto, nela adicione o `html` de seu flexdashboard. Na pasta principal adicione o `.Rmd` do seu projeto. **IMPORTANTE:** ambos os arquivos precisam ter o nome `index`, 
+
+### 4 - Criar um arquivo site :rotating_light:
+Essa etapa é pequena, mas **essencial**, o seu site só irá funcionar se você criar um arquivo `_site.yml`, como se faz isso:
+
+`File` -> `New File` -> `Text File`
+
+Irá aparecer um arquivo em branco, nele copie e cole o código abaixo:
+
+```
+name: "flexdashboard-example"
+output_dir: docs
+```
+Salve o arquivo, caso ele automaticamente não se torne um `yml`, vá no canto da página do script e selecione a opção `YAML`
+
+### 5 - Commit e Push
+Com tudo certinho, arquivos com o nome `index`, arquivo `_site.yml`, e html dentro da página docs, selecione todos os arquivos da aba `Git` de seu Rstudio, _dica_: use `CRTL`+`A`, clique em um documento da aba git e todos serão selecionados. Aperte `commit` _(essa imagem não representa o commit do dashboard)_:
+
+<img src="/img/gitcommit.PNG">
+
+Escreva um textinho no seu commit, algo para registrar essa versão que você está subindo: ex "meu primeiro commit".
+
+Com isso, aperte `PUSH` e irá até o seu github!
+
+### 6 - Arrumar o github como página
+Momento _finaleee_: vá até o seu repositório no github, os arquivos subiram direitinho?
+Ótimo! Agora vá até configurações ou settings:
+
+<img src="/img/settinggit.PNG">
+
+`Settings` -> `Options` -> `Pages`
+
+<img src="/img/pagesgit.PNG">
+
+
+E PRONTOOO :tada: :tada: :tada: :tada:, seu site está no ar!
+<br>
+<br>
+![](https://media.giphy.com/media/DfdXPZlJmLcwLIW7oz/giphy.gif)

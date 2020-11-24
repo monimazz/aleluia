@@ -1,0 +1,94 @@
+---
+title: Como transformar seu dashboard em site
+author: monimazz
+date: '2020-11-22'
+slug: como-transformar-seu-dashboard-em-site
+categories:
+  - Tutorial
+  - dashboard
+tags:
+  - tutorial
+  - dashboard
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-11-22T00:26:23-03:00'
+featured: false
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: yes
+projects: []
+---
+
+<link href="{{< relref "post/2020-11-22-como-transformar-seu-dashboard-em-site/index.html" >}}index_files/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="{{< relref "post/2020-11-22-como-transformar-seu-dashboard-em-site/index.html" >}}index_files/anchor-sections/anchor-sections.js"></script>
+
+
+<p>Recentemente trabalhei com a visualização de dados das <a href="https://monimazz.github.io/eleicoes2020/">eleições municipais de 2020</a>:
+<br>
+<img src="/img/eleicoes2020.PNG">
+<br>
+Após muitas horas fazendo muita exploração descritiva dos dados, selecionei as informações que achei mais interessantes, criei as visualizações, dashboard prontinho e…..<strong>Como eu transformo ele em um site?</strong></p>
+<p>Após procurar por essa informação, encontrei um <a href="https://ramikrispin.github.io/2020/09/deploying-flexdashboard-on-github-pages/">tutorial</a> super prático que recomendo, aqui eu vou reproduzir em português os passos, um destaque para uma etapa essencial e dicas do que você realmente precisa subir no seu github.</p>
+<div id="para-começar-você-precisa-de" class="section level2">
+<h2>Para começar você precisa de:</h2>
+<ul>
+<li>Uma conta no github;</li>
+<li>Um dashboard pronto (aqui estou trabalhando no formato flexdahsboard);</li>
+<li>Ter um arquivo html de seu flexdashboard (para isso você só precisa dar <code>knit</code> no arquivo do dashboard);</li>
+<li>Seu github já configurado com seu RStudio.</li>
+</ul>
+</div>
+<div id="passo-a-passo-para-transformar-o-dashboard-em-site-dizzy" class="section level2">
+<h2>Passo a passo para transformar o dashboard em site :dizzy: :</h2>
+<div id="criar-um-repositório-no-github" class="section level3">
+<h3>1 - Criar um repositório no github</h3>
+<p>Vá até o seu github e crie um repositório que irá guardar seu site, :warning: <strong>importante</strong>: esse também será o nome do seu site.</p>
+<p><img src="/img/repo.PNG"></p>
+<p>Nesse primeiro momento você :warning: <strong>NÃO</strong> irá selecionar nenhuma das opções de inicialização do repositório.</p>
+</div>
+<div id="criar-um-projeto-no-r-linkado-com-seu-repositório" class="section level3">
+<h3>2 - Criar um projeto no R linkado com seu repositório</h3>
+<p>Com essa etapa concluída, selecione o link gerado do seu repositório, vá até seu Rstudio e crie um novo projeto com versionamento</p>
+<p><img src="/img/versioncontrol.PNG"></p>
+<p>Selecione a opção Github</p>
+<p><img src="/img/clonegit.PNG"></p>
+<p>Agora adicione o link do seu repositório do github nos locais especificados.
+<img src="/img/clonegitgo.PNG"></p>
+<p>Após fazer isso você terá um projeto no R associado com seu repositório no github.</p>
+</div>
+<div id="copiar-somente-arquivos-relevantes-para-seu-projeto" class="section level3">
+<h3>3 - Copiar somente arquivos relevantes para seu projeto</h3>
+<p>Copie os arquivos importantes do dashboard para o projeto, :rotating_light: <strong>ATENÇÃO:</strong> você não precisa copiar todos os arquivos, somente o <code>html</code> e o arquivo <code>Rmd</code>.</p>
+<p>Para que o site funcione, crie uma pasta <code>docs</code> no seu projeto, nela adicione o <code>html</code> de seu flexdashboard. Na pasta principal adicione o <code>.Rmd</code> do seu projeto. <strong>IMPORTANTE:</strong> ambos os arquivos precisam ter o nome <code>index</code>,</p>
+</div>
+<div id="criar-um-arquivo-site-rotating_light" class="section level3">
+<h3>4 - Criar um arquivo site :rotating_light:</h3>
+<p>Essa etapa é pequena, mas <strong>essencial</strong>, o seu site só irá funcionar se você criar um arquivo <code>_site.yml</code>, como se faz isso:</p>
+<p><code>File</code> -&gt; <code>New File</code> -&gt; <code>Text File</code></p>
+<p>Irá aparecer um arquivo em branco, nele copie e cole o código abaixo:</p>
+<pre><code>name: &quot;flexdashboard-example&quot;
+output_dir: docs</code></pre>
+<p>Salve o arquivo, caso ele automaticamente não se torne um <code>yml</code>, vá no canto da página do script e selecione a opção <code>YAML</code></p>
+</div>
+<div id="commit-e-push" class="section level3">
+<h3>5 - Commit e Push</h3>
+<p>Com tudo certinho, arquivos com o nome <code>index</code>, arquivo <code>_site.yml</code>, e html dentro da página docs, selecione todos os arquivos da aba <code>Git</code> de seu Rstudio, <em>dica</em>: use <code>CRTL</code>+<code>A</code>, clique em um documento da aba git e todos serão selecionados. Aperte <code>commit</code> <em>(essa imagem não representa o commit do dashboard)</em>:</p>
+<p><img src="/img/gitcommit.PNG"></p>
+<p>Escreva um textinho no seu commit, algo para registrar essa versão que você está subindo: ex “meu primeiro commit”.</p>
+<p>Com isso, aperte <code>PUSH</code> e irá até o seu github!</p>
+</div>
+<div id="arrumar-o-github-como-página" class="section level3">
+<h3>6 - Arrumar o github como página</h3>
+<p>Momento <em>finaleee</em>: vá até o seu repositório no github, os arquivos subiram direitinho?
+Ótimo! Agora vá até configurações ou settings:</p>
+<p><img src="/img/settinggit.PNG"></p>
+<p><code>Settings</code> -&gt; <code>Options</code> -&gt; <code>Pages</code></p>
+<p><img src="/img/pagesgit.PNG"></p>
+<p>E PRONTOOO :tada: :tada: :tada: :tada:, seu site está no ar!
+<br>
+<br>
+<img src="https://media.giphy.com/media/DfdXPZlJmLcwLIW7oz/giphy.gif" /></p>
+</div>
+</div>

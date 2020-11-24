@@ -1,0 +1,11 @@
+# Nome da fonte
+name = "my_fonts"
+
+# Optional Google font URL
+google_fonts = "family=DM+Mono:wght@300&family=Lato&family=Lora:ital,wght@1,700"
+
+# Font families
+heading_font = "Lora"
+body_font = "Lato"
+nav_font = "Lato"
+mono_font = "DM Mono"

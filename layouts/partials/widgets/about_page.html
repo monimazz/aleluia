@@ -1,0 +1,51 @@
+{{ $ := .root }}
+{{ $page := .page }}
+
+<!-- stylesheet from https://animate.style -->
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+</head>
+
+<style>
+  greet  {
+    font-weight: 900;
+    font-size: 1.5rem;
+    font-family: 'Lora', serif;
+  }
+  h1{
+    font-family: 'Lora', serif;
+    font-weight: 900, !important;
+    font-style: italic;
+  }
+</style>
+
+<!-- About me widget -->
+<div class="about-page">
+  <div class="row">
+    <div class="col-12 col-lg-3">
+      <h1>Sobre mim</h1>
+    </div>
+    <div class="col-12 col-lg-9">
+        <div class="card-about">
+          <greet>Prazer! Mônica.</greet>
+          <br>
+          <br>
+          Sou Bacharel em Administração Pública pela FGV-EAESP, pesquisadora, analista de dados e cientista de dados e designer em formação. Sou apaixonada em compreender, descobrir e sintetizar informações complexas em conteúdo visual e agradável ao leitor, para isso utilizando principalmente a linguagem R. 
+          <br>
+          <br>
+          Já trabalhei no governo em um laboratório de inovação, em consultoria política e agora integro um núcleo de pesquisa voltado a empresas e direitos humanos. Também realizo trabalho voluntário no Youth Voices Brasil, no time de pesquisa.
+          <br>
+          <br>
+          Amo arte, adoro desenhar, pintar aquarelas e agora estudo pintura digital. Sonho com as reduções de desigualdades do país, em que todos possam ampliar e exercer seus talentos e capacidades, com todos seus direitos contemplados.
+          <br>
+          <br>
+          <b>Para projetos ou um olá, pode me mandar um <a href="#contact">e-mail</a>,<a href="/files/cv.pdf"> conferir meu CV</a> ou mensagem no <a href="https://www.linkedin.com/in/monicarocabado/">LinkedIn</a>, veja meu código em <a href="https://github.com/monimazz">github</a>, ou mande uma DM no <a href="https://twitter.com/monimazz">Twitter</a>.</b>
+        </div>
+    </div>
+    </div>
+  </div>
+
+</div>

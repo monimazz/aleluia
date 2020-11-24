@@ -46,14 +46,14 @@ subtitle = ""
   #   Any HTML color name or Hex value is valid.
   
   # Background color.
-   color = "#F3E8E3"
+  # color = "#F3E8E3"
   
   # Background gradient.
-#  gradient_start = "#F9EAE3"
- #  gradient_end = "#F9EAE3"
+ #gradient_start = "#F7F7F7"
+ #gradient_end = "#E6C0C0"
   
   # Background image.
-  # image = "background.jpg"  # Name of image in `static/media/`.
+  # image = "ibgra.png"  # Name of image in `static/media/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
 
   # Text color (true=light or false=dark).
