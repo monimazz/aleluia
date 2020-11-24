@@ -46,6 +46,6 @@ title = "<br><center><i><b>Mônica Rocabado<b><i><center>"
   
 +++
 <br>
-<div align="right"><b>Data Analyst<b><div align="right">
+<div align="right">Data Analyst<div align="right">
 <br>
 <br>

@@ -43,11 +43,6 @@ left: 0;
 padding: 0 1rem;
 }
 
-.navbar-collapse.main-menu-item.collapse.justify-content-start{
-  position: absolute;
-  right: 150px;
-}
-
 
 /*************************************************
  *  ABOUT - primeira pagina
@@ -69,6 +64,7 @@ padding: 0 1rem;
 
 .col-12.col-lg-8{
   font-family: 'Lato', sans-serif;
+  font-style: normal;
   font-weight: normal;
 }
  
@@ -116,7 +112,6 @@ padding: 0 1rem;
 
 .summary-link{
     font-family: 'Lato', sans-serif;
-    font-weight: lighter;
     font-size: 12px;
 }
 
