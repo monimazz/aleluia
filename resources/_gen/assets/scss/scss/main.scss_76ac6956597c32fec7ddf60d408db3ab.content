@@ -9192,7 +9192,7 @@ html[dir="rtl"] body {
   font-family: 'Lora', serif; }
 
 .hero-lead {
-  font-family: 'Lato', sans-serif; }
+  font-family: 'Roboto', sans-serif; }
 
 /*************************************************
  *  navbar

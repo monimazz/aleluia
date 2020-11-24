@@ -50,7 +50,7 @@ user_groups:
 ---
 <br>
 <br>
-Bacharel em Administração Pública pela FGV-EAESP e cientista de dados em formação, sou apaixonada por análise e visualização de dados. Aqui compartilho alguns tutoriais e dicas que vou aprendendo nessa jornada de programação e projetos que estou desenvolvendo. Para para colaborar em projetos e freelas me mande uma   <a href="#contact">mensagem</a>
+Bacharel em Administração Pública pela FGV-EAESP e cientista de dados em formação, sou apaixonada por análise e visualização de dados. Aqui compartilho alguns tutoriais e dicas que vou aprendendo nessa jornada de programação e projetos que estou desenvolvendo. Para colaborar em projetos e freelas me mande uma   <a href="#contact">mensagem</a>
 <br>
 <br>
  <a href="/sobre">Mais sobre mim <i class="fas fa-long-arrow-alt-right"></i></a>

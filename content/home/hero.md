@@ -19,11 +19,11 @@ title = "<br><center><i><b>Mônica Rocabado<b><i><center>"
   #   Any HTML color name or Hex value is valid.
 
   # Background color.
-  # color = "#F9BC2C"
+   color = "#F7F7F7"
   
   # Background gradient.
    gradient_start = "#F7F7F7"
-   gradient_end = "#efbc9b"
+   gradient_end = "#84c7d0"
   
 # Background image.
  # image = "bolinha.png"  # Name of image in `static/media/`.

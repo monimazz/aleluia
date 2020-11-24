@@ -17,5 +17,5 @@ weight = 20  # Order that this section will appear in.
   
   # Background color.
   gradient_start = "#F7F7F7"
-  gradient_end = "#efbc9b"
+  gradient_end = "#84c7d0"
 +++

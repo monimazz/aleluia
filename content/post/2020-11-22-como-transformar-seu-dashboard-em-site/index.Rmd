@@ -63,7 +63,13 @@ Após fazer isso você terá um projeto no R associado com seu repositório no g
 ### 3 - Copiar somente arquivos relevantes para seu projeto
 Copie os arquivos importantes do dashboard para o projeto, :rotating_light: **ATENÇÃO:** você não precisa copiar todos os arquivos, somente o `html` e o arquivo `Rmd`.
 
-Para que o site funcione, crie uma pasta `docs` no seu projeto, nela adicione o `html` de seu flexdashboard. Na pasta principal adicione o `.Rmd` do seu projeto. **IMPORTANTE:** ambos os arquivos precisam ter o nome `index`, 
+Para que o site funcione, crie uma pasta `docs` no seu projeto, nela adicione o `html` de seu flexdashboard. Na pasta principal adicione o `.Rmd` do seu projeto. **IMPORTANTE:** ambos os arquivos precisam ter o nome `index`.
+
+<img src="/img/flexdocs.PNG">
+
+Tudo relacionado a visualização do site, o html e outras possíveis pastas que possam surgir, adicionar a pasta `docs`!
+
+
 
 ### 4 - Criar um arquivo site :rotating_light:
 Essa etapa é pequena, mas **essencial**, o seu site só irá funcionar se você criar um arquivo `_site.yml`, como se faz isso:
@@ -76,7 +82,10 @@ Irá aparecer um arquivo em branco, nele copie e cole o código abaixo:
 name: "flexdashboard-example"
 output_dir: docs
 ```
-Salve o arquivo, caso ele automaticamente não se torne um `yml`, vá no canto da página do script e selecione a opção `YAML`
+Para salvar como arquivo `.yml`, só precisa escrever no momento de salvar da seguinte forma
+
+<img src="/img/saveyml.PNG">
+
 
 ### 5 - Commit e Push
 Com tudo certinho, arquivos com o nome `index`, arquivo `_site.yml`, e html dentro da página docs, selecione todos os arquivos da aba `Git` de seu Rstudio, _dica_: use `CRTL`+`A`, clique em um documento da aba git e todos serão selecionados. Aperte `commit` _(essa imagem não representa o commit do dashboard)_:
@@ -86,6 +95,9 @@ Com tudo certinho, arquivos com o nome `index`, arquivo `_site.yml`, e html dent
 Escreva um textinho no seu commit, algo para registrar essa versão que você está subindo: ex "meu primeiro commit".
 
 Com isso, aperte `PUSH` e irá até o seu github!
+
+<img src="/img/commit e push.PNG">
+
 
 ### 6 - Arrumar o github como página
 Momento _finaleee_: vá até o seu repositório no github, os arquivos subiram direitinho?
