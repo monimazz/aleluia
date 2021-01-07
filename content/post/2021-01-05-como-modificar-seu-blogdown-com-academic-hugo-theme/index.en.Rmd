@@ -1,0 +1,52 @@
+---
+title: Como modificar seu blogdown com Academic Hugo theme
+author: monimazz
+draft: true
+date: '2021-01-05'
+slug: como-modificar-seu-blogdown-com-academic-hugo-theme
+categories:
+  - Tutorial
+tags:
+  - tutorial
+  - design
+  - css
+  - blog
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-01-05T13:59:06-03:00'
+featured: yes
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+Modificar cor de fundo, fontes e widgets
+params
+
+Criar um tema
+
+
+Em config > _default ir em params.toml e modificar a parte "theme" pelo seu tema, no caso do meu "my_theme.toml"
+
+
+
+bla bla bla bla
+
+Você precisará trabalhar com html e css
+Criar uma pasta assest > scss (onde fica o arquivo css)
+Criar uma pasta data > themes (onde fica o toml modificado e o seu tema)
+Criar uma pasta layouts > partials > widgets (onde fica o html modificado)
+Crie uma pasta em content com o seu widget modificado (no meu caso é 'sobre')
+
+
+
+### Dicas!
+
+* Inspecione a sua página web
+
+

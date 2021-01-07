@@ -2,7 +2,7 @@
 name = "my_fonts"
 
 # Optional Google font URL
-google_fonts = "family=DM+Mono:wght@300&family=Lato&family=Lora:ital,wght@1,700"
+google_fonts = "family=DM+Mono:wght@300&family=Lato&family=Lora"
 
 # Font families
 heading_font = "Lora"

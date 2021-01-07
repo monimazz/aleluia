@@ -4,17 +4,31 @@
 
 {{ if $page.Params.hero_media }}
 <div class="row">
-  <div class="col-md-6 order-md-1 text-center text-md-right">
+  <div class="conteiner centered">
 {{ end }}
 
     <h1 class="hero-title">
       {{ with $page.Title }}{{ . | markdownify }}{{ end }}
     </h1>
 
+<script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+ <p class="multipleStrings"></p>
+ <script>
+  new TypeIt(".multipleStrings", {
+    strings: ["Administradora Pública.", "Analista de dados e Dataviz.",
+    "Cientista de dados em formação."],
+    breakLines: false,
+    loop: true,
+    speed: 70
+  }).go();
+</script>
+
     {{ with $page.Content }}
     <div class="hero-lead">{{ . }}</div>
     {{ end }}
-
+<div class="boxgradiente">
+  		<div class="shapegradiente"></div>
+		</div>
     {{/* Call-to-action link */}}
     {{ if $page.Params.cta.url }}
       {{ $pack := or $page.Params.cta.icon_pack "fas" }}
