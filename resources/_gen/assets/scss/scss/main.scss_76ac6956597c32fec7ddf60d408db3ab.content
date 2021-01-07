@@ -9443,7 +9443,18 @@ body {
 
 /*homepage graing geral */
 .home-section {
-  background-image: url("/img/ibgra.png"); }
+  background-image: url("/img/ibgra.png");
+  font-size: 15px; }
 
 .home-section.wg-hero {
   background: url("/img/ibgra.png"); }
+
+.featurette h1 {
+  color: #1d3557; }
+
+.featurette h3 {
+  font-family: 'Lato', sans-serif;
+  color: #1d3557; }
+
+.featurette-icon {
+  color: #1d3557; }
