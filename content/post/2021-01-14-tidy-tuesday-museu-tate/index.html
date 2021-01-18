@@ -1,0 +1,194 @@
+---
+title: 'Tidy Tuesday: Museu Tate'
+author: ''
+date: '2021-01-14'
+slug: tidy-tuesday-museu-tate
+categories:
+  - tidy tuesday
+tags:
+  - tidy tuesday
+  - design
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2021-01-14T23:27:56-03:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: yes
+projects: []
+---
+
+<link href="{{< relref "post/2021-01-14-tidy-tuesday-museu-tate/index.html" >}}index_files/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="{{< relref "post/2021-01-14-tidy-tuesday-museu-tate/index.html" >}}index_files/anchor-sections/anchor-sections.js"></script>
+
+
+<center>
+<p><img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Tate_2016_Logo.png" /></p>
+</center>
+<p>Sou uma pessoa apaixonada por arte, tudo desse universo me encanta, seja colocar a mão na massa, ou ler sobre história da arte, vida de artistas, etc. Através da arte conseguimos expressar sentimentos e ideias e levar o espectador a senti-las ou ter outras reações não esperadas.</p>
+<p>Por conta desse interesse resolvi participar do meu primeiro Tidy Tuesday! A base de dados da terceira semana do ano é da coleção do Tate (composto por 4 galerias)! dentre elas, um dos maiores acervos de arte moderna do mundo. Para os novos na comunidade R, o tidy tuesday é um projeto contínuo que disponibiliza por semana diversas bases de dados para que se possa treinar organização e visualização de bases de dados, você encontra mais detalhes no <a href="https://github.com/rfordatascience/tidytuesday">github do projeto</a>.</p>
+<div id="debate-sobre-gênero-e-arte" class="section level2">
+<h2>Debate sobre gênero e arte</h2>
+<p>Já percebeu quando você vai em museus que mulheres/feminilidade é um tema recorrente na arte? Quantos dessas obras são feitas por mulheres? Quanto o feminino e o ser mulher foi idealizado?</p>
+<p>Essas perguntas se tornaram mais presentes na minha vida após ir a uma exposição no MASP do grupo Guerilla Girls. O grupo nasceu em NY nos anos 80, com intuito de combater o sexismo e racismo no mundo da arte, você consegue identificar seus trabalho através da máscara de gorila, marca registrada o grupo.</p>
+<p>Nessa exposição, me deparei com a seguinte imagem:</p>
+<p><img src="https://www.tate.org.uk/art/images/work/P/P78/P78793_10.jpg" /></p>
+<p>Os dados acima infelizmente não são uma exceção no mundo, as artistas mulheres possuem pouco espaço nesse mundo. Apesar do cenário estar sendo problematizado e progressivamente alterado, isso ainda é uma questão presente e necessária de ser debatida e analisada. Dessa forma, com as bases do Tate, decidi trazer esse olhar e tentar compreender:</p>
+</div>
+<div id="perguntas" class="section level2">
+<h2>Perguntas</h2>
+<ul>
+<li>Quantas são as artistas mulheres em relação ao total de artistas?</li>
+<li>Quanto % as artistas são presentes no acervo?</li>
+<li>Quando as artistas mulheres começaram a ser adquiridas pelo Tate?</li>
+<li>Qual a relação entre obras representando mulheres no Tate e artistas mulheres?</li>
+</ul>
+<div id="mão-a-obra" class="section level3">
+<h3>Mão a obra!</h3>
+<p>Antes de começarmos as analises precisamos pegar essa base de dados, para isso é só instalar o pacote <code>tidytuesdayR</code> e baixar a semana das bases de dados de interesse.</p>
+<pre class="r"><code>library(tidyverse)
+library(tidytuesdayR)
+
+tuesdata &lt;- tidytuesdayR::tt_load(2021, week = 3)</code></pre>
+<p>As bases de dados são referentes aos artistas e as obras, para trabalharmos com as nossas bases temos que tirá-las do formato de lista e colocar cada base como um dataframe</p>
+<pre class="r"><code>artistas &lt;- tuesdata$artists
+obras &lt;- tuesdata$artwork</code></pre>
+<p>Respondendo minha primeira pergunta: Quanto % as mulheres representam entre os artistas?</p>
+<pre class="r"><code>library(packcircles)
+data &lt;- data.frame(group=paste(c(&quot;Mulher (14,75%)&quot;, &quot;Homem (81,96%)&quot;, &quot;NA (3,32%)&quot;)), value=c(14.75, 81.96, 3.32)) 
+
+packing &lt;- circleProgressiveLayout(data$value, sizetype=&#39;area&#39;)
+packing$radius &lt;- 0.95*packing$radius
+data &lt;- cbind(data, packing)
+dat.gg &lt;- circleLayoutVertices(packing, npoints=50)
+
+# Plot 
+ggplot() + 
+  geom_polygon(data = dat.gg, aes(x, y, group = id, fill=id), alpha = 0.6) +
+  geom_text(data = data, aes(x, y, size=value, label = group), color=&quot;black&quot;, family = &quot;Montserrat&quot;) +
+  theme_void() + 
+  theme(legend.position=&quot;none&quot;)+ 
+  coord_equal() +
+  scale_fill_gradient2()</code></pre>
+<p><img src="total_artistas_genero.png" /></p>
+<p>Ótimo! Para conseguir responder as perguntas que quero preciso unir as bases de artistas e obras, isto devido a base de obras não possuir o gênero dos artistas, somente o nome deles, logo vou usar o id do artista como dado em comum.
+<em>Detalhe importante: como quero a base mais completa possível, escolhi unir a base através das obras, que possui 69 mil linhas, enquanto de artistas possui 3 mil linhas.</em></p>
+<pre class="r"><code>base_unida &lt;- left_join(obras, artistas, by = c(&quot;artistId&quot; = &quot;id&quot;))</code></pre>
+<p>Para começar a nossa análise, qual a presença de mulheres artistas na coleção?</p>
+<pre class="r"><code>library(packcircles)
+data &lt;- data.frame(group=paste(c(&quot;Mulher (3,94%)&quot;, &quot;Homem (95%)&quot;, &quot;NA (1%)&quot;)), value=c(3.94, 95.04, 1.01)) 
+
+packing &lt;- circleProgressiveLayout(data$value, sizetype=&#39;area&#39;)
+packing$radius &lt;- 0.95*packing$radius
+data &lt;- cbind(data, packing)
+dat.gg &lt;- circleLayoutVertices(packing, npoints=50)
+
+# Plot 
+ggplot() + 
+  geom_polygon(data = dat.gg, aes(x, y, group = id, fill=id), alpha = 0.6) +
+  geom_text(data = data, aes(x, y, size=value, label = group), color=&quot;black&quot;, family = &quot;Montserrat&quot;) +
+  theme_void() + 
+  theme(legend.position=&quot;none&quot;)+ 
+  coord_equal() +
+  scale_fill_gradient2()</code></pre>
+<p><img src="colecao_genero.png" /></p>
+<p>Já começamos a ver algumas informações um pouco chocantes só com esse recorte, de 69 mil obras, o Tate possui somente 3 mil obras de artistas mulheres, ou seja, <em>mulheres representam 5% do acervo do Tate.</em>
+Essa foi minha primeira reação:
+<img src="https://media.giphy.com/media/3o7TKtZ6eYyq506j04/giphy.gif" /></p>
+<p>No entanto, fiquei pensando, será que há algum artista mais presente na coleção que outros? Talvez isso possa explicar esse número tão baixo de artistas mulheres na coleção.</p>
+<pre class="r"><code>base_unida %&gt;% 
+  count(artist, sort = TRUE) %&gt;% 
+  top_n(10) %&gt;%
+  mutate(artist = fct_reorder(artist, n)) %&gt;% 
+  ggplot(aes(artist, n,)) +
+  geom_segment(aes(xend = artist, yend = 0),color = &quot;#FBDB04&quot;, lineend = &quot;round&quot;, size = 5) +
+  coord_flip() +
+  theme_minimal(base_family = &quot;Montserrat&quot;, base_size = 12) +
+  theme(plot.background = element_rect(fill = &quot;#F7F7F7&quot;, color = NA),
+                     plot.title = element_text(size = 18, colour=&quot;#401A82&quot;),
+                    plot.caption = element_text(face = &quot;italic&quot;, size = 8, colour=&quot;#401A82&quot;),
+        axis.text.y =element_text(colour=&quot;#401A82&quot;)) +
+  labs(title = &quot;10 artistas mais presentes na coleção&quot;, caption = &quot;Graphic: @monimazz\nData: TATE&quot;, x = &quot;Artistas&quot;, y = &quot;Total de obras&quot;, color = &quot;&quot;)</code></pre>
+<p><img src="top_10art.png" /></p>
+<p>Como podemos ver há uma grande quantidade de obras de Turner no acervo, podemos melhor visualizar que ele representa mais de 50% do acervo!</p>
+<pre class="r"><code>library(waffle)
+
+tunerr &lt;- c(`Outro Artista`=43.1, `Turner`=56.9) # fiz a conta separado para identificar esse valor
+
+waffle(tunerr/1, rows=8, size=1, colors=c(&quot;#A939B2&quot;, &quot;#FBDB04&quot;)) +
+  labs(title = &quot;Percentual de obras de Turner
+       &quot;, caption = &quot;Cada quadrado é igual a 1%&quot;) +
+  theme_void(base_family = &quot;Montserrat&quot;, base_size = 12)</code></pre>
+<p><img src="turner.png" /></p>
+<p>Refazendo a análise sem o Turner que é mais de 50% do acervo, chegamos a quase a mesma conclusão, mulheres representam <em>menos de 10% do acervo</em>. :sweat:</p>
+<pre class="r"><code>library(packcircles)
+data &lt;- data.frame(group=paste(c(&quot;Mulher (9%)&quot;, &quot;Homem (88%)&quot;, &quot;NA (2%)&quot;)), value=c(9.14, 88.5, 2.34)) 
+
+packing &lt;- circleProgressiveLayout(data$value, sizetype=&#39;area&#39;)
+packing$radius &lt;- 0.95*packing$radius
+data &lt;- cbind(data, packing)
+dat.gg &lt;- circleLayoutVertices(packing, npoints=50)
+
+# Plot 
+ggplot() + 
+  geom_polygon(data = dat.gg, aes(x, y, group = id, fill=id), alpha = 0.6) +
+  geom_text(data = data, aes(x, y, size=value, label = group), color=&quot;black&quot;, family = &quot;Montserrat&quot;) +
+  theme_void() + 
+  theme(legend.position=&quot;none&quot;)+ 
+  coord_equal() +
+  scale_fill_gradient2()</code></pre>
+<p><img src="colecao_semturner.png" /></p>
+<p>Agora que sabemos o quanto as artistas mulheres representam menos de 10% no Tate, será que está havendo algum movimento de mudança para representação de mulheres na arte por parte do Tate? Para isso vamos precisar de uma base com recorte somente de mulheres</p>
+<pre class="r"><code>mulheres &lt;- base_unida %&gt;% 
+  filter(gender == &quot;Female&quot;) %&gt;% 
+    separate(placeOfBirth, into = c(&quot;Local&quot;, &quot;Pais&quot; ), sep = &quot;, &quot;)</code></pre>
+</div>
+<div id="artistas-mulheres-no-tate" class="section level3">
+<h3>Artistas mulheres no Tate</h3>
+Quando as artistas mulheres começaram a ser adquiridas pelo Tate?
+Para responder essa pergunta, me inspirei na visualização do mês de Janeiro de 2021 da cientista de dados e dataviz <a href="https://twitter.com/MaiaPelletier">Maia Pelletier</a>, para isso, segui o <a href="https://github.com/MaiaPelletier/tidytuesday/blob/master/R/2021_Week02_GlobalTransitCosts.R">script</a> que ela disponibilizou em seu github. Tentei fazer em um estilo Yayoi Kusama, que sou fã de suas obras:
+<center>
+<img src="tidytuesday_wk3_Tate_gender.png" />
+</center>
+<p>Como podemos perceber, a partir de 1970 começa uma aquisição mais intensa de obras mulheres artistas pelo TATE, para melhor visualizar a nacionalidade dessas mulheres e quem são, fiz o gráfico interativo abaixo <em>(Tinha feito esse gráfico, mas ele não está funcionando no site, então estará disponível no github)</em></p>
+<pre class="r"><code>mulheres %&gt;% 
+  group_by(acquisitionYear, Continentess) %&gt;% 
+  summarize(n = n(),
+            Região = Região[n],
+            Artista = artist[n]) %&gt;% 
+  ungroup() %&gt;% 
+  ggplot(aes(x = acquisitionYear, y = n, color = Continentess,
+             Artista=Artista, Região=Região)) +
+  geom_point() +
+  theme_minimal(base_family = &quot;Montserrat&quot;, base_size = 12) +
+  labs(x = &quot;Ano de aquisição pelo Tate&quot;, y = &quot;Total de obras adquiridas&quot;, color = &quot;Continente&quot;,
+       title = &quot;Aquisição de obras de mulheres pelo Tate&quot;) +
+  scale_color_viridis_d()</code></pre>
+<p><img src="tempo_obras_mun.png" /></p>
+<p>Outro ponto que fiquei refletindo após a exposição da Guerilla Girls é como a imagem da feminilidade e dar mulher foi criada e construída segundo a visão dos homens em relação ao que significava esses conceitos. Logo, a criação do imaginário do que é ser mulher, foi construído principalmente por artistas homens brancos, que em realidade nada sabem sobre o que é ser uma mulher. O debate sobre a construção e conceito desses conceitos é longa e há diversos estudos muito interessantes sobre isso (se tiver dicas de temas coloca nos comentários!) recomendo a leitura!</p>
+<p>Em vista disso, como está estruturada a coleção do Tate? Qual a % de quadros com o tema “mulher” e “feminino”? <em>Quem nós representa?</em></p>
+</div>
+<div id="as-mulheres-representadas-nas-obras---quem-produz-essa-imagem" class="section level3">
+<h3>As mulheres representadas nas obras - Quem produz essa imagem?</h3>
+<pre class="r"><code>library(waffle)
+
+representacao &lt;- c(`Homens`=92, `Mulheres`=6.5, `NA` = 1.5) # fiz a conta separado para identificar esse valor
+
+waffle(representacao/1, rows=8, size=1, colors=c(&quot;#A939B2&quot;, &quot;#FBDB04&quot;, &quot;grey&quot;)) +
+  labs(title = &quot;Estimativa de obras de representação de mulheres por gênero do artista
+       &quot;, caption = &quot;Cada quadrado é igual a 1%&quot;) +
+  theme_void(base_family = &quot;Montserrat&quot;, base_size = 12)</code></pre>
+<p><img src="obras_representacao.png" /></p>
+</div>
+<div id="considerações-finais" class="section level3">
+<h3>Considerações finais</h3>
+<p>Como podemos perceber há uma falta de representação de artistas mulheres, ainda que nas últimas décadas o TATE realizou um esforço para trazer artistas mulheres a suas galerias. Ainda há um longo caminho a percorrer, sempre se questione sobre a sociedade em que vive e os espaços de representação e poder, segue abaixo um vídeo do grupo Guerilla Girls, que além de explicar a origem traz algumas reflexões sobre o mundo da arte, recomendo muito assistir:</p>
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8uKg7hb2yoo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</center>
+<p>Foi uma experiência legal participar desse tidy tuesday, que me desafiou a pensar novas formas de visualização e aprender com o código da comunidade <code>R</code>, além de conhecer o trabalho de um pessoal incrível! Espero fazer mais vezes com temas tão interessantes.</p>
+</div>
+</div>

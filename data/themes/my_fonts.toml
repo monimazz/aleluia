@@ -2,10 +2,10 @@
 name = "my_fonts"
 
 # Optional Google font URL
-google_fonts = "family=DM+Mono:wght@300&family=Lato&family=Lora"
+google_fonts = "DM+Mono&family=Josefin+Sans:wght@700&family=Lato&family=Lora"
 
 # Font families
 heading_font = "Lora"
 body_font = "Lato"
-nav_font = "Lato"
+nav_font = "Lora"
 mono_font = "DM Mono"
