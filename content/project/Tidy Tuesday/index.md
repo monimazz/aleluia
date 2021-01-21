@@ -17,7 +17,7 @@ slides:
 summary: Um projeto da comunidade R para treinar visualizações, análise e organização de dados!
 tags:
 - tidytuesday
-title: Tidy Tuesday (Quinta)
+title: "Terça-feira Arrumada" 
 url_code: "https://github.com/monimazz/tidytuesday"
 url_pdf: ""
 url_slides: ""
